@@ -1,8 +1,10 @@
-/* Impressum – i18n */
+/* Impressum - i18n */
 
 import { useLocation } from "wouter";
 import { ArrowLeft } from "lucide-react";
 import { useLang } from "@/contexts/LanguageContext";
+
+const LOGO_SRC = "/assets/bind-logo.png";
 
 export default function Impressum() {
   const [, navigate] = useLocation();
@@ -17,7 +19,7 @@ export default function Impressum() {
             <button onClick={() => navigate("/")} style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#6B6B6B', fontSize: '13px', fontFamily: 'DM Sans, sans-serif', background: 'none', border: 'none', cursor: 'pointer' }}>
               <ArrowLeft size={14} /> {t.impressum.back}
             </button>
-            <span style={{ fontFamily: 'Playfair Display, Georgia, serif', fontSize: '18px', fontWeight: 600, color: '#111111' }}>BIND Immobilien GmbH</span>
+            <img src={LOGO_SRC} alt="BIND Immobilien GmbH" style={{ height: '46px', width: 'auto', objectFit: 'contain' }} />
           </div>
         </div>
       </header>

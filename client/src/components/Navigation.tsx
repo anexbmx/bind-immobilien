@@ -1,15 +1,16 @@
-/* Navigation – Clean Authority Design + Language Switcher DE/EN/TR */
+/* Navigation - Clean Authority Design + Language Switcher DE/EN */
 
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { useLang } from "@/contexts/LanguageContext";
 import type { Lang } from "@/lib/translations";
 
-const LANGS: { code: Lang; label: string; flag: string }[] = [
-  { code: 'de', label: 'DE', flag: '🇩🇪' },
-  { code: 'en', label: 'EN', flag: '🇬🇧' },
-  { code: 'tr', label: 'TR', flag: '🇹🇷' },
+const LANGS: { code: Lang; label: string }[] = [
+  { code: 'de', label: 'DE' },
+  { code: 'en', label: 'EN' },
 ];
+
+const LOGO_SRC = "/assets/bind-logo.png";
 
 export default function Navigation() {
   const { t, lang, setLang } = useLang();
@@ -51,7 +52,16 @@ export default function Navigation() {
       }}
     >
       <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 3rem' }}>
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: '72px' }}>
+        <style>{`
+          .nav-desktop { display: flex; }
+          .nav-mobile { display: none; }
+          @media (max-width: 767px) {
+            .nav-shell { padding-left: 1.25rem !important; padding-right: 1.25rem !important; }
+            .nav-desktop { display: none !important; }
+            .nav-mobile { display: flex !important; }
+          }
+        `}</style>
+        <div className="nav-shell" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: '72px' }}>
 
           {/* Logo */}
           <button
@@ -59,14 +69,14 @@ export default function Navigation() {
             style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer', display: 'flex', alignItems: 'center' }}
           >
             <img
-              src="/manus-storage/bind_logo_white_bg_2805c0ff.png"
+              src={LOGO_SRC}
               alt="BIND Immobilien GmbH"
               style={{ height: '52px', width: 'auto', objectFit: 'contain' }}
             />
           </button>
 
           {/* Desktop Nav */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '2.5rem' }} className="hidden md:flex">
+          <div className="nav-desktop" style={{ alignItems: 'center', gap: '2.5rem' }}>
             {navLinks.map((link) => (
               <button
                 key={link.href}
@@ -98,7 +108,7 @@ export default function Navigation() {
                 onMouseEnter={e => { e.currentTarget.style.borderColor = '#B8962E'; }}
                 onMouseLeave={e => { if (!langOpen) e.currentTarget.style.borderColor = '#E0DDD8'; }}
               >
-                {LANGS.find(l => l.code === lang)?.flag} {lang.toUpperCase()}
+                {lang.toUpperCase()}
                 <svg width="8" height="5" viewBox="0 0 8 5" fill="none" style={{ marginLeft: '2px', transition: 'transform 0.2s', transform: langOpen ? 'rotate(180deg)' : 'none' }}>
                   <path d="M1 1l3 3 3-3" stroke="#999" strokeWidth="1.5" strokeLinecap="round"/>
                 </svg>
@@ -127,7 +137,6 @@ export default function Navigation() {
                       onMouseEnter={e => { e.currentTarget.style.backgroundColor = '#F8F7F4'; }}
                       onMouseLeave={e => { e.currentTarget.style.backgroundColor = 'transparent'; }}
                     >
-                      <span>{l.flag}</span>
                       <span>{l.label}</span>
                       {lang === l.code && <span style={{ marginLeft: 'auto', color: '#B8962E', fontSize: '10px' }}>✓</span>}
                     </button>
@@ -146,7 +155,7 @@ export default function Navigation() {
           </div>
 
           {/* Mobile toggle */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }} className="md:hidden">
+          <div className="nav-mobile" style={{ alignItems: 'center', gap: '12px' }}>
             {/* Mobile lang switcher */}
             <div style={{ position: 'relative' }}>
               <button
@@ -175,7 +184,7 @@ export default function Navigation() {
                         color: lang === l.code ? '#B8962E' : '#111111', cursor: 'pointer',
                         borderBottom: '1px solid #F0EDE8',
                       }}>
-                      {l.flag} {l.label}
+                      {l.label}
                     </button>
                   ))}
                 </div>

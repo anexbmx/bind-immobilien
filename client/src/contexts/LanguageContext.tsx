@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, ReactNode } from 'react';
+import { createContext, useContext, useEffect, useState, ReactNode } from 'react';
 import { Lang, translations, Translations } from '@/lib/translations';
 
 interface LanguageContextType {
@@ -14,11 +14,22 @@ const LanguageContext = createContext<LanguageContextType>({
 });
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [lang, setLangState] = useState<Lang>('de');
+  const [lang, setLangState] = useState<Lang>(() => {
+    if (typeof window === 'undefined') return 'de';
+
+    const stored = window.localStorage.getItem('bind-language');
+    if (stored === 'de' || stored === 'en') return stored;
+
+    return 'de';
+  });
+
+  useEffect(() => {
+    document.documentElement.lang = lang;
+  }, [lang]);
 
   const setLang = (l: Lang) => {
     setLangState(l);
-    document.documentElement.lang = l;
+    window.localStorage.setItem('bind-language', l);
   };
 
   return (

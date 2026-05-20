@@ -1,15 +1,9 @@
-/* FooterSection – i18n */
+/* FooterSection - i18n */
 
 import { useLocation } from "wouter";
 import { useLang } from "@/contexts/LanguageContext";
 
-const logoVariants = [
-  { id: "current", src: "/manus-storage/bind_logo_white_bg_2805c0ff.png", dark: false },
-  { id: "v1", src: "https://d2xsxph8kpxj0f.cloudfront.net/310519663556990306/i8Gj75QVv5anJNJu4VYAkn/logo_v1_light-mn32VyaRRYjzC62RGs4cJq.webp", dark: false },
-  { id: "v3", src: "https://d2xsxph8kpxj0f.cloudfront.net/310519663556990306/i8Gj75QVv5anJNJu4VYAkn/logo_v3_wordmark-MbyBTPVj2SuKhEnoqo7nVs.webp", dark: false },
-];
-
-const logoLabels = (t: any) => [t.footer.logoCurrentLabel, t.footer.logoAlt1, t.footer.logoAlt2];
+const LOGO_SRC = "/assets/bind-logo.png";
 
 export default function FooterSection() {
   const { t } = useLang();
@@ -29,23 +23,6 @@ export default function FooterSection() {
 
   return (
     <footer style={{ backgroundColor: '#111111', color: '#FFFFFF' }}>
-      {/* Logo showcase */}
-      <div style={{ borderBottom: '1px solid rgba(255,255,255,0.08)', padding: '3.5rem 0' }}>
-        <div className="container">
-          <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: '11px', letterSpacing: '0.18em', textTransform: 'uppercase', color: '#B8962E', marginBottom: '2rem' }}>{t.footer.logoLabel}</p>
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '2rem', alignItems: 'center' }}>
-            {logoVariants.map((logo, i) => (
-              <div key={logo.id} style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'flex-start' }}>
-                <div style={{ backgroundColor: '#FFFFFF', padding: '1rem 1.5rem', border: logo.id === 'current' ? '1px solid rgba(184,150,46,0.4)' : '1px solid rgba(255,255,255,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', minWidth: '200px' }}>
-                  <img src={logo.src} alt={logoLabels(t)[i]} style={{ height: '44px', width: 'auto', objectFit: 'contain' }} />
-                </div>
-                <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: '11px', color: logo.id === 'current' ? '#B8962E' : 'rgba(255,255,255,0.4)', letterSpacing: '0.04em' }}>{logoLabels(t)[i]}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
       {/* Main */}
       <div style={{ padding: '4rem 0 3rem' }}>
         <div className="container">
@@ -53,7 +30,7 @@ export default function FooterSection() {
             <style>{`@media(max-width:768px){.footer-grid{grid-template-columns:1fr!important;gap:2.5rem!important;}}`}</style>
 
             <div>
-              <img src="/manus-storage/bind_logo_white_bg_2805c0ff.png" alt="BIND Immobilien GmbH" style={{ height: '52px', width: 'auto', objectFit: 'contain', marginBottom: '1.5rem' }} />
+              <img src={LOGO_SRC} alt="BIND Immobilien GmbH" style={{ height: '58px', width: 'auto', maxWidth: '260px', objectFit: 'contain', marginBottom: '1.5rem' }} />
               <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: '14px', fontWeight: 300, color: 'rgba(255,255,255,0.5)', lineHeight: 1.75, maxWidth: '320px' }}>{t.footer.desc}</p>
             </div>
 

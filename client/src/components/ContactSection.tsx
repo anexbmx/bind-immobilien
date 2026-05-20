@@ -1,4 +1,4 @@
-/* ContactSection – i18n */
+/* ContactSection - i18n */
 
 import { useEffect, useRef, useState } from "react";
 import { MapPin, Mail, Clock, ArrowRight } from "lucide-react";
@@ -25,11 +25,25 @@ export default function ContactSection() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setSending(true);
-    setTimeout(() => {
-      setSending(false);
-      toast.success(t.contact.successMsg);
-      setForm({ name: '', email: '', phone: '', type: '', location: '', price: '', message: '' });
-    }, 1200);
+
+    const subject = encodeURIComponent(`Immobilienangebot von ${form.name}`);
+    const body = encodeURIComponent(
+      [
+        `Name: ${form.name}`,
+        `E-Mail: ${form.email}`,
+        `Telefon: ${form.phone || '-'}`,
+        `Objekttyp: ${form.type || '-'}`,
+        `Standort: ${form.location || '-'}`,
+        `Kaufpreisvorstellung: ${form.price || '-'}`,
+        '',
+        'Nachricht / Objektbeschreibung:',
+        form.message || '-',
+      ].join('\n'),
+    );
+
+    window.location.href = `mailto:info@bindimmobilien.de?subject=${subject}&body=${body}`;
+    setSending(false);
+    toast.success(t.contact.successMsg);
   };
 
   const inputStyle: React.CSSProperties = { width: '100%', backgroundColor: 'transparent', border: 'none', borderBottom: '1px solid #E0DDD8', padding: '10px 0', fontFamily: 'DM Sans, sans-serif', fontSize: '15px', fontWeight: 300, color: '#111111', outline: 'none', transition: 'border-color 0.25s ease' };
