@@ -177,7 +177,7 @@ export const translations = {
       label: 'Rechtliche Angaben',
       title: 'Impressum',
       sections: {
-        tmg: 'Angaben gemäß § 5 TMG',
+        tmg: 'Angaben gemäß § 5 DDG',
         management: 'Geschäftsführung',
         ceoTitle: 'Chief Executive Officer (CEO)',
         register: 'Handelsregister',
@@ -356,7 +356,7 @@ export const translations = {
       label: 'Legal Information',
       title: 'Legal Notice',
       sections: {
-        tmg: 'Information pursuant to § 5 TMG',
+        tmg: 'Information pursuant to § 5 DDG',
         management: 'Management',
         ceoTitle: 'Chief Executive Officer (CEO)',
         register: 'Commercial Register',

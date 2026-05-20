@@ -60,7 +60,7 @@ export default function FooterSection() {
           <div style={{ borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '2rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem' }}>
             <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: '12px', color: 'rgba(255,255,255,0.3)' }}>© {new Date().getFullYear()} BIND Immobilien GmbH · HRB 118677 Amtsgericht Köln</p>
             <div style={{ display: 'flex', gap: '2rem' }}>
-              {[{ label: t.footer.impressum, path: '/impressum' }, { label: t.footer.datenschutz, path: '/impressum' }].map(item => (
+              {[{ label: t.footer.impressum, path: '/impressum' }, { label: t.footer.datenschutz, path: '/datenschutz' }].map(item => (
                 <button key={item.label} onClick={() => navigate(item.path)} style={{ background: 'none', border: 'none', fontFamily: 'DM Sans, sans-serif', fontSize: '12px', color: 'rgba(255,255,255,0.3)', cursor: 'pointer', transition: 'color 0.2s ease' }}
                   onMouseEnter={e => { e.currentTarget.style.color = '#B8962E'; }}
                   onMouseLeave={e => { e.currentTarget.style.color = 'rgba(255,255,255,0.3)'; }}>
