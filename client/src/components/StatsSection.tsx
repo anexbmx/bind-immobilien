@@ -1,4 +1,4 @@
-/* StatsSection – i18n */
+/* StatsSection - i18n */
 
 import { useEffect, useRef, useState } from "react";
 import { useLang } from "@/contexts/LanguageContext";
@@ -42,19 +42,32 @@ export default function StatsSection() {
   const { ref, inView } = useInView(0.15);
 
   return (
-    <section ref={ref} style={{ backgroundColor: '#111111', padding: '5rem 0' }}>
+    <section ref={ref} className="stats-section" style={{ backgroundColor: '#111111', padding: '5rem 0' }}>
       <div className="container">
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '0' }} className="stats-grid">
-          <style>{`@media(max-width:768px){.stats-grid{grid-template-columns:repeat(2,1fr)!important;}}`}</style>
+          <style>{`
+            .stats-card { min-width: 0; }
+            .stats-label, .stats-sub { overflow-wrap: anywhere; }
+            @media(max-width:1366px){
+              .stats-section{padding:4rem 0!important;}
+              .stats-grid{grid-template-columns:repeat(2, minmax(0,1fr))!important;border-top:1px solid rgba(255,255,255,0.08);border-left:1px solid rgba(255,255,255,0.08);}
+              .stats-card{padding:2.25rem!important;border-right:1px solid rgba(255,255,255,0.08)!important;border-bottom:1px solid rgba(255,255,255,0.08)!important;}
+            }
+            @media(max-width:600px){
+              .stats-section{padding:3rem 0!important;}
+              .stats-grid{grid-template-columns:1fr!important;}
+              .stats-card{padding:1.75rem 0!important;border-right:none!important;border-left:none!important;}
+            }
+          `}</style>
           {statNums.map((s, i) => (
-            <div key={i} style={{ padding: '2.5rem 2rem', borderRight: i < 3 ? '1px solid rgba(255,255,255,0.08)' : 'none', opacity: inView ? 1 : 0, transform: inView ? 'none' : 'translateY(16px)', transition: `opacity 0.7s ease ${i * 0.12}s, transform 0.7s ease ${i * 0.12}s` }}>
+            <div className="stats-card" key={i} style={{ padding: '2.5rem 2rem', borderRight: i < 3 ? '1px solid rgba(255,255,255,0.08)' : 'none', opacity: inView ? 1 : 0, transform: inView ? 'none' : 'translateY(16px)', transition: `opacity 0.7s ease ${i * 0.12}s, transform 0.7s ease ${i * 0.12}s` }}>
               <div style={{ fontFamily: 'Playfair Display, Georgia, serif', fontSize: 'clamp(2.5rem, 4vw, 3.5rem)', fontWeight: 600, color: '#B8962E', lineHeight: 1, marginBottom: '0.5rem' }}>
                 <Counter target={s.num} suffix={s.suffix} inView={inView} />
               </div>
-              <div style={{ fontFamily: 'DM Sans, sans-serif', fontSize: '13px', fontWeight: 500, color: '#FFFFFF', marginBottom: '4px' }}>
+              <div className="stats-label" style={{ fontFamily: 'DM Sans, sans-serif', fontSize: '13px', fontWeight: 500, color: '#FFFFFF', marginBottom: '4px', lineHeight: 1.45 }}>
                 {t.stats.items[i]?.label}
               </div>
-              <div style={{ fontFamily: 'DM Sans, sans-serif', fontSize: '12px', color: 'rgba(255,255,255,0.4)' }}>
+              <div className="stats-sub" style={{ fontFamily: 'DM Sans, sans-serif', fontSize: '12px', color: 'rgba(255,255,255,0.4)', lineHeight: 1.55 }}>
                 {t.stats.items[i]?.sub}
               </div>
             </div>

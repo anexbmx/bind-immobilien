@@ -166,6 +166,7 @@ export const translations = {
     footer: {
       navTitle: 'Navigation',
       segTitle: 'Investitionssegmente',
+      language: 'Sprache',
       segments: ['Geschäftshäuser', 'Hotels', 'Hotelprojekte', 'Baugrundstücke'],
       desc: 'Privater Immobilieninvestor für Geschäftshäuser, Hotels, Hotelprojekte und Baugrundstücke. Schwerpunkt Köln, Düsseldorf und Rheinland; selektiv deutschlandweit.',
       impressum: 'Impressum',
@@ -346,6 +347,7 @@ export const translations = {
     footer: {
       navTitle: 'Navigation',
       segTitle: 'Investment Segments',
+      language: 'Language',
       segments: ['Commercial Buildings', 'Hotels', 'Hotel Projects', 'Building Plots'],
       desc: 'Private real estate investor for commercial buildings, hotels, hotel developments and building plots. Focus on Cologne, Düsseldorf and the Rhine region; selectively Germany-wide.',
       impressum: 'Legal Notice',

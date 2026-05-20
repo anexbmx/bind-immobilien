@@ -93,6 +93,24 @@ export default function Navigation() {
             animation: langMenuIn 0.18s ease both;
             transform-origin: top right;
           }
+          .nav-lang-button {
+            min-width: 58px;
+            height: 34px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            background: rgba(248,247,244,0.72);
+            border: 1px solid #E0DDD8;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 12px;
+            font-weight: 600;
+            color: #111111;
+            cursor: pointer;
+            padding: 0 12px;
+            letter-spacing: 0.08em;
+            transition: border-color 0.2s ease, background-color 0.2s ease;
+          }
           @keyframes langMenuIn {
             from { opacity: 0; transform: translateY(-6px) scale(0.98); }
             to { opacity: 1; transform: translateY(0) scale(1); }
@@ -143,14 +161,8 @@ export default function Navigation() {
             {/* Language Switcher */}
             <div style={{ position: 'relative' }}>
               <button
+                className="nav-lang-button"
                 onClick={() => setLangOpen(!langOpen)}
-                style={{
-                  display: 'flex', alignItems: 'center', gap: '5px',
-                  background: 'none', border: '1px solid #E0DDD8',
-                  fontFamily: 'DM Sans, sans-serif', fontSize: '12px', fontWeight: 600,
-                  color: '#111111', cursor: 'pointer', padding: '6px 12px',
-                  letterSpacing: '0.08em', transition: 'border-color 0.2s ease',
-                }}
                 onMouseEnter={e => { e.currentTarget.style.borderColor = '#B8962E'; }}
                 onMouseLeave={e => { if (!langOpen) e.currentTarget.style.borderColor = '#E0DDD8'; }}
               >
@@ -206,12 +218,8 @@ export default function Navigation() {
             {/* Mobile lang switcher */}
             <div style={{ position: 'relative' }}>
               <button
+                className="nav-lang-button"
                 onClick={() => setLangOpen(!langOpen)}
-                style={{
-                  background: 'none', border: '1px solid #E0DDD8',
-                  fontFamily: 'DM Sans, sans-serif', fontSize: '11px', fontWeight: 600,
-                  color: '#111111', cursor: 'pointer', padding: '5px 9px',
-                }}
               >
                 {lang.toUpperCase()}
               </button>
