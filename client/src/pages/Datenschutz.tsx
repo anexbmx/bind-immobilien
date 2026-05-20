@@ -1,8 +1,4 @@
-import { useLocation } from "wouter";
-import { ArrowLeft } from "lucide-react";
-import { useLang } from "@/contexts/LanguageContext";
-
-const LOGO_SRC = "/assets/bind-logo.png";
+import Navigation from "@/components/Navigation";
 
 const paragraphStyle: React.CSSProperties = {
   fontFamily: "DM Sans, sans-serif",
@@ -39,23 +35,11 @@ function LegalSection({
 }
 
 export default function Datenschutz() {
-  const [, navigate] = useLocation();
-  const { t } = useLang();
-
   return (
     <div style={{ backgroundColor: "#F8F7F4", minHeight: "100vh", color: "#111111" }}>
-      <header style={{ borderBottom: "1px solid #E0DDD8", backgroundColor: "#F8F7F4" }}>
-        <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 2rem" }}>
-          <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", height: "76px", gap: "1.5rem" }}>
-            <button onClick={() => navigate("/")} style={{ display: "flex", alignItems: "center", gap: "8px", color: "#6B6B6B", fontSize: "13px", fontFamily: "DM Sans, sans-serif", background: "none", border: "none", cursor: "pointer" }}>
-              <ArrowLeft size={14} /> {t.impressum.back}
-            </button>
-            <img src={LOGO_SRC} alt="BIND Immobilien GmbH" style={{ height: "46px", width: "auto", objectFit: "contain" }} />
-          </div>
-        </div>
-      </header>
+      <Navigation />
 
-      <main style={{ maxWidth: "860px", margin: "0 auto", padding: "5rem 2rem 8rem" }}>
+      <main style={{ maxWidth: "860px", margin: "0 auto", padding: "9rem 2rem 8rem" }}>
         <p style={{ fontFamily: "DM Sans, sans-serif", fontSize: "11px", letterSpacing: "0.18em", textTransform: "uppercase", color: "#B8962E", marginBottom: "1.5rem" }}>
           Datenschutz
         </p>

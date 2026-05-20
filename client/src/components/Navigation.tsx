@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import { useLocation } from "wouter";
 import { useLang } from "@/contexts/LanguageContext";
 import type { Lang } from "@/lib/translations";
 
@@ -14,6 +15,7 @@ const LOGO_SRC = "/assets/bind-logo.png";
 
 export default function Navigation() {
   const { t, lang, setLang } = useLang();
+  const [location, navigate] = useLocation();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [langOpen, setLangOpen] = useState(false);
@@ -26,8 +28,25 @@ export default function Navigation() {
 
   const scrollTo = (href: string) => {
     setMenuOpen(false);
+    setLangOpen(false);
+
+    if (location !== "/") {
+      navigate(`/${href}`);
+      return;
+    }
+
     const el = document.querySelector(href);
     if (el) el.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const goHome = () => {
+    setMenuOpen(false);
+    setLangOpen(false);
+    if (location === "/") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+    navigate("/");
   };
 
   const navLinks = [
@@ -128,7 +147,7 @@ export default function Navigation() {
 
           {/* Logo */}
           <button
-            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            onClick={goHome}
             style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer', display: 'flex', alignItems: 'center' }}
           >
             <img
