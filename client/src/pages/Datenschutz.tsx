@@ -1,4 +1,5 @@
 import Navigation from "@/components/Navigation";
+import FooterSection from "@/components/FooterSection";
 
 const paragraphStyle: React.CSSProperties = {
   fontFamily: "DM Sans, sans-serif",
@@ -164,6 +165,7 @@ export default function Datenschutz() {
           </p>
         </div>
       </main>
+      <FooterSection />
     </div>
   );
 }

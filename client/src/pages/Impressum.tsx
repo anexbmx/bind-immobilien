@@ -1,4 +1,5 @@
 import Navigation from "@/components/Navigation";
+import FooterSection from "@/components/FooterSection";
 
 const rowStyle: React.CSSProperties = {
   display: "grid",
@@ -128,6 +129,7 @@ export default function Impressum() {
           </p>
         </div>
       </main>
+      <FooterSection />
     </div>
   );
 }
