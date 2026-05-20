@@ -5,12 +5,8 @@
   "license": "MIT",
   "scripts": {
     "dev": "vite --host",
-<<<<<<< HEAD
     "build": "vite build",
-=======
-    "build": "vite build && esbuild server/index.ts --platform=node --packages=external --bundle --format=esm --outdir=dist",
     "vercel-build": "vite build",
->>>>>>> 3ce26ff (first one)
     "start": "NODE_ENV=production node dist/index.js",
     "preview": "vite preview --host",
     "check": "tsc --noEmit",
