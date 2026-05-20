@@ -51,17 +51,62 @@ export default function Navigation() {
         transition: 'background-color 0.4s ease, border-color 0.4s ease',
       }}
     >
-      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 3rem' }}>
+      <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2.5rem' }}>
         <style>{`
           .nav-desktop { display: flex; }
           .nav-mobile { display: none; }
-          @media (max-width: 767px) {
-            .nav-shell { padding-left: 1.25rem !important; padding-right: 1.25rem !important; }
+          .nav-logo-img { height: 44px; width: auto; object-fit: contain; }
+          .nav-link { white-space: nowrap; }
+          .nav-menu-panel {
+            max-height: 0;
+            opacity: 0;
+            transform: translateY(-10px);
+            overflow: hidden;
+            pointer-events: none;
+            border-top: 0 solid transparent;
+            padding: 0 2rem;
+            transition: max-height 0.32s ease, opacity 0.24s ease, transform 0.32s ease;
+          }
+          .nav-menu-panel.open {
+            max-height: 420px;
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+            border-top: 1px solid #E0DDD8;
+            padding: 1.5rem 2rem 2rem;
+          }
+          .nav-menu-item {
+            opacity: 0;
+            transform: translateY(-8px);
+            transition: opacity 0.24s ease, transform 0.24s ease;
+          }
+          .nav-menu-panel.open .nav-menu-item {
+            opacity: 1;
+            transform: translateY(0);
+          }
+          .nav-menu-panel.open .nav-menu-item:nth-child(1) { transition-delay: 0.04s; }
+          .nav-menu-panel.open .nav-menu-item:nth-child(2) { transition-delay: 0.08s; }
+          .nav-menu-panel.open .nav-menu-item:nth-child(3) { transition-delay: 0.12s; }
+          .nav-menu-panel.open .nav-menu-item:nth-child(4) { transition-delay: 0.16s; }
+          .nav-menu-panel.open .nav-menu-item:nth-child(5) { transition-delay: 0.2s; }
+          .lang-menu {
+            animation: langMenuIn 0.18s ease both;
+            transform-origin: top right;
+          }
+          @keyframes langMenuIn {
+            from { opacity: 0; transform: translateY(-6px) scale(0.98); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
+          }
+          @media (max-width: 1080px) {
             .nav-desktop { display: none !important; }
             .nav-mobile { display: flex !important; }
           }
+          @media (max-width: 767px) {
+            .nav-shell { padding-left: 1.25rem !important; padding-right: 1.25rem !important; }
+            .nav-logo-img { height: 38px; }
+          }
         `}</style>
-        <div className="nav-shell" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: '72px' }}>
+        <div className="nav-shell" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: scrolled ? '68px' : '76px', transition: 'height 0.3s ease' }}>
 
           {/* Logo */}
           <button
@@ -69,16 +114,17 @@ export default function Navigation() {
             style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer', display: 'flex', alignItems: 'center' }}
           >
             <img
+              className="nav-logo-img"
               src={LOGO_SRC}
               alt="BIND Immobilien GmbH"
-              style={{ height: '52px', width: 'auto', objectFit: 'contain' }}
             />
           </button>
 
           {/* Desktop Nav */}
-          <div className="nav-desktop" style={{ alignItems: 'center', gap: '2.5rem' }}>
+          <div className="nav-desktop" style={{ alignItems: 'center', gap: 'clamp(1.3rem, 2.5vw, 2.3rem)' }}>
             {navLinks.map((link) => (
               <button
+                className="nav-link"
                 key={link.href}
                 onClick={() => scrollTo(link.href)}
                 style={{
@@ -115,6 +161,7 @@ export default function Navigation() {
               </button>
               {langOpen && (
                 <div
+                  className="lang-menu"
                   style={{
                     position: 'absolute', top: 'calc(100% + 6px)', right: 0,
                     backgroundColor: '#FFFFFF', border: '1px solid #E0DDD8',
@@ -169,7 +216,7 @@ export default function Navigation() {
                 {lang.toUpperCase()}
               </button>
               {langOpen && (
-                <div style={{
+                <div className="lang-menu" style={{
                   position: 'absolute', top: 'calc(100% + 6px)', right: 0,
                   backgroundColor: '#FFFFFF', border: '1px solid #E0DDD8',
                   boxShadow: '0 8px 24px rgba(0,0,0,0.08)', minWidth: '100px', zIndex: 200,
@@ -201,13 +248,14 @@ export default function Navigation() {
       </div>
 
       {/* Mobile menu */}
-      {menuOpen && (
-        <div style={{
-          backgroundColor: '#F8F7F4', borderTop: '1px solid #E0DDD8',
-          padding: '1.5rem 2rem 2rem', display: 'flex', flexDirection: 'column', gap: '1.25rem',
-        }}>
+      <div
+        className={`nav-menu-panel ${menuOpen ? 'open' : ''}`}
+        style={{
+          backgroundColor: '#F8F7F4', display: 'flex', flexDirection: 'column', gap: '1.25rem',
+        }}
+      >
           {navLinks.map((link) => (
-            <button key={link.href} onClick={() => scrollTo(link.href)}
+            <button className="nav-menu-item" key={link.href} onClick={() => scrollTo(link.href)}
               style={{
                 background: 'none', border: 'none', textAlign: 'left',
                 fontFamily: 'DM Sans, sans-serif', fontSize: '15px', fontWeight: 500,
@@ -216,12 +264,11 @@ export default function Navigation() {
               {link.label}
             </button>
           ))}
-          <button onClick={() => scrollTo("#angebot")} className="btn-primary"
+          <button onClick={() => scrollTo("#angebot")} className="btn-primary nav-menu-item"
             style={{ marginTop: '0.5rem', justifyContent: 'center' }}>
             {t.nav.cta}
           </button>
-        </div>
-      )}
+      </div>
     </nav>
   );
 }
