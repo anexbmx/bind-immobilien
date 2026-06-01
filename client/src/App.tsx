@@ -9,6 +9,7 @@ import { LanguageProvider } from "./contexts/LanguageContext";
 import Home from "./pages/Home";
 import Impressum from "./pages/Impressum";
 import Datenschutz from "./pages/Datenschutz";
+import BrandIdentity from "./pages/BrandIdentity";
 
 function ScrollToTop() {
   const [location] = useLocation();
@@ -39,6 +40,7 @@ function Router() {
       <ScrollToTop />
       <Switch>
         <Route path={"/"} component={Home} />
+        <Route path={"/brand"} component={BrandIdentity} />
         <Route path={"/impressum"} component={Impressum} />
         <Route path={"/datenschutz"} component={Datenschutz} />
         <Route path={"/404"} component={NotFound} />

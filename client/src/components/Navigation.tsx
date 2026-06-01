@@ -30,6 +30,11 @@ export default function Navigation() {
     setMenuOpen(false);
     setLangOpen(false);
 
+    if (href.startsWith("/")) {
+      navigate(href);
+      return;
+    }
+
     if (location !== "/") {
       navigate(`/${href}`);
       return;
@@ -53,6 +58,7 @@ export default function Navigation() {
     { label: t.nav.about, href: "#ueber-uns" },
     { label: t.nav.focus, href: "#investitionsfokus" },
     { label: t.nav.offer, href: "#angebot" },
+    { label: "Brand", href: "/brand" },
     { label: t.nav.contact, href: "#kontakt" },
   ];
 

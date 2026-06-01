@@ -1,0 +1,1847 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BIND Immobilien Brand Identity</title>
+  <link rel="icon" type="image/svg+xml" href="bind-favicon.svg">
+  <style>
+    :root {
+      --black: #1a1a1a;
+      --gold: #c8a05a;
+      --ivory: #f7f5f1;
+      --taupe: #e6ddd1;
+      --slate: #687280;
+      --line: rgba(26, 26, 26, 0.14);
+      --muted: rgba(26, 26, 26, 0.68);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    @page {
+      size: 16in 10in;
+      margin: 0;
+    }
+
+    html,
+    body {
+      margin: 0;
+      min-height: 100%;
+      background: #ebe6dc;
+      color: var(--black);
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      letter-spacing: 0;
+    }
+
+    body {
+      display: grid;
+      place-items: center;
+      min-height: 100vh;
+    }
+
+    .sheet {
+      width: min(1600px, 100%);
+      min-height: max(100vh, 1580px);
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 12% 10%, rgba(255, 255, 255, 0.72), transparent 28%),
+        radial-gradient(circle at 82% 22%, rgba(255, 255, 255, 0.54), transparent 31%),
+        linear-gradient(135deg, #fbfaf7 0%, #f3efe8 48%, #fffdf8 100%);
+      padding: clamp(16px, 1.5vw, 24px);
+    }
+
+    .sheet::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(26, 26, 26, 0.018) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(26, 26, 26, 0.014) 1px, transparent 1px);
+      background-size: 32px 32px;
+      mix-blend-mode: multiply;
+    }
+
+    .grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 2fr 1.72fr 1.24fr;
+      grid-template-rows: minmax(455px, 1.45fr) minmax(300px, 0.9fr) minmax(310px, 0.9fr) minmax(480px, 1.2fr);
+      min-height: calc(100vh - 84px);
+      border: 1px solid transparent;
+    }
+
+    .panel {
+      position: relative;
+      min-width: 0;
+      padding: 0 26px;
+      border-left: 1px solid var(--line);
+    }
+
+    .panel:first-child,
+    .panel:nth-child(4),
+    .panel:nth-child(7) {
+      border-left: 0;
+      padding-left: 0;
+    }
+
+    .top-row {
+      border-bottom: 1px solid var(--line);
+    }
+
+    .mid-row {
+      border-bottom: 1px solid var(--line);
+      padding-top: 18px;
+    }
+
+    .bottom-row {
+      padding-top: 16px;
+    }
+
+    .section-title {
+      margin: 0;
+      font-size: 14px;
+      font-weight: 650;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+    }
+
+    .section-title::after {
+      content: "";
+      display: block;
+      width: 36px;
+      height: 1px;
+      margin-top: 8px;
+      background: var(--gold);
+    }
+
+    .primary {
+      display: grid;
+      grid-template-rows: auto 1fr;
+      align-items: center;
+    }
+
+    .primary-logo {
+      display: grid;
+      place-items: center;
+      height: 385px;
+      padding-top: 16px;
+    }
+
+    .brand-stack {
+      display: grid;
+      justify-items: center;
+      gap: 14px;
+    }
+
+    .mark-large {
+      width: 150px;
+      height: 150px;
+    }
+
+    .word {
+      display: flex;
+      gap: 52px;
+      align-items: center;
+      justify-content: center;
+      font-family: Montserrat, Inter, Arial, sans-serif;
+      font-size: 68px;
+      font-weight: 400;
+      line-height: 1;
+      letter-spacing: 0;
+    }
+
+    .subword {
+      color: var(--gold);
+      font-family: Montserrat, Inter, Arial, sans-serif;
+      font-size: 26px;
+      letter-spacing: 13px;
+      line-height: 1;
+      text-indent: 13px;
+      white-space: nowrap;
+    }
+
+    .tagline {
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 7px;
+      line-height: 1;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .wordmark {
+      display: grid;
+      grid-template-rows: auto minmax(178px, 0.78fr) 1px minmax(154px, 1fr);
+      row-gap: 18px;
+    }
+
+    .wordmark-main {
+      display: grid;
+      place-items: center;
+    }
+
+    .wordmark-main .word {
+      gap: 62px;
+      font-size: 52px;
+    }
+
+    .wordmark-main .subword {
+      margin-top: 10px;
+      font-size: 19px;
+      letter-spacing: 15px;
+      text-indent: 15px;
+    }
+
+    .wordmark-main .tagline {
+      margin-top: 13px;
+      font-size: 12px;
+      letter-spacing: 5.5px;
+    }
+
+    .divider {
+      height: 1px;
+      background: var(--line);
+    }
+
+    .variations {
+      padding-top: 2px;
+    }
+
+    .variation-row {
+      display: grid;
+      grid-template-columns: minmax(126px, 1fr) minmax(168px, 1.1fr) 78px;
+      align-items: center;
+      gap: 14px;
+      margin-top: 13px;
+    }
+
+    .mini-logo {
+      display: grid;
+      justify-items: center;
+      gap: 6px;
+      padding-right: 14px;
+      border-right: 1px solid var(--line);
+    }
+
+    .mini-logo .mark-small {
+      width: 54px;
+      height: 54px;
+    }
+
+    .mini-logo .word {
+      gap: 20px;
+      font-size: 25px;
+    }
+
+    .mini-logo .subword {
+      font-size: 9px;
+      letter-spacing: 6px;
+      text-indent: 6px;
+    }
+
+    .mini-logo .tagline {
+      font-size: 5px;
+      letter-spacing: 1.5px;
+    }
+
+    .horizontal {
+      display: grid;
+      grid-template-columns: 48px minmax(0, 1fr);
+      gap: 12px;
+      align-items: center;
+      padding-right: 14px;
+      border-right: 1px solid var(--line);
+    }
+
+    .horizontal .word {
+      justify-content: start;
+      gap: 17px;
+      font-size: 22px;
+    }
+
+    .horizontal .subword {
+      margin-top: 3px;
+      font-size: 8px;
+      letter-spacing: 5.4px;
+      text-indent: 5.4px;
+    }
+
+    .horizontal .tagline {
+      margin-top: 5px;
+      font-size: 4.5px;
+      letter-spacing: 1px;
+    }
+
+    .badge {
+      position: relative;
+      width: 76px;
+      height: 76px;
+      display: grid;
+      place-items: center;
+    }
+
+    .badge-svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+      overflow: visible;
+    }
+
+    .badge-svg text {
+      fill: var(--black);
+      font-family: Montserrat, Inter, Arial, sans-serif;
+      font-weight: 750;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .badge-svg .badge-top {
+      font-size: 7.6px;
+    }
+
+    .badge-svg .badge-bottom {
+      font-size: 4.2px;
+      letter-spacing: 1.15px;
+    }
+
+    .favicon {
+      display: grid;
+      grid-template-rows: auto auto 1fr;
+    }
+
+    .favicon-showcase {
+      display: grid;
+      justify-items: center;
+      gap: 18px;
+      padding-top: 28px;
+    }
+
+    .browser-chrome {
+      width: min(100%, 345px);
+      height: 50px;
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      padding: 0 14px;
+      background: rgba(255, 255, 255, 0.72);
+      border: 1px solid rgba(230, 221, 209, 0.78);
+      border-radius: 15px;
+      box-shadow: 0 12px 28px rgba(26, 26, 26, 0.12);
+    }
+
+    .window-dot {
+      width: 12px;
+      height: 12px;
+      flex: 0 0 auto;
+      border-radius: 50%;
+    }
+
+    .dot-red {
+      background: #ff5f57;
+    }
+
+    .dot-yellow {
+      background: #febc2e;
+    }
+
+    .dot-green {
+      background: #28c840;
+    }
+
+    .tab-pill {
+      min-width: 0;
+      height: 34px;
+      flex: 1 1 auto;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 0 10px;
+      background: rgba(255, 255, 255, 0.88);
+      border-radius: 10px;
+      box-shadow: inset 0 0 0 1px rgba(230, 221, 209, 0.62);
+    }
+
+    .tab-favicon,
+    .favicon-tile {
+      display: grid;
+      place-items: center;
+      background:
+        linear-gradient(135deg, #fff, #f3efe8);
+      border: 1px solid rgba(230, 221, 209, 0.9);
+      box-shadow: 0 9px 22px rgba(26, 26, 26, 0.11);
+    }
+
+    .tab-favicon {
+      width: 24px;
+      height: 24px;
+      flex: 0 0 auto;
+      border-radius: 6px;
+    }
+
+    .tab-favicon svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    .tab-favicon img,
+    .favicon-tile img {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    .tab-label {
+      min-width: 0;
+      overflow: hidden;
+      color: var(--black);
+      font-size: 12px;
+      font-weight: 750;
+      letter-spacing: 0.3px;
+      text-overflow: ellipsis;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .tab-close {
+      color: rgba(26, 26, 26, 0.42);
+      font-size: 18px;
+      line-height: 1;
+    }
+
+    .favicon-tile {
+      width: 58px;
+      height: 58px;
+      border-radius: 13px;
+    }
+
+    .favicon-tile svg {
+      width: 43px;
+      height: 43px;
+    }
+
+    .favicon-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-auto-rows: min-content;
+      justify-items: center;
+      align-content: start;
+      gap: 16px;
+      padding-top: 24px;
+    }
+
+    .icon-sample {
+      display: grid;
+      justify-items: center;
+      gap: 14px;
+      font-size: 13px;
+      color: var(--black);
+    }
+
+    .icon-box {
+      display: grid;
+      place-items: center;
+      background:
+        radial-gradient(circle at 26% 13%, rgba(255, 255, 255, 0.12), transparent 28%),
+        linear-gradient(135deg, #2a2a2a, #111);
+      border-radius: 14px;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.16);
+    }
+
+    .icon-box.s32 {
+      width: 58px;
+      height: 58px;
+    }
+
+    .icon-box.s64 {
+      width: 74px;
+      height: 74px;
+      border-radius: 16px;
+    }
+
+    .icon-box.s180 {
+      width: 88px;
+      height: 88px;
+      border-radius: 20px;
+    }
+
+    .icon-box svg {
+      max-width: 72%;
+      max-height: 72%;
+    }
+
+    .span-2 {
+      grid-column: auto;
+    }
+
+    .palette {
+      display: grid;
+      grid-template-rows: auto 1fr;
+    }
+
+    .swatches {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 16px;
+      align-content: start;
+      margin-top: 20px;
+      padding-right: 18px;
+    }
+
+    .swatch {
+      min-width: 0;
+      text-align: center;
+      font-size: 11px;
+      line-height: 1.25;
+    }
+
+    .swatch-color {
+      width: 100%;
+      height: 88px;
+      margin-bottom: 13px;
+      border: 1px solid rgba(26, 26, 26, 0.06);
+    }
+
+    .swatch strong {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 12px;
+      font-weight: 500;
+    }
+
+    .swatch span {
+      display: block;
+      font-weight: 650;
+      text-transform: uppercase;
+    }
+
+    .typography {
+      display: grid;
+      grid-template-rows: auto 1fr;
+      grid-column: 2 / 4;
+      grid-row: 2;
+    }
+
+    .type-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      min-height: 220px;
+      margin-top: 18px;
+    }
+
+    .type-card {
+      display: grid;
+      align-content: start;
+      padding: 0 19px;
+      border-left: 1px solid var(--line);
+    }
+
+    .type-card:first-child {
+      border-left: 0;
+      padding-left: 0;
+    }
+
+    .type-sample {
+      font-size: 70px;
+      line-height: 0.9;
+      font-weight: 800;
+      letter-spacing: 0;
+    }
+
+    .type-name {
+      margin-top: 18px;
+      color: var(--gold);
+      font-size: 17px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .type-use {
+      margin-top: 6px;
+      font-size: 11px;
+      color: var(--black);
+    }
+
+    .weights {
+      margin-top: 16px;
+      font-size: 11px;
+      line-height: 1.45;
+      color: var(--black);
+    }
+
+    .assets {
+      display: grid;
+      grid-column: 1 / -1;
+      grid-row: 3;
+      grid-template-rows: auto auto;
+      align-content: start;
+      padding-left: 0;
+      border-left: 0;
+    }
+
+    .signature-assets {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 18px;
+      margin-top: 28px;
+    }
+
+    .signature-card {
+      position: relative;
+      display: grid;
+      gap: 20px;
+      padding: 24px 22px;
+      background: rgba(255, 255, 255, 0.36);
+      border: 1px solid var(--line);
+      user-select: text;
+    }
+
+    .signature-card::before {
+      content: attr(data-label);
+      position: absolute;
+      top: -10px;
+      left: 16px;
+      padding: 0 8px;
+      background: #f7f5f1;
+      color: var(--gold);
+      font-size: 9px;
+      font-weight: 750;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+    }
+
+    .signature-card.with-logo {
+      grid-template-columns: 235px 1px minmax(0, 1fr);
+      align-items: start;
+    }
+
+    .signature-logo {
+      color: var(--black);
+      font-size: 26px;
+      font-weight: 850;
+      letter-spacing: 1.7px;
+      line-height: 1.05;
+      text-transform: uppercase;
+    }
+
+    .signature-rule {
+      width: 1px;
+      min-height: 122px;
+      background: var(--line);
+    }
+
+    .signature-info {
+      min-width: 0;
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    .signature-name {
+      font-size: 18px;
+      font-weight: 850;
+      letter-spacing: 1.8px;
+      line-height: 1.05;
+      text-transform: uppercase;
+    }
+
+    .signature-role {
+      margin-top: 3px;
+      color: rgba(26, 26, 26, 0.48);
+      font-size: 14px;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+    }
+
+    .signature-address {
+      margin-top: 16px;
+      color: rgba(26, 26, 26, 0.68);
+    }
+
+    .signature-contact {
+      margin-top: 9px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      color: rgba(26, 26, 26, 0.72);
+    }
+
+    .signature-contact strong {
+      color: var(--black);
+      font-weight: 850;
+    }
+
+    .signature-legal {
+      margin-top: 15px;
+      color: rgba(26, 26, 26, 0.42);
+      font-size: 10px;
+      line-height: 1.35;
+    }
+
+    .backgrounds {
+      display: grid;
+      grid-column: 1;
+      grid-row: 4;
+      grid-template-rows: auto auto;
+      align-content: start;
+    }
+
+    .bg-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2px;
+      margin-top: 17px;
+      padding-right: 28px;
+      height: 178px;
+      min-height: 0;
+    }
+
+    .bg-card {
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      border: 1px solid rgba(26, 26, 26, 0.06);
+    }
+
+    .bg-white {
+      background: #fbfaf7;
+    }
+
+    .bg-black {
+      background:
+        radial-gradient(circle at 15% 0%, rgba(255, 255, 255, 0.1), transparent 32%),
+        #171717;
+    }
+
+    .bg-gold {
+      background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.16), transparent 45%),
+        var(--gold);
+    }
+
+    .bg-photo {
+      background:
+        linear-gradient(rgba(0, 0, 0, 0.54), rgba(0, 0, 0, 0.54)),
+        linear-gradient(130deg, #171717 0%, #2e3336 42%, #0e0e0e 43%, #1c1c1c 100%);
+    }
+
+    .bg-card .brand-stack {
+      gap: 5px;
+      width: 140px;
+    }
+
+    .bg-card .mark-large {
+      width: 54px;
+      height: 54px;
+    }
+
+    .bg-card .word {
+      gap: 18px;
+      font-size: 23px;
+    }
+
+    .bg-card .subword {
+      font-size: 8px;
+      letter-spacing: 4.8px;
+      text-indent: 4.8px;
+    }
+
+    .bg-card .tagline {
+      font-size: 4.5px;
+      letter-spacing: 1.1px;
+    }
+
+    .on-dark,
+    .on-gold {
+      color: #fff;
+    }
+
+    .business {
+      display: grid;
+      grid-column: 2;
+      grid-row: 4;
+      grid-template-rows: auto 1fr;
+    }
+
+    .cards-scene {
+      position: relative;
+      min-height: 430px;
+      display: grid;
+      place-items: center;
+      padding: 28px;
+      margin-top: 15px;
+      overflow: visible;
+      background:
+        radial-gradient(circle at 48% 6%, rgba(255, 255, 255, 0.72), transparent 22%),
+        linear-gradient(135deg, #e8e1d7, #fbfaf7 54%, #ded5c9);
+      perspective: 1400px;
+    }
+
+    .flip-card {
+      width: min(96%, 520px);
+      aspect-ratio: 1.78 / 1;
+      cursor: pointer;
+      outline: none;
+    }
+
+    .flip-card:focus-visible {
+      box-shadow: 0 0 0 2px var(--gold);
+    }
+
+    .flip-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transform-style: preserve-3d;
+      transition: transform 720ms cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+
+    .flip-card:hover .flip-inner,
+    .flip-card.is-flipped .flip-inner {
+      transform: rotateY(180deg);
+    }
+
+    .business-card {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.23);
+      backface-visibility: hidden;
+      overflow: hidden;
+    }
+
+    .card-black {
+      background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.04), transparent 36%),
+        radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.04), transparent 22%),
+        #171717;
+      color: #fff;
+      display: grid;
+      place-items: center;
+    }
+
+    .card-black::after,
+    .card-white::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 0, 0, 0.035) 1px, transparent 1px);
+      background-size: 5px 5px;
+      opacity: 0.45;
+      mix-blend-mode: overlay;
+    }
+
+    .card-black .brand-stack {
+      gap: 8px;
+      width: 230px;
+    }
+
+    .card-black .mark-large {
+      width: 70px;
+      height: 70px;
+    }
+
+    .card-black .word {
+      gap: 30px;
+      font-size: 34px;
+    }
+
+    .card-black .subword {
+      font-size: 13px;
+      letter-spacing: 7px;
+      text-indent: 7px;
+    }
+
+    .card-black .tagline {
+      margin-top: 8px;
+      color: #fff;
+      font-size: 9px;
+      letter-spacing: 4px;
+    }
+
+    .card-white {
+      transform: rotateY(180deg);
+      background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.64), transparent 42%),
+        #f7f5f1;
+      padding: 32px 36px 28px 58px;
+    }
+
+    .card-white::before {
+      content: "";
+      position: absolute;
+      left: 36px;
+      top: 28px;
+      bottom: 28px;
+      width: 1px;
+      background: var(--gold);
+    }
+
+    .person {
+      font-size: 17px;
+      font-weight: 800;
+      letter-spacing: 1.6px;
+      text-transform: uppercase;
+    }
+
+    .role {
+      margin-top: 5px;
+      color: #8d6f31;
+      font-size: 13px;
+      letter-spacing: 1.2px;
+    }
+
+    .contact-lines {
+      margin-top: 22px;
+      display: grid;
+      gap: 10px;
+      width: calc(100% - 132px);
+      font-size: 12.5px;
+      color: var(--black);
+    }
+
+    .contact-line {
+      display: grid;
+      grid-template-columns: 20px minmax(0, 1fr);
+      align-items: center;
+      gap: 12px;
+    }
+
+    .contact-line svg {
+      width: 16px;
+      height: 16px;
+      fill: var(--black);
+    }
+
+    .card-white .corner-mark {
+      position: absolute;
+      right: 34px;
+      top: 76px;
+      width: 74px;
+      height: 74px;
+    }
+
+    .social {
+      display: grid;
+      grid-column: 3;
+      grid-row: 4;
+      grid-template-rows: auto 1fr;
+    }
+
+    .profile {
+      display: grid;
+      justify-items: center;
+      align-content: start;
+      padding-top: 10px;
+      text-align: center;
+    }
+
+    .avatar {
+      width: 76px;
+      height: 76px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: #1b1b1b;
+      border: 2px solid var(--gold);
+      box-shadow: 0 0 0 5px rgba(200, 160, 90, 0.08);
+    }
+
+    .profile-name {
+      margin-top: 9px;
+      font-size: 13px;
+      font-weight: 750;
+      letter-spacing: 1px;
+    }
+
+    .profile-handle {
+      margin-top: 4px;
+      font-size: 11px;
+      color: var(--black);
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 11px;
+      margin-top: 8px;
+    }
+
+    .social-icons .circle {
+      width: 36px;
+      height: 36px;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+    }
+
+    .social-icons svg {
+      width: 22px;
+      height: 22px;
+      stroke: var(--gold);
+      fill: none;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .footer-band {
+      position: absolute;
+      z-index: 2;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 34px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 44px;
+      background:
+        radial-gradient(circle at 50% -60%, rgba(255, 255, 255, 0.12), transparent 55%),
+        #171717;
+      color: #fff;
+      font-size: 15px;
+      letter-spacing: 11px;
+      text-transform: uppercase;
+    }
+
+    .footer-band .gold-text {
+      color: var(--gold);
+    }
+
+    .footer-band .rule {
+      width: 1px;
+      height: 18px;
+      background: var(--gold);
+      opacity: 0.8;
+    }
+
+    svg .black-stroke {
+      stroke: var(--black);
+    }
+
+    svg .gold-stroke {
+      stroke: var(--gold);
+    }
+
+    .white-mark .black-stroke,
+    .white-mark.black-stroke,
+    .on-dark svg .black-stroke,
+    .on-gold svg .black-stroke {
+      stroke: #fff;
+    }
+
+    @media (min-width: 1200px) and (min-height: 940px) {
+      .sheet {
+        min-height: 1580px;
+      }
+
+      .grid {
+        min-height: 1494px;
+      }
+    }
+
+    @media (max-width: 1199px) {
+      body {
+        display: block;
+      }
+
+      .sheet {
+        width: 100%;
+        min-height: 100vh;
+        overflow: visible;
+      }
+
+      .grid {
+        grid-template-columns: minmax(0, 1.12fr) minmax(0, 1fr);
+        grid-template-rows: none;
+        min-height: 0;
+      }
+
+      .panel,
+      .panel:first-child,
+      .panel:nth-child(4),
+      .panel:nth-child(7) {
+        padding: 24px;
+        border-left: 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .primary,
+      .wordmark {
+        grid-column: 1 / -1;
+      }
+
+      .palette,
+      .typography,
+      .backgrounds,
+      .business,
+      .social {
+        grid-column: auto;
+        grid-row: auto;
+      }
+
+      .assets {
+        grid-column: 1 / -1;
+        grid-row: auto;
+      }
+
+      .top-row,
+      .mid-row {
+        border-bottom: 1px solid var(--line);
+      }
+
+      .bottom-row {
+        padding-top: 24px;
+      }
+
+      .primary-logo {
+        height: auto;
+        min-height: 350px;
+      }
+
+      .wordmark {
+        grid-template-rows: auto auto 1px auto;
+        row-gap: 22px;
+      }
+
+      .wordmark-main {
+        padding: 48px 0 36px;
+      }
+
+      .variation-row {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr) auto;
+      }
+
+      .favicon-grid {
+        grid-template-columns: repeat(3, minmax(120px, 1fr));
+        gap: 24px;
+        padding-top: 28px;
+      }
+
+      .span-2 {
+        grid-column: auto;
+      }
+
+      .swatches {
+        grid-template-columns: repeat(auto-fit, minmax(105px, 1fr));
+        padding-right: 0;
+      }
+
+      .type-row,
+      .bg-row {
+        height: auto;
+        min-height: 0;
+      }
+
+      .signature-assets {
+        grid-template-columns: 1fr;
+      }
+
+      .signature-card.with-logo {
+        grid-template-columns: 190px 1px minmax(0, 1fr);
+      }
+
+      .bg-row {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        height: auto;
+        padding-right: 0;
+      }
+
+      .bg-card {
+        min-height: 172px;
+      }
+
+      .cards-scene {
+        min-height: 430px;
+      }
+
+      .footer-band {
+        position: relative;
+        min-height: 48px;
+        height: auto;
+        flex-wrap: wrap;
+        gap: 10px 28px;
+        padding: 14px 24px;
+        font-size: 12px;
+        letter-spacing: 6px;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .sheet {
+        padding: 16px;
+      }
+
+      .grid {
+        display: block;
+      }
+
+      .panel,
+      .panel:first-child,
+      .panel:nth-child(4),
+      .panel:nth-child(7) {
+        padding: 24px 2px;
+      }
+
+      .section-title {
+        font-size: 12px;
+        letter-spacing: 1.4px;
+      }
+
+      .primary-logo {
+        min-height: 310px;
+      }
+
+      .mark-large {
+        width: 120px;
+        height: 120px;
+      }
+
+      .word {
+        gap: clamp(19px, 7vw, 36px);
+        font-size: clamp(44px, 12vw, 58px);
+      }
+
+      .subword {
+        font-size: clamp(16px, 4.6vw, 22px);
+        letter-spacing: clamp(6px, 2vw, 10px);
+        text-indent: clamp(6px, 2vw, 10px);
+      }
+
+      .tagline {
+        max-width: 100%;
+        font-size: 10px;
+        letter-spacing: 3px;
+        line-height: 1.45;
+        text-align: center;
+        white-space: normal;
+      }
+
+      .wordmark-main {
+        padding: 38px 0 28px;
+      }
+
+      .wordmark-main .word {
+        gap: clamp(26px, 9vw, 44px);
+        font-size: clamp(38px, 11vw, 50px);
+      }
+
+      .wordmark-main .subword {
+        font-size: 16px;
+        letter-spacing: 9px;
+        text-indent: 9px;
+      }
+
+      .wordmark-main .tagline {
+        letter-spacing: 3px;
+      }
+
+      .variation-row {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        gap: 24px;
+      }
+
+      .mini-logo,
+      .horizontal {
+        width: min(100%, 330px);
+        padding-right: 0;
+        border-right: 0;
+      }
+
+      .horizontal {
+        grid-template-columns: 54px minmax(0, 1fr);
+      }
+
+      .badge {
+        margin-top: 4px;
+      }
+
+      .favicon-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 24px 14px;
+      }
+
+      .span-2 {
+        grid-column: 1 / -1;
+      }
+
+      .icon-box.s64 {
+        width: 98px;
+        height: 98px;
+      }
+
+      .icon-box.s180 {
+        width: 132px;
+        height: 132px;
+      }
+
+      .swatches {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px 12px;
+      }
+
+      .type-row {
+        grid-template-columns: 1fr;
+        gap: 22px;
+      }
+
+      .type-card,
+      .type-card:first-child {
+        padding: 0;
+        border-left: 0;
+      }
+
+      .type-card + .type-card {
+        padding-top: 20px;
+        border-top: 1px solid var(--line);
+      }
+
+      .signature-assets {
+        gap: 22px;
+      }
+
+      .signature-card,
+      .signature-card.with-logo {
+        grid-template-columns: 1fr;
+      }
+
+      .signature-rule {
+        width: 100%;
+        min-height: 1px;
+        height: 1px;
+      }
+
+      .bg-row {
+        grid-template-columns: 1fr;
+        height: auto;
+      }
+
+      .bg-card {
+        min-height: 170px;
+      }
+
+      .cards-scene {
+        min-height: 360px;
+        padding: 22px;
+      }
+
+      .flip-card {
+        width: min(96%, 430px);
+      }
+
+      .card-white {
+        padding: 28px 26px 24px 48px;
+      }
+
+      .person {
+        font-size: 14px;
+      }
+
+      .role {
+        font-size: 11px;
+      }
+
+      .contact-lines {
+        gap: 8px;
+        width: calc(100% - 84px);
+        font-size: 10.5px;
+      }
+
+      .card-white .corner-mark {
+        right: 20px;
+        top: 82px;
+        width: 54px;
+        height: 54px;
+      }
+
+      .social-icons {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .footer-band {
+        gap: 10px 18px;
+        padding: 14px 16px;
+        font-size: 11px;
+        letter-spacing: 4px;
+      }
+    }
+
+    @media (max-width: 430px) {
+      .sheet {
+        padding: 12px;
+      }
+
+      .word {
+        gap: 18px;
+        font-size: 42px;
+      }
+
+      .subword {
+        font-size: 15px;
+        letter-spacing: 5px;
+        text-indent: 5px;
+      }
+
+      .tagline {
+        font-size: 9px;
+        letter-spacing: 2px;
+      }
+
+      .favicon-grid,
+      .swatches {
+        grid-template-columns: 1fr;
+      }
+
+      .business-card {
+        box-shadow: 0 10px 22px rgba(0, 0, 0, 0.2);
+      }
+
+      .cards-scene {
+        min-height: 330px;
+        padding: 16px;
+      }
+
+      .flip-card {
+        width: 100%;
+      }
+
+      .card-white {
+        padding: 24px 18px 20px 38px;
+      }
+
+      .card-white::before {
+        left: 24px;
+      }
+
+      .card-black .brand-stack {
+        transform: scale(0.82);
+      }
+
+      .contact-lines {
+        width: 100%;
+        font-size: 9px;
+      }
+
+      .contact-line {
+        grid-template-columns: 15px minmax(0, 1fr);
+        gap: 8px;
+      }
+
+      .contact-line svg {
+        width: 13px;
+        height: 13px;
+      }
+
+      .card-white .corner-mark {
+        opacity: 0.28;
+      }
+
+      .footer-band {
+        font-size: 10px;
+        letter-spacing: 3px;
+      }
+    }
+
+    @media print {
+      html,
+      body {
+        width: 16in;
+        height: 10in;
+        background: #fff;
+      }
+
+      .sheet {
+        width: 16in;
+        height: 10in;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="sheet" aria-label="BIND Immobilien brand identity board">
+    <section class="grid">
+      <div class="panel top-row primary">
+        <h1 class="section-title">Primary Logo</h1>
+        <div class="primary-logo">
+          <div class="brand-stack">
+            <svg class="mark-large" viewBox="0 0 100 100" aria-hidden="true">
+              <path class="black-stroke" d="M10 88V35L50 8l40 27v53" fill="none" stroke-width="5.4" stroke-linejoin="miter"/>
+              <path class="gold-stroke" d="M34 88V58l16-16 16 16v30" fill="none" stroke-width="5.4" stroke-linejoin="miter"/>
+            </svg>
+            <div class="word" aria-label="BIND"><span>B</span><span>I</span><span>N</span><span>D</span></div>
+            <div class="subword">IMMOBILIEN</div>
+            <div class="tagline">Investments. Value. Growth.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel top-row wordmark">
+        <h2 class="section-title">Word Mark</h2>
+        <div class="wordmark-main">
+          <div>
+            <div class="word"><span>B</span><span>I</span><span>N</span><span>D</span></div>
+            <div class="subword">IMMOBILIEN</div>
+            <div class="tagline">Investments. Value. Growth.</div>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <div class="variations">
+          <h2 class="section-title">Logo Variations</h2>
+          <div class="variation-row">
+            <div class="mini-logo">
+              <svg class="mark-small" viewBox="0 0 100 100" aria-hidden="true">
+                <path class="black-stroke" d="M14 88V36L50 9l36 27v52" fill="none" stroke-width="5"/>
+                <path class="gold-stroke" d="M37 88V60l13-13 13 13v28" fill="none" stroke-width="5"/>
+              </svg>
+              <div class="word"><span>B</span><span>I</span><span>N</span><span>D</span></div>
+              <div class="subword">IMMOBILIEN</div>
+              <div class="tagline">Investments. Value. Growth.</div>
+            </div>
+            <div class="horizontal">
+              <svg class="mark-small" viewBox="0 0 100 100" aria-hidden="true">
+                <path class="black-stroke" d="M14 88V36L50 9l36 27v52" fill="none" stroke-width="5"/>
+                <path class="gold-stroke" d="M37 88V60l13-13 13 13v28" fill="none" stroke-width="5"/>
+              </svg>
+              <div>
+                <div class="word"><span>B</span><span>I</span><span>N</span><span>D</span></div>
+                <div class="subword">IMMOBILIEN</div>
+                <div class="tagline">Investments. Value. Growth.</div>
+              </div>
+            </div>
+            <div class="badge">
+              <svg class="badge-svg" viewBox="0 0 100 100" aria-label="BIND Immobilien round logo">
+                <defs>
+                  <path id="badgeTopArc" d="M18 51a32 32 0 0 1 64 0"/>
+                  <path id="badgeBottomArc" d="M78 59a29 29 0 0 1 -56 0"/>
+                </defs>
+                <circle cx="50" cy="50" r="47" fill="none" stroke="var(--black)" stroke-width="2.5"/>
+                <path class="black-stroke" d="M35 70V42L50 31l15 11v28" fill="none" stroke-width="3.8"/>
+                <path class="gold-stroke" d="M44 70V55l6-6 6 6v15" fill="none" stroke-width="3.8"/>
+                <text class="badge-top">
+                  <textPath href="#badgeTopArc" startOffset="50%" text-anchor="middle">BIND IMMOBILIEN</textPath>
+                </text>
+                <text class="badge-bottom">
+                  <textPath href="#badgeBottomArc" startOffset="50%" text-anchor="middle">INVESTMENTS. VALUE. GROWTH.</textPath>
+                </text>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel top-row favicon">
+        <h2 class="section-title">Favicon</h2>
+        <div class="favicon-showcase">
+          <div class="browser-chrome" aria-label="Browser tab favicon preview">
+            <span class="window-dot dot-red"></span>
+            <span class="window-dot dot-yellow"></span>
+            <span class="window-dot dot-green"></span>
+            <div class="tab-pill">
+              <span class="tab-favicon">
+                <img src="bind-favicon.svg" alt="">
+              </span>
+              <span class="tab-label">BIND IMMOBILIEN</span>
+              <span class="tab-close">×</span>
+            </div>
+          </div>
+          <div class="favicon-tile">
+            <img src="bind-favicon.svg" alt="BIND Immobilien favicon">
+          </div>
+        </div>
+        <div class="favicon-grid">
+          <div class="icon-sample">
+            <div class="icon-box s32">
+              <svg width="54" height="54" viewBox="0 0 100 100" aria-hidden="true">
+                <path d="M14 88V36L50 9l36 27v52" fill="none" stroke="#fff" stroke-width="5"/>
+                <path class="gold-stroke" d="M37 88V60l13-13 13 13v28" fill="none" stroke-width="5"/>
+              </svg>
+            </div>
+            <span>32x32px</span>
+          </div>
+          <div class="icon-sample">
+            <div class="icon-box s64">
+              <svg width="74" height="74" viewBox="0 0 100 100" aria-hidden="true">
+                <path d="M14 88V36L50 9l36 27v52" fill="none" stroke="#fff" stroke-width="5"/>
+                <path class="gold-stroke" d="M37 88V60l13-13 13 13v28" fill="none" stroke-width="5"/>
+              </svg>
+            </div>
+            <span>64x64px</span>
+          </div>
+          <div class="icon-sample span-2">
+            <div class="icon-box s180">
+              <svg width="108" height="108" viewBox="0 0 100 100" aria-hidden="true">
+                <path d="M14 88V36L50 9l36 27v52" fill="none" stroke="#fff" stroke-width="5"/>
+                <path class="gold-stroke" d="M37 88V60l13-13 13 13v28" fill="none" stroke-width="5"/>
+              </svg>
+            </div>
+            <span>180x180px</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel mid-row palette">
+        <h2 class="section-title">Color Palette</h2>
+        <div class="swatches">
+          <div class="swatch">
+            <div class="swatch-color" style="background:#1a1a1a"></div>
+            <strong>#1A1A1A</strong>
+            <span>Charcoal<br>Black</span>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background:#c8a05a"></div>
+            <strong>#C8A05A</strong>
+            <span>Luxury<br>Gold</span>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background:#f7f5f1"></div>
+            <strong>#F7F5F1</strong>
+            <span>Warm<br>Ivory</span>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background:#e6ddd1"></div>
+            <strong>#E6DDD1</strong>
+            <span>Light<br>Taupe</span>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background:#687280"></div>
+            <strong>#687280</strong>
+            <span>Slate<br>Gray</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel mid-row typography">
+        <h2 class="section-title">Typography</h2>
+        <div class="type-row">
+          <div class="type-card">
+            <div class="type-sample" style="font-family: Montserrat, Inter, Arial, sans-serif;">Aa</div>
+            <div class="type-name">Montserrat</div>
+            <div class="type-use">Used for Headings &amp; Logo</div>
+            <div class="weights">Light&nbsp;&nbsp;|&nbsp;&nbsp;Regular&nbsp;&nbsp;|&nbsp;&nbsp;Medium<br>SemiBold&nbsp;&nbsp;|&nbsp;&nbsp;<strong>Bold</strong>&nbsp;&nbsp;|&nbsp;&nbsp;<strong>ExtraBold</strong></div>
+          </div>
+          <div class="type-card">
+            <div class="type-sample" style="font-family: Inter, Arial, sans-serif; font-weight:500;">Aa</div>
+            <div class="type-name">Inter</div>
+            <div class="type-use">Used for Body Text</div>
+            <div class="weights">Regular&nbsp;&nbsp;|&nbsp;&nbsp;Medium&nbsp;&nbsp;|&nbsp;&nbsp;<strong>SemiBold</strong></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel mid-row assets">
+        <h2 class="section-title">Brand Assets</h2>
+        <div class="signature-assets">
+          <div class="signature-card with-logo" data-label="With Logo">
+            <div class="signature-logo">BIND<br>IMMOBILIEN<br>GMBH</div>
+            <div class="signature-rule" aria-hidden="true"></div>
+            <div class="signature-info">
+              <div class="signature-name">DUYGU SALTIK</div>
+              <div class="signature-role">CHIEF OPERATING OFFICER</div>
+              <div class="signature-address">Ostwall 21 | 47798 Krefeld | Germany</div>
+              <div class="signature-contact">
+                <span><strong>M.</strong> +49 160 1010602</span>
+                <span>|</span>
+                <span><strong>E.</strong> duygu.saltik@bindimmobilien.de</span>
+              </div>
+              <div class="signature-legal">
+                Sitz der Gesellschaft: 47798 Krefeld<br>
+                Handelsregister: Amtsgericht Koln HRB 118677<br>
+                Ust-IdNr. DE 359540228
+              </div>
+            </div>
+          </div>
+
+          <div class="signature-card" data-label="Without Logo">
+            <div class="signature-info">
+              <div class="signature-name">DUYGU SALTIK</div>
+              <div class="signature-role">CHIEF OPERATING OFFICER</div>
+              <div class="signature-address">Ostwall 21 | 47798 Krefeld | Germany</div>
+              <div class="signature-contact">
+                <span><strong>M.</strong> +49 160 1010602</span>
+                <span>|</span>
+                <span><strong>E.</strong> duygu.saltik@bindimmobilien.de</span>
+              </div>
+              <div class="signature-legal">
+                BIND Immobilien GmbH<br>
+                Sitz der Gesellschaft: 47798 Krefeld<br>
+                Handelsregister: Amtsgericht Koln HRB 118677<br>
+                Ust-IdNr. DE 359540228
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel bottom-row backgrounds">
+        <h2 class="section-title">Logo on Backgrounds</h2>
+        <div class="bg-row">
+          <div class="bg-card bg-white">
+            <div class="brand-stack">
+              <svg class="mark-large" viewBox="0 0 100 100" aria-hidden="true">
+                <path class="black-stroke" d="M14 88V36L50 9l36 27v52" fill="none" stroke-width="5"/>
+                <path class="gold-stroke" d="M37 88V60l13-13 13 13v28" fill="none" stroke-width="5"/>
+              </svg>
+              <div class="word"><span>B</span><span>I</span><span>N</span><span>D</span></div>
+              <div class="subword">IMMOBILIEN</div>
+              <div class="tagline">Investments. Value. Growth.</div>
+            </div>
+          </div>
+          <div class="bg-card bg-black on-dark">
+            <div class="brand-stack">
+              <svg class="mark-large" viewBox="0 0 100 100" aria-hidden="true">
+                <path d="M14 88V36L50 9l36 27v52" fill="none" stroke="#fff" stroke-width="5"/>
+                <path class="gold-stroke" d="M37 88V60l13-13 13 13v28" fill="none" stroke-width="5"/>
+              </svg>
+              <div class="word"><span>B</span><span>I</span><span>N</span><span>D</span></div>
+              <div class="subword">IMMOBILIEN</div>
+              <div class="tagline">Investments. Value. Growth.</div>
+            </div>
+          </div>
+          <div class="bg-card bg-gold on-gold">
+            <div class="brand-stack">
+              <svg class="mark-large" viewBox="0 0 100 100" aria-hidden="true">
+                <path d="M14 88V36L50 9l36 27v52" fill="none" stroke="#fff" stroke-width="5"/>
+                <path d="M37 88V60l13-13 13 13v28" fill="none" stroke="#fff" stroke-width="5"/>
+              </svg>
+              <div class="word"><span>B</span><span>I</span><span>N</span><span>D</span></div>
+              <div class="subword" style="color:#fff;">IMMOBILIEN</div>
+              <div class="tagline">Investments. Value. Growth.</div>
+            </div>
+          </div>
+          <div class="bg-card bg-photo on-dark">
+            <div class="brand-stack">
+              <svg class="mark-large" viewBox="0 0 100 100" aria-hidden="true">
+                <path d="M14 88V36L50 9l36 27v52" fill="none" stroke="#fff" stroke-width="5"/>
+                <path class="gold-stroke" d="M37 88V60l13-13 13 13v28" fill="none" stroke-width="5"/>
+              </svg>
+              <div class="word"><span>B</span><span>I</span><span>N</span><span>D</span></div>
+              <div class="subword">IMMOBILIEN</div>
+              <div class="tagline">Investments. Value. Growth.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel bottom-row business">
+        <h2 class="section-title">Business Card</h2>
+        <div class="cards-scene">
+          <div class="flip-card" role="button" tabindex="0" aria-label="Flip business card">
+            <div class="flip-inner">
+              <div class="business-card card-black">
+                <div class="brand-stack">
+                  <svg class="mark-large" viewBox="0 0 100 100" aria-hidden="true">
+                    <path d="M14 88V36L50 9l36 27v52" fill="none" stroke="#fff" stroke-width="5"/>
+                    <path class="gold-stroke" d="M37 88V60l13-13 13 13v28" fill="none" stroke-width="5"/>
+                  </svg>
+                  <div class="word"><span>B</span><span>I</span><span>N</span><span>D</span></div>
+                  <div class="subword">IMMOBILIEN</div>
+                  <div class="tagline">Investments. Value. Growth.</div>
+                </div>
+              </div>
+
+              <div class="business-card card-white">
+                <div class="person">MAXIMILIAN BINDER</div>
+                <div class="role">Geschaeftsfuehrer</div>
+                <div class="contact-lines">
+                  <div class="contact-line">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.8-.4 1.2-.2 1.3.4 2.6.7 4 .7.7 0 1.2.5 1.2 1.2v3.5c0 .7-.5 1.2-1.2 1.2C10.3 21.6 2.4 13.7 2.4 3.4c0-.7.5-1.2 1.2-1.2h3.5c.7 0 1.2.5 1.2 1.2 0 1.4.2 2.8.7 4 .1.4.1.8-.2 1.2l-2.2 2.2z"/>
+                    </svg>
+                    <span>+49 123 456 7890</span>
+                  </div>
+                  <div class="contact-line">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M2.5 5.5h19v13h-19v-13zm2 2.2 7.5 5.1 7.5-5.1v-1l-7.5 5.1-7.5-5.1v1z"/>
+                    </svg>
+                    <span>info@bind-immobilien.de</span>
+                  </div>
+                  <div class="contact-line">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M12 2.2a9.8 9.8 0 1 0 0 19.6 9.8 9.8 0 0 0 0-19.6zm6.8 8.6h-3.1a15.5 15.5 0 0 0-1.1-5.1 8 8 0 0 1 4.2 5.1zm-6.8-6.7c.8 1.2 1.5 3.5 1.7 6.7h-3.4c.2-3.2.9-5.5 1.7-6.7zm-2.6 1.6a15.5 15.5 0 0 0-1.1 5.1H5.2a8 8 0 0 1 4.2-5.1zm-4.2 7.5h3.1c.1 2 .5 3.8 1.1 5.1a8 8 0 0 1-4.2-5.1zm6.8 6.7c-.8-1.2-1.5-3.5-1.7-6.7h3.4c-.2 3.2-.9 5.5-1.7 6.7zm2.6-1.6c.6-1.4 1-3.1 1.1-5.1h3.1a8 8 0 0 1-4.2 5.1z"/>
+                    </svg>
+                    <span>www.bind-immobilien.de</span>
+                  </div>
+                  <div class="contact-line">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M12 2.2a7.1 7.1 0 0 0-7.1 7.1c0 5.4 7.1 12.5 7.1 12.5s7.1-7.1 7.1-12.5A7.1 7.1 0 0 0 12 2.2zm0 9.9a2.8 2.8 0 1 1 0-5.6 2.8 2.8 0 0 1 0 5.6z"/>
+                    </svg>
+                    <span>Musterstrasse 1<br>80331 Muenchen, Deutschland</span>
+                  </div>
+                </div>
+                <svg class="corner-mark" viewBox="0 0 100 100" aria-hidden="true">
+                  <path class="gold-stroke" d="M14 88V36L50 9l36 27v52" fill="none" stroke-width="5"/>
+                  <path class="gold-stroke" d="M37 88V60l13-13 13 13v28" fill="none" stroke-width="5"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel bottom-row social">
+        <h2 class="section-title">Social Media Profile</h2>
+        <div class="profile">
+          <div class="avatar">
+            <svg width="66" height="66" viewBox="0 0 100 100" aria-hidden="true">
+              <path d="M14 88V36L50 9l36 27v52" fill="none" stroke="#fff" stroke-width="5"/>
+              <path class="gold-stroke" d="M37 88V60l13-13 13 13v28" fill="none" stroke-width="5"/>
+            </svg>
+          </div>
+          <div class="profile-name">BIND IMMOBILIEN</div>
+          <div class="profile-handle">@bind.immobilien</div>
+          <div class="social-icons">
+            <div class="circle">
+              <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M9 55h46M17 55V15h22v40M39 31h12v24"/><path d="M26 23h3M26 33h3M26 43h3"/></svg>
+            </div>
+            <div class="circle">
+              <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M10 54h44M16 48V36h8v12M30 48V24h8v24M44 48V12h8v36"/><path d="M13 33l13-11 8 7 19-20M53 9v9h-9"/></svg>
+            </div>
+            <div class="circle">
+              <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M32 58c16-12 21-27 18-49C28 11 14 22 15 39c.5 8 6 14 17 19z"/><path d="M24 39l21-22M34 30l5 10"/></svg>
+            </div>
+            <div class="circle">
+              <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M20 37l8 8c3 3 6 3 9 0l13-13M31 24l5-5c3-3 8-3 11 0l8 8-7 10"/><path d="M33 44l-5 5c-3 3-7 3-10 0L6 37l10-18 11 5"/></svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer-band">
+      <span class="gold-text">Bind Immobilien</span>
+      <span class="rule"></span>
+      <span>Investments. Value. Growth.</span>
+    </footer>
+  </main>
+  <script>
+    document.querySelectorAll(".flip-card").forEach((card) => {
+      const toggleCard = () => {
+        const flipped = card.classList.toggle("is-flipped");
+        card.setAttribute("aria-pressed", String(flipped));
+      };
+
+      card.setAttribute("aria-pressed", "false");
+      card.addEventListener("click", toggleCard);
+      card.addEventListener("keydown", (event) => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          toggleCard();
+        }
+      });
+    });
+  </script>
+</body>
+</html>
