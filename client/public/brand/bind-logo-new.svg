@@ -1,0 +1,8 @@
+<svg width="520" height="310" viewBox="0 0 520 310" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(178 18)">
+    <path d="M15 132V55L82 12L149 55V132" stroke="#1a1a1a" stroke-width="8" stroke-linejoin="miter"/>
+    <path d="M58 132V87L82 64L106 87V132" stroke="#c8a05a" stroke-width="8" stroke-linejoin="miter"/>
+  </g>
+  <text x="260" y="232" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="76" font-weight="400" letter-spacing="56" fill="#1a1a1a">BIND</text>
+  <text x="260" y="286" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="400" letter-spacing="22" fill="#c8a05a">IMMOBILIEN</text>
+</svg>
