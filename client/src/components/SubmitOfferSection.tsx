@@ -36,7 +36,7 @@ export default function SubmitOfferSection() {
             {t.submit.headline1}{' '}<em style={{ color: '#B8962E', fontWeight: 400 }}>{t.submit.headline2}</em>
           </h2>
           <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: '16px', fontWeight: 300, color: 'rgba(255,255,255,0.75)', lineHeight: 1.75, maxWidth: '500px', marginBottom: '2.5rem' }}>{t.submit.sub}</p>
-          <button onClick={() => { const el = document.querySelector("#kontakt"); if (el) el.scrollIntoView({ behavior: "smooth" }); }}
+          <button className="theme-cta-light" onClick={() => { const el = document.querySelector("#kontakt"); if (el) el.scrollIntoView({ behavior: "smooth" }); }}
             style={{ display: 'inline-flex', alignItems: 'center', gap: '10px', fontFamily: 'DM Sans, sans-serif', fontSize: '12px', fontWeight: 600, letterSpacing: '0.14em', textTransform: 'uppercase', padding: '14px 32px', backgroundColor: '#B8962E', color: '#FFFFFF', border: 'none', cursor: 'pointer', transition: 'background-color 0.25s ease' }}
             onMouseEnter={e => { e.currentTarget.style.backgroundColor = '#D4AE4A'; }}
             onMouseLeave={e => { e.currentTarget.style.backgroundColor = '#B8962E'; }}>

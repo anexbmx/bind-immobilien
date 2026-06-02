@@ -65,19 +65,6 @@ export default function HeroSection() {
             </button>
           </div>
 
-          {/* Stats */}
-          <div style={{ display: 'flex', gap: '2.5rem', marginTop: '4rem', paddingTop: '2rem', borderTop: '1px solid #E0DDD8', opacity: visible ? 1 : 0, transition: 'opacity 0.8s ease 0.7s', flexWrap: 'wrap' }}>
-            {[
-              { num: '4 Mio.', label: t.hero.stat1Label },
-              { num: '48h', label: t.hero.stat2Label },
-              { num: '4', label: t.hero.stat3Label },
-            ].map((f) => (
-              <div key={f.label}>
-                <div style={{ fontFamily: 'Playfair Display, Georgia, serif', fontSize: '1.6rem', fontWeight: 600, color: '#111111', lineHeight: 1 }}>{f.num}</div>
-                <div style={{ fontFamily: 'DM Sans, sans-serif', fontSize: '11px', color: '#999999', marginTop: '4px', letterSpacing: '0.05em' }}>{f.label}</div>
-              </div>
-            ))}
-          </div>
         </div>
 
         {/* Right: Image */}

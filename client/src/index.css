@@ -74,6 +74,71 @@
   --c-white: #FFFFFF;
 }
 
+html[data-site-theme="graphite"] {
+  --c-bg: #F4F1EC;
+  --c-bg-alt: #E9E5DD;
+  --c-bg-dark: #1B1B19;
+  --c-text: #181714;
+  --c-text-muted: #5F5A52;
+  --c-text-light: #8A8176;
+  --c-gold: #8A8176;
+  --c-gold-light: #B6AB9F;
+  --c-border: #D8D1C8;
+}
+
+html[data-site-theme="rhein"] {
+  --c-bg: #F3F7F6;
+  --c-bg-alt: #E4EEED;
+  --c-bg-dark: #102428;
+  --c-text: #102428;
+  --c-text-muted: #53676A;
+  --c-text-light: #82989C;
+  --c-gold: #2F7D8C;
+  --c-gold-light: #74AEB8;
+  --c-border: #D3E0DF;
+}
+
+html[data-site-theme="burgundy"] {
+  --c-bg: #FAF5F2;
+  --c-bg-alt: #F0E6E2;
+  --c-bg-dark: #211316;
+  --c-text: #1B1112;
+  --c-text-muted: #6D5A5C;
+  --c-text-light: #9B8588;
+  --c-gold: #8E3D45;
+  --c-gold-light: #B56A72;
+  --c-border: #E2D3D0;
+}
+
+html[data-site-theme] body {
+  background-color: var(--c-bg);
+  color: var(--c-text);
+}
+
+html[data-site-theme] [style*="#F8F7F4"] { background-color: var(--c-bg) !important; }
+html[data-site-theme] [style*="#F2F0EC"] { background-color: var(--c-bg-alt) !important; }
+html[data-site-theme] [style*="#E0DDD8"] { border-color: var(--c-border) !important; }
+html[data-site-theme] [style*="#6B6B6B"] { color: var(--c-text-muted) !important; }
+html[data-site-theme] [style*="#999999"] { color: var(--c-text-light) !important; }
+html[data-site-theme] [style*="background-color: rgb(248, 247, 244)"] { background-color: var(--c-bg) !important; }
+html[data-site-theme] [style*="background-color: rgb(242, 240, 236)"] { background-color: var(--c-bg-alt) !important; }
+html[data-site-theme] [style*="color: rgb(17, 17, 17)"] { color: var(--c-text) !important; }
+html[data-site-theme] [style*="color: rgb(184, 150, 46)"] { color: var(--c-gold) !important; }
+html[data-site-theme] [style*="border-color: rgb(224, 221, 216)"] { border-color: var(--c-border) !important; }
+html[data-site-theme] [style*="border: 1px solid rgb(224, 221, 216)"] { border-color: var(--c-border) !important; }
+html[data-site-theme] [style*="color: rgb(107, 107, 107)"] { color: var(--c-text-muted) !important; }
+html[data-site-theme] [style*="color: rgb(153, 153, 153)"] { color: var(--c-text-light) !important; }
+html[data-site-theme] [style*="background-color: rgb(184, 150, 46)"] {
+  background-color: var(--c-gold) !important;
+}
+html[data-site-theme] [style*="background-color: rgb(17, 17, 17)"] {
+  background-color: var(--c-bg-dark) !important;
+}
+
+html[data-site-theme] .theme-cta-light {
+  color: #FFFFFF !important;
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;

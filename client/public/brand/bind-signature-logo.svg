@@ -1,0 +1,7 @@
+<svg width="240" height="180" viewBox="0 0 240 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M74 88V45L120 14L166 45V88" stroke="#1A1A1A" stroke-width="7" stroke-linejoin="miter"/>
+  <path d="M102 88V62L120 45L138 62V88" stroke="#C8A05A" stroke-width="7" stroke-linejoin="miter"/>
+  <text x="120" y="126" text-anchor="middle" textLength="170" lengthAdjust="spacing" font-family="Arial, Helvetica, sans-serif" font-size="42" font-weight="400" fill="#1A1A1A">BIND</text>
+  <text x="120" y="153" text-anchor="middle" textLength="170" lengthAdjust="spacing" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="400" fill="#C8A05A">IMMOBILIEN</text>
+  <text x="120" y="172" text-anchor="middle" textLength="170" lengthAdjust="spacing" font-family="Arial, Helvetica, sans-serif" font-size="8" font-weight="700" fill="#1A1A1A">INVESTMENTS. VALUE. GROWTH.</text>
+</svg>
