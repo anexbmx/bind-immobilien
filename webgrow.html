@@ -1,0 +1,1032 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WebGrow - Webdesign, SEO & Google Ads</title>
+  <meta name="description" content="WebGrow ist Ihre Agentur für Webdesign, SEO und Google Ads aus Düsseldorf.">
+  <style>
+    :root {
+      --blue: #0757f8;
+      --blue-dark: #003ebf;
+      --ink: #07122f;
+      --muted: #56627a;
+      --soft: #f3f7ff;
+      --line: #dce5f7;
+      --white: #ffffff;
+      --dark: #031021;
+      --shadow: 0 20px 50px rgba(18, 39, 85, .14);
+      --radius: 8px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--white);
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.55;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1160px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid var(--line);
+      background: rgba(255, 255, 255, .92);
+      backdrop-filter: blur(16px);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 76px;
+      gap: 24px;
+    }
+
+    .logo {
+      display: grid;
+      gap: 0;
+      line-height: 1;
+      font-weight: 900;
+      letter-spacing: 0;
+    }
+
+    .logo strong {
+      font-size: 29px;
+    }
+
+    .logo strong span,
+    .blue {
+      color: var(--blue);
+    }
+
+    .logo small {
+      margin-top: 5px;
+      color: var(--ink);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 34px;
+      color: var(--ink);
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .nav-links a {
+      position: relative;
+      padding: 28px 0;
+    }
+
+    .nav-links a.active {
+      color: var(--blue);
+    }
+
+    .nav-links a.active::after {
+      position: absolute;
+      right: 0;
+      bottom: 18px;
+      left: 0;
+      height: 2px;
+      background: var(--blue);
+      content: "";
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      gap: 10px;
+      padding: 0 22px;
+      border: 1px solid transparent;
+      border-radius: 6px;
+      background: var(--blue);
+      color: #fff;
+      font-size: 14px;
+      font-weight: 900;
+      box-shadow: 0 12px 26px rgba(7, 87, 248, .24);
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      background: var(--blue-dark);
+      box-shadow: 0 16px 34px rgba(7, 87, 248, .32);
+    }
+
+    .btn.secondary {
+      border-color: #9db8f5;
+      background: #fff;
+      color: var(--ink);
+      box-shadow: none;
+    }
+
+    .btn.dark {
+      border-color: rgba(255, 255, 255, .2);
+      background: rgba(255, 255, 255, .04);
+      color: #fff;
+      box-shadow: none;
+    }
+
+    .menu-check {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .mobile-toggle {
+      display: none;
+      width: 46px;
+      height: 46px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: #fff;
+      color: var(--ink);
+      cursor: pointer;
+    }
+
+    .mobile-panel {
+      display: none;
+      border-top: 1px solid var(--line);
+      background: #fff;
+    }
+
+    .mobile-panel .container {
+      display: grid;
+      gap: 6px;
+      padding-top: 14px;
+      padding-bottom: 18px;
+    }
+
+    .mobile-panel a {
+      min-height: 44px;
+      padding: 11px 0;
+      color: var(--ink);
+      font-weight: 850;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      min-height: 610px;
+      padding: 34px 0 64px;
+      background:
+        linear-gradient(90deg, rgba(255, 255, 255, .96) 0%, rgba(255, 255, 255, .86) 42%, rgba(255, 255, 255, .18) 100%),
+        url("https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1600&q=80") center right / cover;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(420px, .95fr);
+      align-items: center;
+      min-height: 510px;
+      gap: 42px;
+    }
+
+    .eyebrow {
+      margin: 0 0 14px;
+      color: var(--blue);
+      font-size: 13px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin: 0;
+    }
+
+    h1 {
+      max-width: 660px;
+      font-size: clamp(38px, 5.5vw, 66px);
+      line-height: 1.08;
+      letter-spacing: 0;
+    }
+
+    .hero-copy {
+      max-width: 575px;
+      margin-top: 24px;
+      color: var(--ink);
+      font-size: 17px;
+      font-weight: 700;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 32px;
+    }
+
+    .hero-visual {
+      align-self: end;
+      min-height: 420px;
+      border-radius: 0;
+    }
+
+    .stats {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      width: min(610px, 100%);
+      margin: -112px 8% 0 auto;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fff;
+      box-shadow: var(--shadow);
+    }
+
+    .stat {
+      display: grid;
+      justify-items: center;
+      gap: 7px;
+      padding: 22px 16px 20px;
+      text-align: center;
+      border-right: 1px solid var(--line);
+    }
+
+    .stat:last-child {
+      border-right: 0;
+    }
+
+    .icon {
+      width: 34px;
+      height: 34px;
+      color: var(--blue);
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .stat strong {
+      font-size: 25px;
+      line-height: 1;
+    }
+
+    .stat span {
+      color: var(--ink);
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .stat small {
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    .values {
+      padding: 32px 0 16px;
+    }
+
+    .values h2,
+    .section-title {
+      text-align: center;
+      font-size: 20px;
+      font-weight: 900;
+    }
+
+    .value-grid,
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .value-card,
+    .feature-card,
+    .testimonial-card {
+      min-height: 126px;
+      padding: 24px 18px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fff;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(18, 39, 85, .06);
+    }
+
+    .value-card .icon,
+    .feature-card .icon {
+      margin: 0 auto 14px;
+    }
+
+    .value-card h3,
+    .feature-card h3 {
+      margin-bottom: 8px;
+      font-size: 14px;
+      font-weight: 900;
+    }
+
+    .value-card p,
+    .feature-card p {
+      color: var(--ink);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .band {
+      margin-top: 0;
+      padding: 54px 0;
+      background: var(--soft);
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 64px;
+    }
+
+    .split h2 {
+      margin-bottom: 18px;
+      font-size: clamp(30px, 4vw, 44px);
+      line-height: 1.1;
+    }
+
+    .split p {
+      max-width: 620px;
+      color: var(--ink);
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    .check-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 24px;
+      padding: 0;
+      list-style: none;
+      color: var(--ink);
+      font-weight: 800;
+    }
+
+    .check-list li {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+
+    .check {
+      display: inline-grid;
+      flex: 0 0 auto;
+      place-items: center;
+      width: 19px;
+      height: 19px;
+      margin-top: 2px;
+      border-radius: 999px;
+      background: var(--blue);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .image-panel {
+      overflow: hidden;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .image-panel img {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+    }
+
+    .story {
+      padding: 50px 0;
+    }
+
+    .story .split {
+      gap: 54px;
+    }
+
+    .features {
+      padding: 18px 0 54px;
+    }
+
+    .features .eyebrow,
+    .testimonials .eyebrow {
+      text-align: center;
+    }
+
+    .features h2,
+    .testimonials h2 {
+      margin-top: 6px;
+      text-align: center;
+      font-size: clamp(28px, 4vw, 40px);
+    }
+
+    .testimonials {
+      padding: 50px 0 60px;
+      background: var(--soft);
+    }
+
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 56px;
+      margin-top: 34px;
+      padding: 0 42px;
+    }
+
+    .testimonial-card {
+      min-height: 160px;
+      padding: 28px;
+    }
+
+    .review-logo {
+      display: inline-flex;
+      gap: 1px;
+      margin-bottom: 8px;
+      font-size: 24px;
+      font-weight: 900;
+    }
+
+    .review-logo .g1 { color: #4285f4; }
+    .review-logo .g2 { color: #db4437; }
+    .review-logo .g3 { color: #f4b400; }
+    .review-logo .g4 { color: #4285f4; }
+    .review-logo .g5 { color: #0f9d58; }
+    .review-logo .g6 { color: #db4437; }
+
+    .stars {
+      color: #f5a400;
+      font-size: 18px;
+      letter-spacing: 2px;
+    }
+
+    .trust {
+      color: #00b67a;
+      font-size: 25px;
+      font-weight: 900;
+    }
+
+    .testimonial-card p {
+      margin-top: 12px;
+      color: var(--ink);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .testimonial-card strong {
+      display: block;
+      margin-top: 8px;
+      font-size: 13px;
+    }
+
+    .cta {
+      position: relative;
+      overflow: hidden;
+      padding: 34px 0;
+      background:
+        linear-gradient(90deg, rgba(3, 16, 33, .98), rgba(3, 16, 33, .92)),
+        url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1600&q=80") center / cover;
+      color: #fff;
+    }
+
+    .cta .container {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .cta h2 {
+      max-width: 620px;
+      font-size: clamp(30px, 4vw, 44px);
+      line-height: 1.1;
+    }
+
+    .cta p {
+      max-width: 540px;
+      margin-top: 12px;
+      color: #d6e2ff;
+      font-weight: 700;
+    }
+
+    .cta-actions {
+      display: grid;
+      gap: 12px;
+      min-width: 320px;
+    }
+
+    .site-footer {
+      padding: 44px 0 20px;
+      background: #020c1a;
+      color: #dbe7ff;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr repeat(4, 1fr);
+      gap: 38px;
+    }
+
+    .site-footer h3,
+    .site-footer h4 {
+      margin: 0 0 14px;
+      color: #fff;
+    }
+
+    .site-footer p,
+    .site-footer a,
+    .site-footer li {
+      color: #b9c7e2;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .site-footer ul {
+      display: grid;
+      gap: 8px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .socials {
+      display: flex;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .socials a,
+    .contact-line {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .socials a {
+      justify-content: center;
+      width: 34px;
+      height: 34px;
+      border: 1px solid rgba(255, 255, 255, .22);
+      border-radius: 999px;
+    }
+
+    .footer-bottom {
+      margin-top: 32px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255, 255, 255, .12);
+      text-align: center;
+      color: #b9c7e2;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    @media (max-width: 980px) {
+      .nav-links,
+      .nav .btn {
+        display: none;
+      }
+
+      .mobile-toggle {
+        display: inline-grid;
+        place-items: center;
+      }
+
+      .menu-check:checked ~ .mobile-panel {
+        display: block;
+      }
+
+      .hero-grid,
+      .split,
+      .cta .container {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        min-height: auto;
+        background-position: center;
+      }
+
+      .hero-visual {
+        display: none;
+      }
+
+      .stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        margin: -28px auto 0;
+      }
+
+      .stat:nth-child(2) {
+        border-right: 0;
+      }
+
+      .stat:nth-child(1),
+      .stat:nth-child(2) {
+        border-bottom: 1px solid var(--line);
+      }
+
+      .value-grid,
+      .feature-grid,
+      .testimonial-grid,
+      .footer-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .testimonial-grid {
+        gap: 18px;
+        padding: 0;
+      }
+
+      .cta-actions {
+        min-width: 0;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .container {
+        width: min(100% - 28px, 1160px);
+      }
+
+      .nav {
+        min-height: 68px;
+      }
+
+      .logo strong {
+        font-size: 23px;
+      }
+
+      .logo small {
+        font-size: 10px;
+      }
+
+      .hero {
+        padding: 42px 0 58px;
+        background:
+          linear-gradient(180deg, rgba(255, 255, 255, .96) 0%, rgba(255, 255, 255, .86) 100%),
+          url("https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80") center / cover;
+      }
+
+      .hero-copy {
+        font-size: 16px;
+      }
+
+      .hero-actions,
+      .cta-actions {
+        display: grid;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .stats,
+      .value-grid,
+      .feature-grid,
+      .testimonial-grid,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .stat,
+      .stat:nth-child(2) {
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .stat:last-child {
+        border-bottom: 0;
+      }
+
+      .band,
+      .story,
+      .features,
+      .testimonials {
+        padding: 42px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <input class="menu-check" type="checkbox" id="menu-check" aria-label="Mobiles Menü ein- oder ausblenden">
+    <div class="container nav">
+      <a class="logo" href="#" aria-label="WebGrow Startseite">
+        <strong>WEB<span>GROW</span></strong>
+        <small>Webdesign · SEO · Google Ads</small>
+      </a>
+
+      <nav class="nav-links" aria-label="Hauptnavigation">
+        <a href="#">Startseite</a>
+        <a href="#webseiten">Webseiten</a>
+        <a href="#seo">SEO</a>
+        <a href="#ads">Google Ads</a>
+        <a href="#referenzen">Referenzen</a>
+        <a class="active" href="#ueber-uns">Über uns</a>
+      </nav>
+
+      <a class="btn" href="#kontakt">
+        Kostenlos beraten lassen
+        <svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+      </a>
+
+      <label class="mobile-toggle" for="menu-check" aria-label="Menü öffnen">
+        <svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M4 7h16"/><path d="M4 12h16"/><path d="M4 17h16"/></svg>
+      </label>
+    </div>
+
+    <nav class="mobile-panel" aria-label="Mobile Navigation">
+      <div class="container">
+        <a href="#">Startseite</a>
+        <a href="#webseiten">Webseiten</a>
+        <a href="#seo">SEO</a>
+        <a href="#ads">Google Ads</a>
+        <a href="#referenzen">Referenzen</a>
+        <a href="#ueber-uns">Über uns</a>
+        <a class="btn" href="#kontakt">Kostenlos beraten lassen</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="ueber-uns">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">Über uns</p>
+          <h1>Wir sind <span class="blue">WebGrow.</span><br>Ihre Agentur für Webdesign, <span class="blue">SEO & Google Ads.</span></h1>
+          <p class="hero-copy">Unser Ziel ist einfach: Unternehmen online sichtbar machen, mehr Kunden gewinnen und nachhaltiges Wachstum schaffen. Mit Strategie, Erfahrung und Leidenschaft.</p>
+          <div class="hero-actions">
+            <a class="btn" href="#kontakt">
+              <svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.08 4.18 2 2 0 0 1 4.06 2h3a2 2 0 0 1 2 1.72c.12.9.32 1.77.6 2.61a2 2 0 0 1-.45 2.11L8 9.65a16 16 0 0 0 6.35 6.35l1.21-1.21a2 2 0 0 1 2.11-.45c.84.28 1.71.48 2.61.6A2 2 0 0 1 22 16.92Z"/></svg>
+              Kostenlos beraten lassen
+            </a>
+            <a class="btn secondary" href="#warum">
+              <svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m10 8 6 4-6 4Z"/></svg>
+              Mehr über uns
+            </a>
+          </div>
+        </div>
+        <div class="hero-visual" aria-hidden="true"></div>
+      </div>
+    </section>
+
+    <div class="container">
+      <section class="stats" aria-label="Kennzahlen">
+        <div class="stat">
+          <svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          <strong>50+</strong>
+          <span>Projekte</span>
+          <small>erfolgreich umgesetzt</small>
+        </div>
+        <div class="stat">
+          <svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M8 21h8"/><path d="M12 17v4"/><path d="M7 4h10v5a5 5 0 0 1-10 0V4Z"/><path d="M5 9H4a2 2 0 0 1-2-2V6h5"/><path d="M19 9h1a2 2 0 0 0 2-2V6h-5"/></svg>
+          <strong>3+</strong>
+          <span>Jahre</span>
+          <small>Erfahrung</small>
+        </div>
+        <div class="stat">
+          <svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M3 20h18"/><path d="M6 16V8"/><path d="M12 16V4"/><path d="M18 16v-6"/><path d="m17 5 2 2 3-4"/></svg>
+          <strong>100%</strong>
+          <span>Zufriedene</span>
+          <small>Kunden</small>
+        </div>
+        <div class="stat">
+          <svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          <strong>Düsseldorf</strong>
+          <span>Unsere Heimat.</span>
+          <small>Ihr Partner.</small>
+        </div>
+      </section>
+
+      <section class="values" id="webseiten" aria-labelledby="werte-title">
+        <h2 id="werte-title">Unsere Werte</h2>
+        <div class="value-grid">
+          <article class="value-card">
+            <svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-5"/></svg>
+            <h3>Ehrlich & Transparent</h3>
+            <p>Klare Kommunikation und ehrliche Beratung.</p>
+          </article>
+          <article class="value-card">
+            <svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+            <h3>Ergebnisorientiert</h3>
+            <p>Wir liefern nicht nur Arbeit, sondern echte Ergebnisse.</p>
+          </article>
+          <article class="value-card">
+            <svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8Z"/></svg>
+            <h3>Leidenschaft</h3>
+            <p>Wir lieben, was wir tun - und das sieht man in jedem Projekt.</p>
+          </article>
+          <article class="value-card">
+            <svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><path d="m11 17 2 2a3 3 0 0 0 4.2 0l3.6-3.6a3 3 0 0 0 0-4.2L19 9"/><path d="m13 7-2-2a3 3 0 0 0-4.2 0L3.2 8.6a3 3 0 0 0 0 4.2L5 15"/><path d="m8 12 8-8"/></svg>
+            <h3>Zuverlässig</h3>
+            <p>Wir halten, was wir versprechen.</p>
+          </article>
+          <article class="value-card">
+            <svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M4.5 16.5c-1.5 1.3-2 3.3-2 5 1.7 0 3.7-.5 5-2"/><path d="M9 15 15 9"/><path d="M15 9h4l2-7-7 2v4"/><path d="M9 15H5l-2 7 7-2v-4"/></svg>
+            <h3>Langfristig</h3>
+            <p>Wir denken nicht an heute, sondern an morgen.</p>
+          </article>
+        </div>
+      </section>
+    </div>
+
+    <section class="band" id="seo">
+      <div class="container split">
+        <div>
+          <p class="eyebrow">Warum WebGrow?</p>
+          <h2>Mehr als nur eine Agentur</h2>
+          <p>Wir kombinieren modernes Webdesign, effektive SEO Strategien und profitables Google Ads Management - alles unter einem Dach.</p>
+          <ul class="check-list">
+            <li><span class="check">✓</span>Maßgeschneiderte Lösungen für Ihr Unternehmen</li>
+            <li><span class="check">✓</span>Mehr Sichtbarkeit bei Google</li>
+            <li><span class="check">✓</span>Mehr Kundenanfragen & Umsatz</li>
+            <li><span class="check">✓</span>Langfristige Partnerschaften statt schneller Versprechen</li>
+          </ul>
+        </div>
+        <figure class="image-panel">
+          <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1200&q=80" alt="Moderner Agenturarbeitsplatz mit Monitoren">
+        </figure>
+      </div>
+    </section>
+
+    <section class="story">
+      <div class="container split">
+        <figure class="image-panel">
+          <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80" alt="Modernes Bürogebäude am Abend">
+        </figure>
+        <div>
+          <p class="eyebrow">Unsere Geschichte</p>
+          <h2>Wie alles begann</h2>
+          <p>WebGrow wurde aus der Idee geboren, Unternehmen online wirklich nach vorne zu bringen. Wir haben gesehen, wie viele Firmen großartige Produkte oder Dienstleistungen anbieten, aber online unsichtbar sind oder die falschen Partner haben. Deshalb haben wir WebGrow gegründet - eine Agentur, die wirklich Ergebnisse liefert.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="features" id="ads">
+      <div class="container">
+        <p class="eyebrow">Was uns auszeichnet</p>
+        <h2>Das macht uns besonders</h2>
+        <div class="feature-grid">
+          <article class="feature-card">
+            <svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M4.5 16.5c-1.5 1.3-2 3.3-2 5 1.7 0 3.7-.5 5-2"/><path d="M9 15 15 9"/><path d="M15 9h4l2-7-7 2v4"/><path d="M9 15H5l-2 7 7-2v-4"/></svg>
+            <h3>Alles aus einer Hand</h3>
+            <p>Webdesign, SEO und Google Ads - perfekt aufeinander abgestimmt.</p>
+          </article>
+          <article class="feature-card">
+            <svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            <h3>Persönlicher Ansprechpartner</h3>
+            <p>Sie haben immer einen festen Ansprechpartner, der sich wirklich kümmert.</p>
+          </article>
+          <article class="feature-card">
+            <svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M3 20h18"/><path d="M6 16V8"/><path d="M12 16V4"/><path d="M18 16v-6"/></svg>
+            <h3>Messbare Ergebnisse</h3>
+            <p>Wir arbeiten datenbasiert und optimieren ständig für die besten Ergebnisse.</p>
+          </article>
+          <article class="feature-card">
+            <svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0-4 12c.8.7 1 1.6 1 3h6c0-1.4.2-2.3 1-3a7 7 0 0 0-4-12Z"/></svg>
+            <h3>Moderne Strategien</h3>
+            <p>Wir nutzen die neuesten Methoden & Tools für Ihren Vorsprung.</p>
+          </article>
+          <article class="feature-card">
+            <svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-5"/></svg>
+            <h3>Volle Transparenz</h3>
+            <p>Sie wissen immer, was wir tun und welche Ergebnisse wir erzielen.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonials" id="referenzen">
+      <div class="container">
+        <h2>Das sagen unsere Kunden</h2>
+        <div class="testimonial-grid">
+          <article class="testimonial-card">
+            <div class="review-logo" aria-label="Google">
+              <span class="g1">G</span><span class="g2">o</span><span class="g3">o</span><span class="g4">g</span><span class="g5">l</span><span class="g6">e</span>
+            </div>
+            <strong>5.0 <span class="stars">★★★★★</span></strong>
+            <p>"WebGrow hat unsere Webseite komplett neu erstellt und unser Ranking massiv verbessert. Absolute Empfehlung!"</p>
+            <strong>- KFZ Service Point</strong>
+          </article>
+          <article class="testimonial-card">
+            <div class="trust">★ Trustpilot</div>
+            <strong>5.0 <span class="stars">★★★★★</span></strong>
+            <p>"Professionell, zuverlässig und immer erreichbar. Das Team liefert einfach Ergebnisse!"</p>
+            <strong>- Malermeister Schulz</strong>
+          </article>
+          <article class="testimonial-card">
+            <div class="review-logo" aria-label="Google">
+              <span class="g1">G</span><span class="g2">o</span><span class="g3">o</span><span class="g4">g</span><span class="g5">l</span><span class="g6">e</span>
+            </div>
+            <strong>5.0 <span class="stars">★★★★★</span></strong>
+            <p>"Dank Google Ads von WebGrow bekommen wir konstant neue Anfragen. Top Arbeit!"</p>
+            <strong>- Physiotherapie Weber</strong>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" id="kontakt">
+      <div class="container">
+        <div>
+          <h2>Lassen Sie uns gemeinsam etwas Großes erreichen.</h2>
+          <p>Egal ob Webdesign, SEO oder Google Ads - wir sind Ihr Partner für nachhaltigen Erfolg.</p>
+        </div>
+        <div class="cta-actions">
+          <a class="btn" href="tel:+4915753437938">
+            <svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.08 4.18 2 2 0 0 1 4.06 2h3a2 2 0 0 1 2 1.72c.12.9.32 1.77.6 2.61a2 2 0 0 1-.45 2.11L8 9.65a16 16 0 0 0 6.35 6.35l1.21-1.21a2 2 0 0 1 2.11-.45c.84.28 1.71.48 2.61.6A2 2 0 0 1 22 16.92Z"/></svg>
+            Kostenlos beraten lassen
+          </a>
+          <a class="btn dark" href="mailto:kontakt@webgrow.de">
+            <svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M21 15a4 4 0 0 1-4 4H7l-4 4V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/></svg>
+            Jetzt unverbindlich anfragen
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h3 class="logo"><strong>WEB<span>GROW</span></strong></h3>
+          <p>Webdesign · SEO · Google Ads</p>
+          <p>Wir helfen Unternehmen dabei, online sichtbar zu werden und mehr Kunden zu gewinnen.</p>
+          <div class="socials" aria-label="Social Media">
+            <a href="#" aria-label="Instagram"><svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="3" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg></a>
+            <a href="#" aria-label="Facebook"><svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+            <a href="#" aria-label="LinkedIn"><svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg></a>
+            <a href="#" aria-label="YouTube"><svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M2.5 17a24 24 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49 49 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24 24 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49 49 0 0 1-16.2 0A2 2 0 0 1 2.5 17Z"/><path d="m10 15 5-3-5-3z"/></svg></a>
+          </div>
+        </div>
+        <div>
+          <h4>Leistungen</h4>
+          <ul>
+            <li><a href="#webseiten">Webdesign</a></li>
+            <li><a href="#seo">SEO</a></li>
+            <li><a href="#ads">Google Ads</a></li>
+            <li><a href="#">Wartung & Betreuung</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Unternehmen</h4>
+          <ul>
+            <li><a href="#ueber-uns">Über uns</a></li>
+            <li><a href="#referenzen">Referenzen</a></li>
+            <li><a href="#">Ablauf</a></li>
+            <li><a href="#">Karriere</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Rechtliches</h4>
+          <ul>
+            <li><a href="#">Impressum</a></li>
+            <li><a href="#">Datenschutz</a></li>
+            <li><a href="#">AGB</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Kontakt</h4>
+          <ul>
+            <li><a class="contact-line" href="tel:+4915753437938"><svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.08 4.18 2 2 0 0 1 4.06 2h3a2 2 0 0 1 2 1.72c.12.9.32 1.77.6 2.61a2 2 0 0 1-.45 2.11L8 9.65a16 16 0 0 0 6.35 6.35l1.21-1.21a2 2 0 0 1 2.11-.45c.84.28 1.71.48 2.61.6A2 2 0 0 1 22 16.92Z"/></svg>+49 1575 3437938</a></li>
+            <li><a class="contact-line" href="mailto:kontakt@webgrow.de"><svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-10 6L2 7"/></svg>kontakt@webgrow.de</a></li>
+            <li><span class="contact-line"><svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>Düsseldorf, Deutschland</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">© 2024 WebGrow - Webdesign, SEO & Google Ads aus Düsseldorf</div>
+    </div>
+  </footer>
+</body>
+</html>

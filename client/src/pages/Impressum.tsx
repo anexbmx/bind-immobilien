@@ -65,7 +65,7 @@ export default function Impressum() {
           <LegalSection title="Vertreten durch">
             <div style={valueStyle}>
               <p>Duygu Saltik</p>
-              <p style={{ color: "#6B6B6B", fontSize: "14px" }}>Geschäftsführerin</p>
+              <p style={{ color: "#6B6B6B", fontSize: "14px" }}>COO</p>
             </div>
           </LegalSection>
 
@@ -84,8 +84,6 @@ export default function Impressum() {
                 ["Registergericht", "Amtsgericht Köln"],
                 ["Registernummer", "HRB 118677"],
                 ["Rechtsform", "Gesellschaft mit beschränkter Haftung"],
-                ["Gesellschaftsvertrag", "07. März 2024"],
-                ["Stammkapital", "4.000.000,00 EUR"],
               ].map(([label, value]) => (
                 <div key={label} style={rowStyle}>
                   <span style={labelStyle}>{label}</span>
@@ -103,9 +101,10 @@ export default function Impressum() {
 
           <LegalSection title="Verantwortlich für redaktionelle Inhalte">
             <div style={valueStyle}>
-              <p>Duygu Saltik</p>
               <p>BIND Immobilien GmbH</p>
-              <p>Ostwall 9-11, 47798 Krefeld</p>
+              <p>Duygu Saltik</p>
+              <p>Ostwall 9-11</p>
+              <p>47798 Krefeld</p>
             </div>
           </LegalSection>
 

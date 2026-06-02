@@ -1,4 +1,4 @@
-/* Navigation - Clean Authority Design + Language Switcher DE/EN */
+/* Navigation - Clean Authority Design + Language Switcher */
 
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
@@ -9,9 +9,10 @@ import type { Lang } from "@/lib/translations";
 const LANGS: { code: Lang; label: string }[] = [
   { code: 'de', label: 'DE' },
   { code: 'en', label: 'EN' },
+  { code: 'tr', label: 'TR' },
 ];
 
-const LOGO_SRC = "/assets/bind-logo.png";
+const LOGO_SRC = "/brand/bind-logo-header.svg";
 
 export default function Navigation() {
   const { t, lang, setLang } = useLang();
@@ -58,7 +59,6 @@ export default function Navigation() {
     { label: t.nav.about, href: "#ueber-uns" },
     { label: t.nav.focus, href: "#investitionsfokus" },
     { label: t.nav.offer, href: "#angebot" },
-    { label: "Brand", href: "/brand" },
     { label: t.nav.contact, href: "#kontakt" },
   ];
 
@@ -80,7 +80,7 @@ export default function Navigation() {
         <style>{`
           .nav-desktop { display: flex; }
           .nav-mobile { display: none; }
-          .nav-logo-img { height: 44px; width: auto; object-fit: contain; }
+          .nav-logo-img { height: 62px; width: auto; object-fit: contain; }
           .nav-link { white-space: nowrap; }
           .nav-menu-panel {
             max-height: 0;
@@ -146,7 +146,7 @@ export default function Navigation() {
           }
           @media (max-width: 767px) {
             .nav-shell { padding-left: 1.25rem !important; padding-right: 1.25rem !important; }
-            .nav-logo-img { height: 38px; }
+            .nav-logo-img { height: 52px; }
           }
         `}</style>
         <div className="nav-shell" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: scrolled ? '68px' : '76px', transition: 'height 0.3s ease' }}>

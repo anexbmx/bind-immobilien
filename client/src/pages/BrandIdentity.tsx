@@ -1,5 +1,5 @@
 import { useMemo, useRef, useState } from "react";
-import { Check, Copy, PenLine, X } from "lucide-react";
+import { Check, Copy, Download, PenLine, X } from "lucide-react";
 import Navigation from "@/components/Navigation";
 
 type LogoType = "none" | "text" | "image";
@@ -184,6 +184,34 @@ export default function BrandIdentity() {
           }}
         />
       </main>
+
+      <a
+        href="/brand/bind-logo-new.svg"
+        download="bind-immobilien-logo.svg"
+        style={{
+          position: "fixed",
+          right: "24px",
+          bottom: "82px",
+          zIndex: 140,
+          display: "inline-flex",
+          alignItems: "center",
+          gap: "10px",
+          border: "1px solid #ded6ca",
+          background: "#fbfaf7",
+          color: "#1a1a1a",
+          padding: "13px 18px",
+          fontFamily: "DM Sans, Arial, sans-serif",
+          fontSize: "12px",
+          fontWeight: 700,
+          letterSpacing: "0.12em",
+          textTransform: "uppercase",
+          textDecoration: "none",
+          boxShadow: "0 14px 35px rgba(26,26,26,0.14)",
+        }}
+      >
+        <Download size={16} />
+        Export logo SVG
+      </a>
 
       <button
         type="button"

@@ -86,17 +86,6 @@ export default function ContactSection() {
                 </div>
               ))}
             </div>
-
-            {/* Register */}
-            <div style={{ marginTop: '2.5rem', padding: '1.25rem', border: '1px solid #E0DDD8', backgroundColor: '#FFFFFF' }}>
-              <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: '11px', letterSpacing: '0.14em', textTransform: 'uppercase', color: '#B8962E', marginBottom: '0.75rem' }}>{t.contact.regTitle}</p>
-              {t.contact.regData.map(([k, v]) => (
-                <div key={k} style={{ display: 'flex', justifyContent: 'space-between', gap: '1rem', padding: '4px 0', borderBottom: '1px solid #F0EDE8' }}>
-                  <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: '12px', color: '#999999' }}>{k}</span>
-                  <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: '12px', color: '#111111', textAlign: 'right' }}>{v}</span>
-                </div>
-              ))}
-            </div>
           </div>
 
           {/* Form */}

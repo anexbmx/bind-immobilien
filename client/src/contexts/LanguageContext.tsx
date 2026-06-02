@@ -18,7 +18,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     if (typeof window === 'undefined') return 'de';
 
     const stored = window.localStorage.getItem('bind-language');
-    if (stored === 'de' || stored === 'en') return stored;
+    if (stored === 'de' || stored === 'en' || stored === 'tr') return stored;
 
     return 'de';
   });

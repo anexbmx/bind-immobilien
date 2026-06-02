@@ -1,7 +1,7 @@
 /* SubmitOfferSection – i18n */
 
 import { useEffect, useRef, useState } from "react";
-import { ArrowRight, CheckCircle2, Upload } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { useLang } from "@/contexts/LanguageContext";
 
 function useInView(threshold = 0.08) {
@@ -62,32 +62,6 @@ export default function SubmitOfferSection() {
         </div>
       </div>
 
-      {/* Docs */}
-      <div style={{ backgroundColor: '#FFFFFF', paddingTop: '4rem', paddingBottom: '5rem', borderTop: '1px solid #E0DDD8' }}>
-        <div className="container">
-          <div className="docs-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '5rem', alignItems: 'start' }}>
-            <div>
-              <h3 style={{ fontFamily: 'Playfair Display, Georgia, serif', fontSize: 'clamp(1.5rem, 2.5vw, 2.2rem)', fontWeight: 600, color: '#111111', marginBottom: '1rem', letterSpacing: '-0.02em' }}>
-                {t.submit.docsTitle1}{' '}<em style={{ color: '#B8962E', fontWeight: 400 }}>{t.submit.docsTitle2}</em>{t.submit.docsTitle3 ? ` ${t.submit.docsTitle3}` : ''}
-              </h3>
-              <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: '15px', fontWeight: 300, color: '#6B6B6B', lineHeight: 1.75, marginBottom: '1.5rem' }}>{t.submit.docsSub}</p>
-              {/* Exposé note */}
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', padding: '14px 18px', backgroundColor: 'rgba(184,150,46,0.07)', border: '1px solid rgba(184,150,46,0.3)' }}>
-                <Upload size={15} style={{ color: '#B8962E', flexShrink: 0 }} />
-                <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: '13px', fontWeight: 500, color: '#111111' }}>{t.submit.exposeNote}</span>
-              </div>
-            </div>
-            <div style={{ display: 'flex', flexDirection: 'column' }}>
-              {t.submit.docs.map((d, i) => (
-                <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', padding: '1rem 0', borderBottom: '1px solid #E0DDD8' }}>
-                  <CheckCircle2 size={15} style={{ color: '#B8962E', flexShrink: 0, marginTop: '2px' }} />
-                  <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: '14px', fontWeight: 300, color: '#6B6B6B', lineHeight: 1.6 }}>{d}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
     </section>
   );
 }

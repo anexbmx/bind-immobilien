@@ -10,6 +10,11 @@ export default function FooterSection() {
   const [, navigate] = useLocation();
 
   const scrollTo = (href: string) => {
+    if (href.startsWith("/")) {
+      navigate(href);
+      return;
+    }
+
     const el = document.querySelector(href);
     if (el) el.scrollIntoView({ behavior: "smooth" });
   };
@@ -18,6 +23,7 @@ export default function FooterSection() {
     { label: t.nav.about, href: '#ueber-uns' },
     { label: t.nav.focus, href: '#investitionsfokus' },
     { label: t.nav.offer, href: '#angebot' },
+    { label: 'Brand', href: '/brand' },
     { label: t.nav.contact, href: '#kontakt' },
   ];
 
@@ -79,6 +85,7 @@ export default function FooterSection() {
                 {[
                   { code: 'de' as const, label: 'DE' },
                   { code: 'en' as const, label: 'EN' },
+                  { code: 'tr' as const, label: 'TR' },
                 ].map(item => (
                   <button
                     key={item.code}

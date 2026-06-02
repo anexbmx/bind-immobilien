@@ -1,0 +1,1832 @@
+{
+  "buttons": [
+    {
+      "aria": "LLS-SERVICE-GMBH-LLF-GREEN-FW-1080p",
+      "href": "https://lls.services/",
+      "rect": {
+        "h": 30,
+        "w": 130,
+        "x": 70,
+        "y": 15
+      },
+      "tag": "A",
+      "text": ""
+    },
+    {
+      "aria": "Menü",
+      "href": "https://lls.services/#",
+      "rect": {
+        "h": 0,
+        "w": 0,
+        "x": 0,
+        "y": 0
+      },
+      "tag": "A",
+      "text": ""
+    },
+    {
+      "aria": null,
+      "href": "https://lls.services/",
+      "rect": {
+        "h": 50,
+        "w": 84,
+        "x": 442,
+        "y": 5
+      },
+      "tag": "A",
+      "text": "Home"
+    },
+    {
+      "aria": null,
+      "href": "https://lls.services/#leistungen",
+      "rect": {
+        "h": 50,
+        "w": 145,
+        "x": 526,
+        "y": 5
+      },
+      "tag": "A",
+      "text": "Leistungen"
+    },
+    {
+      "aria": null,
+      "href": "https://lls.services/fulfillment-dienstleister-nrw/",
+      "rect": {
+        "h": 38,
+        "w": 255,
+        "x": 526,
+        "y": 85
+      },
+      "tag": "A",
+      "text": "Fulfillment"
+    },
+    {
+      "aria": null,
+      "href": "https://lls.services/lagerlogostik-e-commerce/",
+      "rect": {
+        "h": 38,
+        "w": 255,
+        "x": 526,
+        "y": 123
+      },
+      "tag": "A",
+      "text": "Lagerlogostik E-Commerce"
+    },
+    {
+      "aria": null,
+      "href": "https://lls.services/kommissionierung-und-versand/",
+      "rect": {
+        "h": 38,
+        "w": 255,
+        "x": 526,
+        "y": 161
+      },
+      "tag": "A",
+      "text": "Kommissionierung und Versand"
+    },
+    {
+      "aria": null,
+      "href": "https://lls.services/retourenmanagement/",
+      "rect": {
+        "h": 38,
+        "w": 255,
+        "x": 526,
+        "y": 198
+      },
+      "tag": "A",
+      "text": "Retourenmanagement"
+    },
+    {
+      "aria": null,
+      "href": "https://lls.services/logistikdienstleister-in-nrw/",
+      "rect": {
+        "h": 38,
+        "w": 255,
+        "x": 526,
+        "y": 236
+      },
+      "tag": "A",
+      "text": "Logistikdienstleister"
+    },
+    {
+      "aria": null,
+      "href": "https://lls.services/verpackung-konfektionierung/",
+      "rect": {
+        "h": 38,
+        "w": 255,
+        "x": 526,
+        "y": 274
+      },
+      "tag": "A",
+      "text": "Verpackung & Konfektionierung"
+    },
+    {
+      "aria": null,
+      "href": "https://lls.services/facility-instandsetzung-maler-lackierer/",
+      "rect": {
+        "h": 38,
+        "w": 255,
+        "x": 526,
+        "y": 312
+      },
+      "tag": "A",
+      "text": "Facility-Services"
+    },
+    {
+      "aria": null,
+      "href": "https://lls.services/industrie/",
+      "rect": {
+        "h": 38,
+        "w": 255,
+        "x": 526,
+        "y": 350
+      },
+      "tag": "A",
+      "text": "Industrie-Services"
+    },
+    {
+      "aria": null,
+      "href": "https://lls.services/ueber-uns/",
+      "rect": {
+        "h": 50,
+        "w": 109,
+        "x": 671,
+        "y": 5
+      },
+      "tag": "A",
+      "text": "Über uns"
+    },
+    {
+      "aria": null,
+      "href": "https://jobmarkt-nrw.de/organization/lls-service-gmbh",
+      "rect": {
+        "h": 50,
+        "w": 101,
+        "x": 781,
+        "y": 5
+      },
+      "tag": "A",
+      "text": "Karriere"
+    },
+    {
+      "aria": null,
+      "href": "https://online2.superoffice.com/Cust31133/CS/scripts/customer.fcgi?action=formFrame&formId=F-MCTD0eL0",
+      "rect": {
+        "h": 50,
+        "w": 100,
+        "x": 882,
+        "y": 5
+      },
+      "tag": "A",
+      "text": "Kontakt"
+    },
+    {
+      "aria": null,
+      "href": "https://lls.services/#",
+      "rect": {
+        "h": 50,
+        "w": 167,
+        "x": 982,
+        "y": 5
+      },
+      "tag": "A",
+      "text": "Firmengruppe"
+    },
+    {
+      "aria": null,
+      "href": "https://lls-personal.de/",
+      "rect": {
+        "h": 38,
+        "w": 224,
+        "x": 982,
+        "y": 85
+      },
+      "tag": "A",
+      "text": "LLS Industrieservice GmbH"
+    },
+    {
+      "aria": "Titel",
+      "href": "tel:+4920439210730",
+      "rect": {
+        "h": 36,
+        "w": 36,
+        "x": 1174,
+        "y": 12
+      },
+      "tag": "A",
+      "text": ""
+    },
+    {
+      "aria": null,
+      "href": "https://lls.services/#leistungen",
+      "rect": {
+        "h": 51,
+        "w": 149,
+        "x": 565,
+        "y": 528
+      },
+      "tag": "A",
+      "text": "Leistungen"
+    },
+    {
+      "aria": null,
+      "href": "https://online2.superoffice.com/Cust31133/CS/scripts/customer.fcgi?action=formFrame&formId=F-MCTD0eL0",
+      "rect": {
+        "h": 51,
+        "w": 208,
+        "x": 536,
+        "y": 584
+      },
+      "tag": "A",
+      "text": "Angebot anfordern"
+    },
+    {
+      "aria": null,
+      "href": "https://lls.services/#",
+      "rect": {
+        "h": 18,
+        "w": 446,
+        "x": 716,
+        "y": 1035
+      },
+      "tag": "A",
+      "text": "Mehr Informationen"
+    },
+    {
+      "aria": null,
+      "href": "https://lls.services/#",
+      "rect": {
+        "h": 45,
+        "w": 446,
+        "x": 716,
+        "y": 1069
+      },
+      "tag": "A",
+      "text": "Inhalt entsperren"
+    },
+    {
+      "aria": null,
+      "href": "https://lls.services/#",
+      "rect": {
+        "h": 45,
+        "w": 446,
+        "x": 716,
+        "y": 1130
+      },
+      "tag": "A",
+      "text": "Erforderlichen Service akzeptieren und Inhalte entsperren"
+    },
+    {
+      "aria": "Previous",
+      "href": null,
+      "rect": {
+        "h": 0,
+        "w": 0,
+        "x": 0,
+        "y": 0
+      },
+      "tag": "BUTTON",
+      "text": ""
+    },
+    {
+      "aria": "Weiter",
+      "href": null,
+      "rect": {
+        "h": 0,
+        "w": 0,
+        "x": 0,
+        "y": 0
+      },
+      "tag": "BUTTON",
+      "text": ""
+    },
+    {
+      "aria": null,
+      "href": "https://online2.superoffice.com/Cust31133/CS/scripts/customer.fcgi?action=formFrame&formId=F-MCTD0eL0",
+      "rect": {
+        "h": 51,
+        "w": 346,
+        "x": 45,
+        "y": 2526
+      },
+      "tag": "A",
+      "text": "Jetzt Beratungstermin vereinbaren"
+    },
+    {
+      "aria": null,
+      "href": "https://lls.services/#",
+      "rect": {
+        "h": 18,
+        "w": 468,
+        "x": 717,
+        "y": 2259
+      },
+      "tag": "A",
+      "text": "Mehr Informationen"
+    },
+    {
+      "aria": null,
+      "href": "https://lls.services/#",
+      "rect": {
+        "h": 45,
+        "w": 468,
+        "x": 717,
+        "y": 2293
+      },
+      "tag": "A",
+      "text": "Inhalt entsperren"
+    },
+    {
+      "aria": null,
+      "href": "https://lls.services/#",
+      "rect": {
+        "h": 45,
+        "w": 468,
+        "x": 717,
+        "y": 2354
+      },
+      "tag": "A",
+      "text": "Erforderlichen Service akzeptieren und Inhalte entsperren"
+    },
+    {
+      "aria": "Fulfillment Dienstleister",
+      "href": "https://lls.services/fulfillment-dienstleister-nrw/",
+      "rect": {
+        "h": 371,
+        "w": 557,
+        "x": 70,
+        "y": 3235
+      },
+      "tag": "A",
+      "text": ""
+    },
+    {
+      "aria": "Kommissionierung und Versand",
+      "href": "https://lls.services/kommissionierung-und-versand/",
+      "rect": {
+        "h": 371,
+        "w": 557,
+        "x": 70,
+        "y": 3632
+      },
+      "tag": "A",
+      "text": ""
+    },
+    {
+      "aria": "Lagerlogistik für E-Commerce",
+      "href": "https://lls.services/lagerlogostik-e-commerce/",
+      "rect": {
+        "h": 371,
+        "w": 557,
+        "x": 653,
+        "y": 3235
+      },
+      "tag": "A",
+      "text": ""
+    },
+    {
+      "aria": "Retourenmanagement",
+      "href": "https://lls.services/retourenmanagement/",
+      "rect": {
+        "h": 371,
+        "w": 557,
+        "x": 653,
+        "y": 3632
+      },
+      "tag": "A",
+      "text": ""
+    },
+    {
+      "aria": "Logistikdienstleister",
+      "href": "https://lls.services/logistikdienstleister-in-nrw/",
+      "rect": {
+        "h": 371,
+        "w": 557,
+        "x": 70,
+        "y": 4029
+      },
+      "tag": "A",
+      "text": ""
+    },
+    {
+      "aria": "Verpackung & Konfektionierung",
+      "href": "https://lls.services/verpackung-konfektionierung/",
+      "rect": {
+        "h": 371,
+        "w": 557,
+        "x": 653,
+        "y": 4029
+      },
+      "tag": "A",
+      "text": ""
+    },
+    {
+      "aria": "Facility Services",
+      "href": "https://lls.services/facility-instandsetzung-maler-lackierer/",
+      "rect": {
+        "h": 371,
+        "w": 557,
+        "x": 70,
+        "y": 4426
+      },
+      "tag": "A",
+      "text": ""
+    },
+    {
+      "aria": null,
+      "href": "https://lls.services/#",
+      "rect": {
+        "h": 18,
+        "w": 468,
+        "x": 95,
+        "y": 5222
+      },
+      "tag": "A",
+      "text": "Mehr Informationen"
+    },
+    {
+      "aria": null,
+      "href": "https://lls.services/#",
+      "rect": {
+        "h": 45,
+        "w": 468,
+        "x": 95,
+        "y": 5256
+      },
+      "tag": "A",
+      "text": "Inhalt entsperren"
+    },
+    {
+      "aria": null,
+      "href": "https://lls.services/#",
+      "rect": {
+        "h": 45,
+        "w": 468,
+        "x": 95,
+        "y": 5317
+      },
+      "tag": "A",
+      "text": "Erforderlichen Service akzeptieren und Inhalte entsperren"
+    },
+    {
+      "aria": null,
+      "href": "https://lls.services/#",
+      "rect": {
+        "h": 18,
+        "w": 468,
+        "x": 717,
+        "y": 5222
+      },
+      "tag": "A",
+      "text": "Mehr Informationen"
+    },
+    {
+      "aria": null,
+      "href": "https://lls.services/#",
+      "rect": {
+        "h": 45,
+        "w": 468,
+        "x": 717,
+        "y": 5256
+      },
+      "tag": "A",
+      "text": "Inhalt entsperren"
+    },
+    {
+      "aria": null,
+      "href": "https://lls.services/#",
+      "rect": {
+        "h": 45,
+        "w": 468,
+        "x": 717,
+        "y": 5317
+      },
+      "tag": "A",
+      "text": "Erforderlichen Service akzeptieren und Inhalte entsperren"
+    },
+    {
+      "aria": null,
+      "href": "https://online2.superoffice.com/Cust31133/CS/scripts/customer.fcgi?action=formFrame&formId=F-MCTD0eL0",
+      "rect": {
+        "h": 51,
+        "w": 233,
+        "x": 134,
+        "y": 6535
+      },
+      "tag": "A",
+      "text": "Termin vereinbaren"
+    },
+    {
+      "aria": null,
+      "href": null,
+      "rect": {
+        "h": 76,
+        "w": 1140,
+        "x": 70,
+        "y": 6931
+      },
+      "tag": "BUTTON",
+      "text": "Bieten Sie nur Fulfillment an oder auch Unterstützung in unseren eigenen Lagern?"
+    },
+    {
+      "aria": null,
+      "href": null,
+      "rect": {
+        "h": 76,
+        "w": 1140,
+        "x": 70,
+        "y": 7007
+      },
+      "tag": "BUTTON",
+      "text": "Für welche Branchen eignet sich LLS-Service?"
+    },
+    {
+      "aria": null,
+      "href": null,
+      "rect": {
+        "h": 76,
+        "w": 1140,
+        "x": 70,
+        "y": 7084
+      },
+      "tag": "BUTTON",
+      "text": "Wie schnell kann die Zusammenarbeit starten?"
+    },
+    {
+      "aria": null,
+      "href": null,
+      "rect": {
+        "h": 76,
+        "w": 1140,
+        "x": 70,
+        "y": 7160
+      },
+      "tag": "BUTTON",
+      "text": "Können wir einzelne Leistungen wie z. B. nur Kommissionierung oder Retouren buchen?"
+    },
+    {
+      "aria": null,
+      "href": null,
+      "rect": {
+        "h": 76,
+        "w": 1140,
+        "x": 70,
+        "y": 7237
+      },
+      "tag": "BUTTON",
+      "text": "Wo ist LLS-Service tätig? Arbeiten Sie nur in NRW?"
+    },
+    {
+      "aria": null,
+      "href": "https://lls.services/#",
+      "rect": {
+        "h": 18,
+        "w": 545,
+        "x": 367,
+        "y": 7589
+      },
+      "tag": "A",
+      "text": "Mehr Informationen"
+    },
+    {
+      "aria": null,
+      "href": "https://lls.services/#",
+      "rect": {
+        "h": 45,
+        "w": 545,
+        "x": 367,
+        "y": 7622
+      },
+      "tag": "A",
+      "text": "Inhalt entsperren"
+    },
+    {
+      "aria": null,
+      "href": "https://lls.services/#",
+      "rect": {
+        "h": 45,
+        "w": 545,
+        "x": 367,
+        "y": 7683
+      },
+      "tag": "A",
+      "text": "Erforderlichen Service akzeptieren und Inhalte entsperren"
+    },
+    {
+      "aria": null,
+      "href": "https://lls.services/#",
+      "rect": {
+        "h": 18,
+        "w": 330,
+        "x": 86,
+        "y": 8207
+      },
+      "tag": "A",
+      "text": "Mehr Informationen"
+    },
+    {
+      "aria": null,
+      "href": "https://lls.services/#",
+      "rect": {
+        "h": 45,
+        "w": 165,
+        "x": 432,
+        "y": 8079
+      },
+      "tag": "A",
+      "text": "Inhalt entsperren"
+    },
+    {
+      "aria": null,
+      "href": "https://lls.services/#",
+      "rect": {
+        "h": 108,
+        "w": 165,
+        "x": 432,
+        "y": 8140
+      },
+      "tag": "A",
+      "text": "Erforderlichen Service akzeptieren und Inhalte entsperren"
+    },
+    {
+      "aria": null,
+      "href": "tel:+4920439210730",
+      "rect": {
+        "h": 21,
+        "w": 125,
+        "x": 667,
+        "y": 8114
+      },
+      "tag": "A",
+      "text": "02043 9210730"
+    },
+    {
+      "aria": null,
+      "href": "mailto:info@lls.services",
+      "rect": {
+        "h": 21,
+        "w": 135,
+        "x": 667,
+        "y": 8170
+      },
+      "tag": "A",
+      "text": "info@lls.services"
+    },
+    {
+      "aria": null,
+      "href": "tel:+491726128349",
+      "rect": {
+        "h": 21,
+        "w": 116,
+        "x": 667,
+        "y": 8364
+      },
+      "tag": "A",
+      "text": "0172-6128349"
+    },
+    {
+      "aria": "Previous",
+      "href": null,
+      "rect": {
+        "h": 0,
+        "w": 0,
+        "x": 0,
+        "y": 0
+      },
+      "tag": "BUTTON",
+      "text": ""
+    },
+    {
+      "aria": "Weiter",
+      "href": null,
+      "rect": {
+        "h": 0,
+        "w": 0,
+        "x": 0,
+        "y": 0
+      },
+      "tag": "BUTTON",
+      "text": ""
+    },
+    {
+      "aria": null,
+      "href": "https://lls.services/",
+      "rect": {
+        "h": 21,
+        "w": 48,
+        "x": 218,
+        "y": 9133
+      },
+      "tag": "A",
+      "text": "Home"
+    },
+    {
+      "aria": null,
+      "href": "https://lls.services/fulfillment-dienstleister-nrw/",
+      "rect": {
+        "h": 21,
+        "w": 82,
+        "x": 201,
+        "y": 9164
+      },
+      "tag": "A",
+      "text": "Fulfillment"
+    },
+    {
+      "aria": null,
+      "href": "https://lls.services/logistikdienstleister-in-nrw/",
+      "rect": {
+        "h": 21,
+        "w": 157,
+        "x": 163,
+        "y": 9194
+      },
+      "tag": "A",
+      "text": "Logistikdienstleister"
+    },
+    {
+      "aria": null,
+      "href": "https://lls.services/lagerlogostik-e-commerce/",
+      "rect": {
+        "h": 21,
+        "w": 218,
+        "x": 133,
+        "y": 9225
+      },
+      "tag": "A",
+      "text": "Lagerlogostik E-Commerce"
+    },
+    {
+      "aria": null,
+      "href": "https://lls.services/kommissionierung-und-versand/",
+      "rect": {
+        "h": 21,
+        "w": 236,
+        "x": 124,
+        "y": 9256
+      },
+      "tag": "A",
+      "text": "Kommissionierung & Versand"
+    },
+    {
+      "aria": null,
+      "href": "https://lls.services/retourenmanagement/",
+      "rect": {
+        "h": 21,
+        "w": 179,
+        "x": 152,
+        "y": 9286
+      },
+      "tag": "A",
+      "text": "Retourenmanagement"
+    },
+    {
+      "aria": null,
+      "href": "https://lls.services/facility-instandsetzung-maler-lackierer/",
+      "rect": {
+        "h": 21,
+        "w": 122,
+        "x": 181,
+        "y": 9317
+      },
+      "tag": "A",
+      "text": "Facility-Service"
+    },
+    {
+      "aria": null,
+      "href": "https://lls.services/industrie/",
+      "rect": {
+        "h": 21,
+        "w": 144,
+        "x": 170,
+        "y": 9347
+      },
+      "tag": "A",
+      "text": "Industrie-Services"
+    },
+    {
+      "aria": null,
+      "href": "https://lls.services/ueber-uns/",
+      "rect": {
+        "h": 21,
+        "w": 73,
+        "x": 205,
+        "y": 9378
+      },
+      "tag": "A",
+      "text": "Über uns"
+    },
+    {
+      "aria": null,
+      "href": "https://jobmarkt-nrw.de/organization/lls-service-gmbh",
+      "rect": {
+        "h": 21,
+        "w": 64,
+        "x": 210,
+        "y": 9409
+      },
+      "tag": "A",
+      "text": "Karriere"
+    },
+    {
+      "aria": null,
+      "href": "https://online2.superoffice.com/Cust31133/CS/scripts/customer.fcgi?action=formFrame&formId=F-MCTD0eL0",
+      "rect": {
+        "h": 21,
+        "w": 61,
+        "x": 211,
+        "y": 9439
+      },
+      "tag": "A",
+      "text": "Kontakt"
+    },
+    {
+      "aria": "YouTube",
+      "href": "https://www.youtube.com/@LLSSERVICE",
+      "rect": {
+        "h": 55,
+        "w": 55,
+        "x": 981,
+        "y": 9186
+      },
+      "tag": "A",
+      "text": ""
+    },
+    {
+      "aria": "LinkedIn",
+      "href": "https://www.linkedin.com/company/lls-service-gmbh/",
+      "rect": {
+        "h": 55,
+        "w": 55,
+        "x": 1040,
+        "y": 9186
+      },
+      "tag": "A",
+      "text": ""
+    },
+    {
+      "aria": null,
+      "href": "https://lls.services/impressum/",
+      "rect": {
+        "h": 18,
+        "w": 79,
+        "x": 943,
+        "y": 9356
+      },
+      "tag": "A",
+      "text": "Impressum"
+    },
+    {
+      "aria": null,
+      "href": "https://lls.services/datenschutz/",
+      "rect": {
+        "h": 18,
+        "w": 89,
+        "x": 1035,
+        "y": 9356
+      },
+      "tag": "A",
+      "text": "Datenschutz"
+    },
+    {
+      "aria": null,
+      "href": "https://lls-services.hinweis.digital/",
+      "rect": {
+        "h": 18,
+        "w": 179,
+        "x": 949,
+        "y": 9384
+      },
+      "tag": "A",
+      "text": "Hinweisgebermeldekanal"
+    },
+    {
+      "aria": "Zurück nach oben",
+      "href": "https://lls.services/#",
+      "rect": {
+        "h": 50,
+        "w": 50,
+        "x": 1215,
+        "y": 655
+      },
+      "tag": "A",
+      "text": ""
+    },
+    {
+      "aria": "Menü",
+      "href": null,
+      "rect": {
+        "h": 0,
+        "w": 0,
+        "x": 0,
+        "y": 0
+      },
+      "tag": "BUTTON",
+      "text": "Menü"
+    },
+    {
+      "aria": "Dialog schließen",
+      "href": null,
+      "rect": {
+        "h": 32,
+        "w": 32,
+        "x": 888,
+        "y": 24
+      },
+      "tag": "BUTTON",
+      "text": "Mit diesem Button wird der Dialog geschlossen. Seine Funktionalität ist identisch mit der des Buttons Nur essenzielle Cookies akzeptieren."
+    },
+    {
+      "aria": null,
+      "href": "https://lls.services/datenschutz/",
+      "rect": {
+        "h": 14,
+        "w": 119,
+        "x": 754,
+        "y": 264
+      },
+      "tag": "A",
+      "text": "Datenschutzerklärung"
+    },
+    {
+      "aria": null,
+      "href": "https://lls.services/#",
+      "rect": {
+        "h": 14,
+        "w": 74,
+        "x": 639,
+        "y": 299
+      },
+      "tag": "A",
+      "text": "Einstellungen"
+    },
+    {
+      "aria": null,
+      "href": null,
+      "rect": {
+        "h": 45,
+        "w": 528,
+        "x": 376,
+        "y": 411
+      },
+      "tag": "BUTTON",
+      "text": "Einwilligung speichern"
+    },
+    {
+      "aria": null,
+      "href": null,
+      "rect": {
+        "h": 45,
+        "w": 528,
+        "x": 376,
+        "y": 468
+      },
+      "tag": "BUTTON",
+      "text": "Ich akzeptiere alle"
+    },
+    {
+      "aria": null,
+      "href": null,
+      "rect": {
+        "h": 45,
+        "w": 528,
+        "x": 376,
+        "y": 525
+      },
+      "tag": "BUTTON",
+      "text": "Nur essenzielle Cookies akzeptieren"
+    },
+    {
+      "aria": null,
+      "href": null,
+      "rect": {
+        "h": 45,
+        "w": 528,
+        "x": 376,
+        "y": 582
+      },
+      "tag": "BUTTON",
+      "text": "Individuelle Datenschutz-Präferenzen"
+    },
+    {
+      "aria": null,
+      "href": null,
+      "rect": {
+        "h": 34,
+        "w": 99,
+        "x": 401,
+        "y": 663
+      },
+      "tag": "BUTTON",
+      "text": "Präferenzen"
+    },
+    {
+      "aria": null,
+      "href": "https://lls.services/datenschutz/",
+      "rect": {
+        "h": 34,
+        "w": 151,
+        "x": 500,
+        "y": 663
+      },
+      "tag": "A",
+      "text": "Datenschutzerklärung"
+    },
+    {
+      "aria": null,
+      "href": "https://lls.services/impressum/",
+      "rect": {
+        "h": 34,
+        "w": 93,
+        "x": 651,
+        "y": 663
+      },
+      "tag": "A",
+      "text": "Impressum"
+    },
+    {
+      "aria": null,
+      "href": "https://borlabs.io/borlabs-cookie/",
+      "rect": {
+        "h": 34,
+        "w": 135,
+        "x": 744,
+        "y": 663
+      },
+      "tag": "A",
+      "text": "Borlabs Cookie"
+    }
+  ],
+  "forms": [
+    {
+      "inputs": [
+        {
+          "label": "Essenziell",
+          "name": "essential",
+          "placeholder": null,
+          "required": false,
+          "tag": "INPUT",
+          "type": "checkbox"
+        },
+        {
+          "label": "Externe Medien",
+          "name": "external-media",
+          "placeholder": null,
+          "required": false,
+          "tag": "INPUT",
+          "type": "checkbox"
+        }
+      ],
+      "text": "Es folgt eine Liste der Service-Gruppen, für die eine Einwilligung erteilt werden kann. Die erste Service-Gruppe ist essenziell und kann nicht abgewählt werden.Essenziell Essenzielle Services ermöglichen grundlegende Funktionen und sind für das ordnungsgemäße Funktionieren der Website erforderlich.Externe Medien Inhalte von Videoplattformen und Social-Media-Plattformen werden standardmäßig blockiert. Wenn externe Services akzeptiert werden, ist für den Zugriff auf diese Inhalte keine manuelle Ei"
+    }
+  ],
+  "headings": [
+    {
+      "tag": "H1",
+      "text": "LLS SERVICE GmbH"
+    },
+    {
+      "tag": "H2",
+      "text": "Wir übernehmen Ihre Logistikprozesse –"
+    },
+    {
+      "tag": "H2",
+      "text": "in unserem eigenen Lager oder direkt bei Ihnen im Unternehmen."
+    },
+    {
+      "tag": "H3",
+      "text": "Was LLS-Service besonders macht"
+    },
+    {
+      "tag": "H2",
+      "text": "Unsere Leistungen"
+    },
+    {
+      "tag": "H3",
+      "text": "Fulfillment Dienstleister"
+    },
+    {
+      "tag": "H3",
+      "text": "Kommissionierung und Versand"
+    },
+    {
+      "tag": "H3",
+      "text": "Lagerlogistik für E-Commerce"
+    },
+    {
+      "tag": "H3",
+      "text": "Retourenmanagement"
+    },
+    {
+      "tag": "H3",
+      "text": "Logistikdienstleister"
+    },
+    {
+      "tag": "H3",
+      "text": "Verpackung & Konfektionierung"
+    },
+    {
+      "tag": "H3",
+      "text": "Facility Services"
+    },
+    {
+      "tag": "H3",
+      "text": "Kundenstimmen"
+    },
+    {
+      "tag": "H2",
+      "text": "Kostenlose Beratung"
+    },
+    {
+      "tag": "H2",
+      "text": "Häufige Fragen (FAQs)"
+    },
+    {
+      "tag": "H2",
+      "text": "Datenschutz-Präferenz"
+    }
+  ],
+  "images": [
+    {
+      "alt": "",
+      "displayH": 30,
+      "displayW": 130,
+      "h": 29,
+      "src": "https://lls.services/wp-content/uploads/2025/08/LLS-SERVICE-GMBH-LLF-GREEN-FW-1080p.png",
+      "w": 130
+    },
+    {
+      "alt": "",
+      "displayH": 236,
+      "displayW": 1024,
+      "h": 236,
+      "src": "https://lls.services/wp-content/uploads/2025/08/LLS-SERVICE-GMBH-LLF-GREEN-FW-1080p.png",
+      "w": 1024
+    },
+    {
+      "alt": "",
+      "displayH": 240,
+      "displayW": 240,
+      "h": 240,
+      "src": "https://lls.services/wp-content/uploads/2026/04/4.png",
+      "w": 240
+    },
+    {
+      "alt": "",
+      "displayH": 240,
+      "displayW": 240,
+      "h": 240,
+      "src": "https://lls.services/wp-content/uploads/2026/04/5.png",
+      "w": 240
+    },
+    {
+      "alt": "",
+      "displayH": 240,
+      "displayW": 240,
+      "h": 240,
+      "src": "https://lls.services/wp-content/uploads/2026/04/6.png",
+      "w": 240
+    },
+    {
+      "alt": "",
+      "displayH": 240,
+      "displayW": 240,
+      "h": 240,
+      "src": "https://lls.services/wp-content/uploads/2026/05/Logo-Serie-Fulfilment.png",
+      "w": 240
+    },
+    {
+      "alt": "",
+      "displayH": 240,
+      "displayW": 240,
+      "h": 500,
+      "src": "https://lls.services/wp-content/uploads/2026/04/1.png",
+      "w": 500
+    },
+    {
+      "alt": "",
+      "displayH": 240,
+      "displayW": 240,
+      "h": 500,
+      "src": "https://lls.services/wp-content/uploads/2026/04/2.png",
+      "w": 500
+    },
+    {
+      "alt": "",
+      "displayH": 240,
+      "displayW": 240,
+      "h": 500,
+      "src": "https://lls.services/wp-content/uploads/2026/04/3.png",
+      "w": 500
+    },
+    {
+      "alt": "",
+      "displayH": 240,
+      "displayW": 240,
+      "h": 240,
+      "src": "https://lls.services/wp-content/uploads/2026/04/4.png",
+      "w": 240
+    },
+    {
+      "alt": "",
+      "displayH": 240,
+      "displayW": 240,
+      "h": 240,
+      "src": "https://lls.services/wp-content/uploads/2026/04/5.png",
+      "w": 240
+    },
+    {
+      "alt": "",
+      "displayH": 240,
+      "displayW": 240,
+      "h": 240,
+      "src": "https://lls.services/wp-content/uploads/2026/04/6.png",
+      "w": 240
+    },
+    {
+      "alt": "",
+      "displayH": 240,
+      "displayW": 240,
+      "h": 240,
+      "src": "https://lls.services/wp-content/uploads/2026/05/Logo-Serie-Fulfilment.png",
+      "w": 240
+    },
+    {
+      "alt": "",
+      "displayH": 240,
+      "displayW": 240,
+      "h": 500,
+      "src": "https://lls.services/wp-content/uploads/2026/04/1.png",
+      "w": 500
+    },
+    {
+      "alt": "",
+      "displayH": 240,
+      "displayW": 240,
+      "h": 500,
+      "src": "https://lls.services/wp-content/uploads/2026/04/2.png",
+      "w": 500
+    },
+    {
+      "alt": "",
+      "displayH": 240,
+      "displayW": 240,
+      "h": 500,
+      "src": "https://lls.services/wp-content/uploads/2026/04/3.png",
+      "w": 500
+    },
+    {
+      "alt": "",
+      "displayH": 240,
+      "displayW": 240,
+      "h": 240,
+      "src": "https://lls.services/wp-content/uploads/2026/04/4.png",
+      "w": 240
+    },
+    {
+      "alt": "",
+      "displayH": 380,
+      "displayW": 570,
+      "h": 0,
+      "src": "https://lls.services/wp-content/uploads/2025/08/young-happy-businesswoman-using-cell-phone-making-phone-call-office-scaled-1-1024x683.jpg",
+      "w": 0
+    },
+    {
+      "alt": "",
+      "displayH": 240,
+      "displayW": 240,
+      "h": 240,
+      "src": "https://lls.services/wp-content/uploads/2026/04/4.png",
+      "w": 240
+    },
+    {
+      "alt": "",
+      "displayH": 240,
+      "displayW": 240,
+      "h": 240,
+      "src": "https://lls.services/wp-content/uploads/2026/04/5.png",
+      "w": 240
+    },
+    {
+      "alt": "",
+      "displayH": 240,
+      "displayW": 240,
+      "h": 240,
+      "src": "https://lls.services/wp-content/uploads/2026/04/6.png",
+      "w": 240
+    },
+    {
+      "alt": "",
+      "displayH": 240,
+      "displayW": 240,
+      "h": 240,
+      "src": "https://lls.services/wp-content/uploads/2026/05/Logo-Serie-Fulfilment.png",
+      "w": 240
+    },
+    {
+      "alt": "",
+      "displayH": 240,
+      "displayW": 240,
+      "h": 240,
+      "src": "https://lls.services/wp-content/uploads/2026/04/1.png",
+      "w": 240
+    },
+    {
+      "alt": "",
+      "displayH": 240,
+      "displayW": 240,
+      "h": 240,
+      "src": "https://lls.services/wp-content/uploads/2026/04/2.png",
+      "w": 240
+    },
+    {
+      "alt": "",
+      "displayH": 240,
+      "displayW": 240,
+      "h": 240,
+      "src": "https://lls.services/wp-content/uploads/2026/04/3.png",
+      "w": 240
+    },
+    {
+      "alt": "",
+      "displayH": 240,
+      "displayW": 240,
+      "h": 240,
+      "src": "https://lls.services/wp-content/uploads/2026/04/4.png",
+      "w": 240
+    },
+    {
+      "alt": "",
+      "displayH": 240,
+      "displayW": 240,
+      "h": 240,
+      "src": "https://lls.services/wp-content/uploads/2026/04/5.png",
+      "w": 240
+    },
+    {
+      "alt": "",
+      "displayH": 240,
+      "displayW": 240,
+      "h": 240,
+      "src": "https://lls.services/wp-content/uploads/2026/04/6.png",
+      "w": 240
+    },
+    {
+      "alt": "",
+      "displayH": 240,
+      "displayW": 240,
+      "h": 240,
+      "src": "https://lls.services/wp-content/uploads/2026/05/Logo-Serie-Fulfilment.png",
+      "w": 240
+    },
+    {
+      "alt": "",
+      "displayH": 240,
+      "displayW": 240,
+      "h": 240,
+      "src": "https://lls.services/wp-content/uploads/2026/04/1.png",
+      "w": 240
+    },
+    {
+      "alt": "",
+      "displayH": 240,
+      "displayW": 240,
+      "h": 240,
+      "src": "https://lls.services/wp-content/uploads/2026/04/2.png",
+      "w": 240
+    },
+    {
+      "alt": "",
+      "displayH": 240,
+      "displayW": 240,
+      "h": 240,
+      "src": "https://lls.services/wp-content/uploads/2026/04/3.png",
+      "w": 240
+    },
+    {
+      "alt": "",
+      "displayH": 240,
+      "displayW": 240,
+      "h": 240,
+      "src": "https://lls.services/wp-content/uploads/2026/04/4.png",
+      "w": 240
+    },
+    {
+      "alt": "",
+      "displayH": 200,
+      "displayW": 800,
+      "h": 200,
+      "src": "https://lls.services/wp-content/uploads/2026/05/E-commerce-day.png",
+      "w": 800
+    },
+    {
+      "alt": "",
+      "displayH": 79,
+      "displayW": 344,
+      "h": 79,
+      "src": "https://lls.services/wp-content/uploads/2025/08/LLS-SERVICE-GMBH-LLF-WHITE-CO-4K-scaled-1-1024x236.png",
+      "w": 344
+    },
+    {
+      "alt": "",
+      "displayH": 50,
+      "displayW": 217,
+      "h": 124,
+      "src": "https://lls.services/wp-content/uploads/2025/08/LLS-SERVICE-GMBH-LLF-GREEN-FW-1080p.png",
+      "w": 540
+    }
+  ],
+  "lang": "de",
+  "links": [
+    {
+      "href": "https://lls.services/",
+      "text": ""
+    },
+    {
+      "href": "https://lls.services/#",
+      "text": ""
+    },
+    {
+      "href": "https://lls.services/",
+      "text": "Home"
+    },
+    {
+      "href": "https://lls.services/#leistungen",
+      "text": "Leistungen"
+    },
+    {
+      "href": "https://lls.services/fulfillment-dienstleister-nrw/",
+      "text": "Fulfillment"
+    },
+    {
+      "href": "https://lls.services/lagerlogostik-e-commerce/",
+      "text": "Lagerlogostik E-Commerce"
+    },
+    {
+      "href": "https://lls.services/kommissionierung-und-versand/",
+      "text": "Kommissionierung und Versand"
+    },
+    {
+      "href": "https://lls.services/retourenmanagement/",
+      "text": "Retourenmanagement"
+    },
+    {
+      "href": "https://lls.services/logistikdienstleister-in-nrw/",
+      "text": "Logistikdienstleister"
+    },
+    {
+      "href": "https://lls.services/verpackung-konfektionierung/",
+      "text": "Verpackung & Konfektionierung"
+    },
+    {
+      "href": "https://lls.services/facility-instandsetzung-maler-lackierer/",
+      "text": "Facility-Services"
+    },
+    {
+      "href": "https://lls.services/industrie/",
+      "text": "Industrie-Services"
+    },
+    {
+      "href": "https://lls.services/ueber-uns/",
+      "text": "Über uns"
+    },
+    {
+      "href": "https://jobmarkt-nrw.de/organization/lls-service-gmbh",
+      "text": "Karriere"
+    },
+    {
+      "href": "https://online2.superoffice.com/Cust31133/CS/scripts/customer.fcgi?action=formFrame&formId=F-MCTD0eL0",
+      "text": "Kontakt"
+    },
+    {
+      "href": "https://lls.services/#",
+      "text": "Firmengruppe"
+    },
+    {
+      "href": "https://lls-personal.de/",
+      "text": "LLS Industrieservice GmbH"
+    },
+    {
+      "href": "tel:+4920439210730",
+      "text": ""
+    },
+    {
+      "href": "https://lls.services/#leistungen",
+      "text": "Leistungen"
+    },
+    {
+      "href": "https://online2.superoffice.com/Cust31133/CS/scripts/customer.fcgi?action=formFrame&formId=F-MCTD0eL0",
+      "text": "Angebot anfordern"
+    },
+    {
+      "href": "https://lls.services/#",
+      "text": "Mehr Informationen"
+    },
+    {
+      "href": "https://lls.services/#",
+      "text": "Inhalt entsperren"
+    },
+    {
+      "href": "https://lls.services/#",
+      "text": "Erforderlichen Service akzeptieren und Inhalte entsperren"
+    },
+    {
+      "href": "https://online2.superoffice.com/Cust31133/CS/scripts/customer.fcgi?action=formFrame&formId=F-MCTD0eL0",
+      "text": "Jetzt Beratungstermin vereinbaren"
+    },
+    {
+      "href": "https://lls.services/#",
+      "text": "Mehr Informationen"
+    },
+    {
+      "href": "https://lls.services/#",
+      "text": "Inhalt entsperren"
+    },
+    {
+      "href": "https://lls.services/#",
+      "text": "Erforderlichen Service akzeptieren und Inhalte entsperren"
+    },
+    {
+      "href": "https://lls.services/fulfillment-dienstleister-nrw/",
+      "text": ""
+    },
+    {
+      "href": "https://lls.services/kommissionierung-und-versand/",
+      "text": ""
+    },
+    {
+      "href": "https://lls.services/lagerlogostik-e-commerce/",
+      "text": ""
+    },
+    {
+      "href": "https://lls.services/retourenmanagement/",
+      "text": ""
+    },
+    {
+      "href": "https://lls.services/logistikdienstleister-in-nrw/",
+      "text": ""
+    },
+    {
+      "href": "https://lls.services/verpackung-konfektionierung/",
+      "text": ""
+    },
+    {
+      "href": "https://lls.services/facility-instandsetzung-maler-lackierer/",
+      "text": ""
+    },
+    {
+      "href": "https://lls.services/#",
+      "text": "Mehr Informationen"
+    },
+    {
+      "href": "https://lls.services/#",
+      "text": "Inhalt entsperren"
+    },
+    {
+      "href": "https://lls.services/#",
+      "text": "Erforderlichen Service akzeptieren und Inhalte entsperren"
+    },
+    {
+      "href": "https://lls.services/#",
+      "text": "Mehr Informationen"
+    },
+    {
+      "href": "https://lls.services/#",
+      "text": "Inhalt entsperren"
+    },
+    {
+      "href": "https://lls.services/#",
+      "text": "Erforderlichen Service akzeptieren und Inhalte entsperren"
+    },
+    {
+      "href": "https://online2.superoffice.com/Cust31133/CS/scripts/customer.fcgi?action=formFrame&formId=F-MCTD0eL0",
+      "text": "Termin vereinbaren"
+    },
+    {
+      "href": "https://lls.services/#",
+      "text": "Mehr Informationen"
+    },
+    {
+      "href": "https://lls.services/#",
+      "text": "Inhalt entsperren"
+    },
+    {
+      "href": "https://lls.services/#",
+      "text": "Erforderlichen Service akzeptieren und Inhalte entsperren"
+    },
+    {
+      "href": "https://lls.services/#",
+      "text": "Mehr Informationen"
+    },
+    {
+      "href": "https://lls.services/#",
+      "text": "Inhalt entsperren"
+    },
+    {
+      "href": "https://lls.services/#",
+      "text": "Erforderlichen Service akzeptieren und Inhalte entsperren"
+    },
+    {
+      "href": "tel:+4920439210730",
+      "text": "02043 9210730"
+    },
+    {
+      "href": "mailto:info@lls.services",
+      "text": "info@lls.services"
+    },
+    {
+      "href": "tel:+491726128349",
+      "text": "0172-6128349"
+    },
+    {
+      "href": "https://lls.services/",
+      "text": "Home"
+    },
+    {
+      "href": "https://lls.services/fulfillment-dienstleister-nrw/",
+      "text": "Fulfillment"
+    },
+    {
+      "href": "https://lls.services/logistikdienstleister-in-nrw/",
+      "text": "Logistikdienstleister"
+    },
+    {
+      "href": "https://lls.services/lagerlogostik-e-commerce/",
+      "text": "Lagerlogostik E-Commerce"
+    },
+    {
+      "href": "https://lls.services/kommissionierung-und-versand/",
+      "text": "Kommissionierung & Versand"
+    },
+    {
+      "href": "https://lls.services/retourenmanagement/",
+      "text": "Retourenmanagement"
+    },
+    {
+      "href": "https://lls.services/facility-instandsetzung-maler-lackierer/",
+      "text": "Facility-Service"
+    },
+    {
+      "href": "https://lls.services/industrie/",
+      "text": "Industrie-Services"
+    },
+    {
+      "href": "https://lls.services/ueber-uns/",
+      "text": "Über uns"
+    },
+    {
+      "href": "https://jobmarkt-nrw.de/organization/lls-service-gmbh",
+      "text": "Karriere"
+    },
+    {
+      "href": "https://online2.superoffice.com/Cust31133/CS/scripts/customer.fcgi?action=formFrame&formId=F-MCTD0eL0",
+      "text": "Kontakt"
+    },
+    {
+      "href": "https://www.youtube.com/@LLSSERVICE",
+      "text": ""
+    },
+    {
+      "href": "https://www.linkedin.com/company/lls-service-gmbh/",
+      "text": ""
+    },
+    {
+      "href": "https://lls.services/impressum/",
+      "text": "Impressum"
+    },
+    {
+      "href": "https://lls.services/datenschutz/",
+      "text": "Datenschutz"
+    },
+    {
+      "href": "https://lls-services.hinweis.digital/",
+      "text": "Hinweisgebermeldekanal"
+    },
+    {
+      "href": "https://lls.services/#",
+      "text": ""
+    },
+    {
+      "href": "https://lls.services/datenschutz/",
+      "text": "Datenschutzerklärung"
+    },
+    {
+      "href": "https://lls.services/#",
+      "text": "Einstellungen"
+    },
+    {
+      "href": "https://lls.services/datenschutz/",
+      "text": "Datenschutzerklärung"
+    },
+    {
+      "href": "https://lls.services/impressum/",
+      "text": "Impressum"
+    },
+    {
+      "href": "https://borlabs.io/borlabs-cookie/",
+      "text": "Borlabs Cookie"
+    }
+  ],
+  "meta": [
+    {
+      "content": "max-image-preview:large",
+      "name": "robots",
+      "property": null
+    },
+    {
+      "content": "width=device-width, initial-scale=1",
+      "name": "viewport",
+      "property": null
+    },
+    {
+      "content": "SKYPE_TOOLBAR_PARSER_COMPATIBLE",
+      "name": "SKYPE_TOOLBAR",
+      "property": null
+    },
+    {
+      "content": "#f2f4f7",
+      "name": "theme-color",
+      "property": null
+    },
+    {
+      "content": "Fulfilment Lagerlogistik - LLS Services GmbH",
+      "name": null,
+      "property": "og:title"
+    },
+    {
+      "content": "https://lls.services",
+      "name": null,
+      "property": "og:url"
+    },
+    {
+      "content": "de_DE",
+      "name": null,
+      "property": "og:locale"
+    },
+    {
+      "content": "Fulfillment & Lagerlogistik in NRW – LLS-Service GmbH",
+      "name": null,
+      "property": "og:site_name"
+    },
+    {
+      "content": "website",
+      "name": null,
+      "property": "og:type"
+    },
+    {
+      "content": "https://lls.services/wp-content/uploads/2025/08/LLS-SERVICE-GMBH-LLF-GREEN-FW-1080p-1024x236.png",
+      "name": null,
+      "property": "og:image"
+    },
+    {
+      "content": "WordPress 7.0",
+      "name": "generator",
+      "property": null
+    },
+    {
+      "content": "Powered by WPBakery Page Builder - drag and drop page builder for WordPress.",
+      "name": "generator",
+      "property": null
+    },
+    {
+      "content": "https://lls.services/wp-content/uploads/2025/08/LLS-SERVICE-GMBH-GREEN-FW-1-1-1000px-300x300.png",
+      "name": "msapplication-TileImage",
+      "property": null
+    }
+  ],
+  "navText": [
+    "Home",
+    "Leistungen",
+    "Fulfillment",
+    "Lagerlogostik E-Commerce",
+    "Kommissionierung und Versand",
+    "Retourenmanagement",
+    "Logistikdienstleister",
+    "Verpackung & Konfektionierung",
+    "Facility-Services",
+    "Industrie-Services",
+    "Über uns",
+    "Karriere",
+    "Kontakt",
+    "Firmengruppe",
+    "LLS Industrieservice GmbH",
+    "Home",
+    "Fulfillment",
+    "Logistikdienstleister",
+    "Lagerlogostik E-Commerce",
+    "Kommissionierung & Versand",
+    "Retourenmanagement",
+    "Facility-Service",
+    "Industrie-Services",
+    "Über uns",
+    "Karriere",
+    "Kontakt"
+  ],
+  "scrollHeight": 9512,
+  "title": "Fulfilment Lagerlogistik – LLS Services GmbH",
+  "url": "https://lls.services/",
+  "viewport": {
+    "h": 720,
+    "w": 1280
+  }
+}
