@@ -25,6 +25,14 @@ type SignatureExample = {
   logo: ExampleLogoType;
   layout: ExampleLayoutType;
   accent?: boolean;
+  logoOrientation?: "horizontal" | "vertical";
+};
+
+type SignatureLogoSet = {
+  horizontal: string;
+  horizontalDark: string;
+  vertical: string;
+  verticalDark: string;
 };
 
 const defaultSignature: SignatureForm = {
@@ -40,20 +48,30 @@ const defaultSignature: SignatureForm = {
 };
 
 const signatureExamples: SignatureExample[] = [
-  { title: "01 Reference Full Lockup", note: "Closest to the requested visual direction.", logo: "image", layout: "reference", accent: true },
-  { title: "02 Dark Reference Lockup", note: "Black premium version with white and gold contrast.", logo: "image", layout: "referenceDark", accent: true },
-  { title: "03 Split Dark Logo Panel", note: "Dark brand block with light content area.", logo: "image", layout: "referenceSplit", accent: true },
-  { title: "04 Classic Text Logo", note: "Current clean Outlook-safe direction.", logo: "stacked", layout: "classic" },
-  { title: "05 Wordmark Inline", note: "More modern and lighter logo treatment.", logo: "wordmark", layout: "classic" },
-  { title: "06 Brand Mark", note: "Icon-led version with compact identity.", logo: "mark", layout: "classic" },
-  { title: "07 Full Logo", note: "Uses the full brand logo asset.", logo: "image", layout: "classic" },
-  { title: "08 No Logo", note: "Pure text signature for strict email clients.", logo: "none", layout: "classic" },
-  { title: "09 Compact Wordmark", note: "Reduced height for frequent replies.", logo: "wordmark", layout: "compact" },
-  { title: "10 Stacked Contact", note: "Phone and email one under another.", logo: "stacked", layout: "stacked" },
-  { title: "11 Initial Mark", note: "Very minimal brand cue.", logo: "initials", layout: "compact" },
-  { title: "12 Top Wordmark", note: "Logo above details for narrow layouts.", logo: "wordmark", layout: "top" },
-  { title: "13 Accent Line", note: "Premium version with gold divider.", logo: "mark", layout: "classic", accent: true },
+  { title: "01 Horizontal Reference", note: "Light layout with horizontal logo.", logo: "image", layout: "reference", accent: true, logoOrientation: "horizontal" },
+  { title: "02 Vertical Reference", note: "Light layout with vertical logo.", logo: "image", layout: "reference", accent: true, logoOrientation: "vertical" },
+  { title: "03 Horizontal Dark", note: "Dark premium version with horizontal logo.", logo: "image", layout: "referenceDark", accent: true, logoOrientation: "horizontal" },
+  { title: "04 Vertical Dark", note: "Dark premium version with vertical logo.", logo: "image", layout: "referenceDark", accent: true, logoOrientation: "vertical" },
+  { title: "05 Horizontal Split Panel", note: "Dark brand panel with horizontal logo.", logo: "image", layout: "referenceSplit", accent: true, logoOrientation: "horizontal" },
+  { title: "06 Vertical Split Panel", note: "Dark brand panel with vertical logo.", logo: "image", layout: "referenceSplit", accent: true, logoOrientation: "vertical" },
+  { title: "07 Classic Text Logo", note: "Current clean Outlook-safe direction.", logo: "stacked", layout: "classic" },
+  { title: "08 Wordmark Inline", note: "More modern and lighter logo treatment.", logo: "wordmark", layout: "classic" },
+  { title: "09 Brand Mark", note: "Icon-led version with compact identity.", logo: "mark", layout: "classic" },
+  { title: "10 Full Logo", note: "Uses the full brand logo asset.", logo: "image", layout: "classic" },
+  { title: "11 No Logo", note: "Pure text signature for strict email clients.", logo: "none", layout: "classic" },
+  { title: "12 Compact Wordmark", note: "Reduced height for frequent replies.", logo: "wordmark", layout: "compact" },
+  { title: "13 Stacked Contact", note: "Phone and email one under another.", logo: "stacked", layout: "stacked" },
+  { title: "14 Initial Mark", note: "Very minimal brand cue.", logo: "initials", layout: "compact" },
+  { title: "15 Top Wordmark", note: "Logo above details for narrow layouts.", logo: "wordmark", layout: "top" },
+  { title: "16 Accent Line", note: "Premium version with gold divider.", logo: "mark", layout: "classic", accent: true },
 ];
+
+const fallbackSignatureLogos: SignatureLogoSet = {
+  horizontal: "/brand/bind-signature-logo-horizontal-dark.png",
+  horizontalDark: "/brand/bind-signature-logo-horizontal.png",
+  vertical: "/brand/bind-signature-logo-vertical-dark.png",
+  verticalDark: "/brand/bind-signature-logo-vertical.png",
+};
 
 function escapeHtml(value: string) {
   return value
@@ -151,11 +169,11 @@ function buildSignatureHtml(form: SignatureForm, logoImageUrl: string) {
 </table>`;
 }
 
-function buildExampleLogo(logo: ExampleLogoType, logoImageUrl: string) {
+function buildExampleLogo(logo: ExampleLogoType, logos: SignatureLogoSet) {
   if (logo === "none") return "";
 
   if (logo === "image") {
-    return `<img src="${escapeHtml(logoImageUrl)}" width="118" alt="BIND Immobilien" style="display:block;width:118px;height:auto;border:0;outline:none;text-decoration:none;">`;
+    return `<img src="${escapeHtml(logos.horizontal)}" width="113" alt="BIND Immobilien" style="display:block;width:113px;height:auto;border:0;outline:none;text-decoration:none;">`;
   }
 
   if (logo === "mark") {
@@ -184,19 +202,25 @@ function buildExampleLogo(logo: ExampleLogoType, logoImageUrl: string) {
   </div>`;
 }
 
-function buildReferenceLogo(imageUrl: string) {
-  return `<img src="${escapeHtml(imageUrl)}" width="162" alt="BIND Immobilien" style="display:block;width:162px;height:auto;border:0;outline:none;text-decoration:none;">`;
+function logoImageForExample(logos: SignatureLogoSet, example: SignatureExample, dark = false) {
+  const orientation = example.logoOrientation ?? "horizontal";
+
+  if (orientation === "vertical") {
+    return dark ? logos.verticalDark : logos.vertical;
+  }
+
+  return dark ? logos.horizontalDark : logos.horizontal;
 }
 
-function buildDarkReferenceLogo(imageUrl: string) {
-  return `<img src="${escapeHtml(imageUrl)}" width="162" alt="BIND Immobilien" style="display:block;width:162px;height:auto;border:0;outline:none;text-decoration:none;">`;
+function logoWidthForExample(example: SignatureExample) {
+  return example.logoOrientation === "vertical" ? 150 : 96;
 }
 
-function buildCompactDarkReferenceLogo(imageUrl: string) {
-  return `<img src="${escapeHtml(imageUrl)}" width="128" alt="BIND Immobilien" style="display:block;width:128px;height:auto;border:0;outline:none;text-decoration:none;">`;
+function buildReferenceImage(imageUrl: string, width: number) {
+  return `<img src="${escapeHtml(imageUrl)}" width="${width}" alt="BIND Immobilien" style="display:block;width:${width}px;height:auto;border:0;outline:none;text-decoration:none;">`;
 }
 
-function buildSignatureExampleHtml(form: SignatureForm, logoImageUrl: string, darkLogoImageUrl: string, example: SignatureExample) {
+function buildSignatureExampleHtml(form: SignatureForm, logos: SignatureLogoSet, example: SignatureExample) {
   const name = escapeHtml(form.name);
   const role = escapeHtml(form.role);
   const address = escapeHtml(form.address);
@@ -212,16 +236,18 @@ function buildSignatureExampleHtml(form: SignatureForm, logoImageUrl: string, da
   ].filter(Boolean);
   const contactHtml = contactParts.join(example.layout === "stacked" ? "<br>" : "&nbsp;&nbsp;|&nbsp;&nbsp;");
   const legal = `Sitz der Gesellschaft: 47798 Krefeld<br>Handelsregister: Amtsgericht Köln HRB 118677<br>USt-IdNr. DE 359540228`;
-  const logoHtml = buildExampleLogo(example.logo, logoImageUrl);
+  const logoHtml = buildExampleLogo(example.logo, logos);
   const divider = example.accent ? "#c8a05a" : "#d9d9d9";
   const contentSize = example.layout === "compact" ? { name: 16, role: 9, body: 11, legal: 10 } : { name: 18, role: 10, body: 12, legal: 11 };
 
   if (example.layout === "reference") {
     const web = website || "www.bindimmobilien.de";
+    const logoWidth = logoWidthForExample(example);
+    const logoCellWidth = example.logoOrientation === "vertical" ? 180 : 112;
     return `<table cellpadding="0" cellspacing="0" border="0" style="font-family:Arial,Helvetica,sans-serif;border-collapse:collapse;margin:0;padding:0;">
       <tr>
-        <td width="162" style="width:162px;min-width:162px;max-width:162px;padding:0 18px 0 0;vertical-align:middle;">
-          ${buildReferenceLogo(logoImageUrl)}
+        <td width="${logoCellWidth}" style="width:${logoCellWidth}px;min-width:${logoCellWidth}px;max-width:${logoCellWidth}px;padding:0 18px 0 0;vertical-align:middle;">
+          ${buildReferenceImage(logoImageForExample(logos, example), logoWidth)}
         </td>
         <td width="2" style="width:2px;min-width:2px;background:${divider};font-size:0;line-height:0;">&nbsp;</td>
         <td style="padding:0 0 0 22px;vertical-align:middle;">
@@ -246,10 +272,13 @@ function buildSignatureExampleHtml(form: SignatureForm, logoImageUrl: string, da
 
   if (example.layout === "referenceDark") {
     const web = website || "www.bindimmobilien.de";
-    return `<table cellpadding="0" cellspacing="0" border="0" style="font-family:Arial,Helvetica,sans-serif;border-collapse:collapse;margin:0;padding:18px;background:#050505;background-color:#050505;">
+    const logoWidth = logoWidthForExample(example);
+    const logoCellWidth = example.logoOrientation === "vertical" ? 180 : 112;
+    const panelPadding = example.logoOrientation === "vertical" ? 18 : 10;
+    return `<table cellpadding="0" cellspacing="0" border="0" style="font-family:Arial,Helvetica,sans-serif;border-collapse:collapse;margin:0;padding:${panelPadding}px;background:#050505;background-color:#050505;">
       <tr>
-        <td width="162" style="width:162px;min-width:162px;max-width:162px;padding:0 18px 0 0;vertical-align:middle;">
-          ${buildDarkReferenceLogo(darkLogoImageUrl)}
+        <td width="${logoCellWidth}" style="width:${logoCellWidth}px;min-width:${logoCellWidth}px;max-width:${logoCellWidth}px;padding:0 18px 0 0;vertical-align:middle;">
+          ${buildReferenceImage(logoImageForExample(logos, example, true), logoWidth)}
         </td>
         <td width="2" style="width:2px;min-width:2px;background:${divider};font-size:0;line-height:0;">&nbsp;</td>
         <td style="padding:0 0 0 22px;vertical-align:middle;">
@@ -274,10 +303,12 @@ function buildSignatureExampleHtml(form: SignatureForm, logoImageUrl: string, da
 
   if (example.layout === "referenceSplit") {
     const web = website || "www.bindimmobilien.de";
+    const logoWidth = example.logoOrientation === "vertical" ? 150 : 96;
+    const logoCellWidth = example.logoOrientation === "vertical" ? 180 : 112;
     return `<table cellpadding="0" cellspacing="0" border="0" style="font-family:Arial,Helvetica,sans-serif;border-collapse:collapse;margin:0;padding:0;background:#ffffff;background-color:#ffffff;">
       <tr>
-        <td width="156" style="width:156px;min-width:156px;max-width:156px;padding:14px;background:#050505;background-color:#050505;vertical-align:middle;">
-          ${buildCompactDarkReferenceLogo(darkLogoImageUrl)}
+        <td width="${logoCellWidth}" style="width:${logoCellWidth}px;min-width:${logoCellWidth}px;max-width:${logoCellWidth}px;padding:14px;background:#050505;background-color:#050505;vertical-align:middle;">
+          ${buildReferenceImage(logoImageForExample(logos, example, true), logoWidth)}
         </td>
         <td width="2" style="width:2px;min-width:2px;background:${divider};font-size:0;line-height:0;">&nbsp;</td>
         <td style="padding:18px 18px 18px 22px;background:#ffffff;background-color:#ffffff;vertical-align:middle;">
@@ -370,27 +401,26 @@ export default function BrandIdentity() {
   const [selectedSignatureIndex, setSelectedSignatureIndex] = useState<number | null>(null);
   const [form, setForm] = useState<SignatureForm>(defaultSignature);
   const [copied, setCopied] = useState<"html" | "rich" | null>(null);
-  const [signatureLogoDataUrl, setSignatureLogoDataUrl] = useState("");
-  const [darkSignatureLogoDataUrl, setDarkSignatureLogoDataUrl] = useState("");
+  const [signatureLogos, setSignatureLogos] = useState<SignatureLogoSet>(fallbackSignatureLogos);
   const previewRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     let cancelled = false;
 
     Promise.all([
-      assetToDataUrl("/brand/bind-signature-logo.png"),
-      assetToDataUrl("/brand/bind-signature-logo-dark.png"),
+      assetToDataUrl(fallbackSignatureLogos.horizontal),
+      assetToDataUrl(fallbackSignatureLogos.horizontalDark),
+      assetToDataUrl(fallbackSignatureLogos.vertical),
+      assetToDataUrl(fallbackSignatureLogos.verticalDark),
     ])
-      .then(([lightLogo, darkLogo]) => {
+      .then(([horizontal, horizontalDark, vertical, verticalDark]) => {
         if (!cancelled) {
-          setSignatureLogoDataUrl(lightLogo);
-          setDarkSignatureLogoDataUrl(darkLogo);
+          setSignatureLogos({ horizontal, horizontalDark, vertical, verticalDark });
         }
       })
       .catch(() => {
         if (!cancelled) {
-          setSignatureLogoDataUrl("");
-          setDarkSignatureLogoDataUrl("");
+          setSignatureLogos(fallbackSignatureLogos);
         }
       });
 
@@ -399,23 +429,13 @@ export default function BrandIdentity() {
     };
   }, []);
 
-  const fallbackLogoImageUrl =
-    typeof window === "undefined"
-      ? "/brand/bind-signature-logo.png"
-      : `${window.location.origin}/brand/bind-signature-logo.png`;
-  const fallbackDarkLogoImageUrl =
-    typeof window === "undefined"
-      ? "/brand/bind-signature-logo-dark.png"
-      : `${window.location.origin}/brand/bind-signature-logo-dark.png`;
-  const logoImageUrl = signatureLogoDataUrl || fallbackLogoImageUrl;
-  const darkLogoImageUrl = darkSignatureLogoDataUrl || fallbackDarkLogoImageUrl;
   const exportLogo = exportLogoType === "full"
     ? { href: "/brand/bind-logo-header.svg", filename: "bind-immobilien-full-logo.svg", label: "Full logo" }
     : { href: "/brand/bind-logo-icon.svg", filename: "bind-immobilien-icon.svg", label: "Icon only" };
-  const signatureHtml = useMemo(() => buildSignatureHtml(form, logoImageUrl), [form, logoImageUrl]);
+  const signatureHtml = useMemo(() => buildSignatureHtml(form, signatureLogos.horizontal), [form, signatureLogos]);
   const exampleHtml = useMemo(
-    () => signatureExamples.map((example) => buildSignatureExampleHtml(form, logoImageUrl, darkLogoImageUrl, example)),
-    [form, logoImageUrl, darkLogoImageUrl],
+    () => signatureExamples.map((example) => buildSignatureExampleHtml(form, signatureLogos, example)),
+    [form, signatureLogos],
   );
   const activeSignatureHtml = selectedSignatureIndex === null
     ? signatureHtml
@@ -617,7 +637,7 @@ export default function BrandIdentity() {
               cursor: "pointer",
             }}
           >
-            View 13 Signature Examples
+            View {signatureExamples.length} Signature Examples
           </button>
 
           <div style={{ display: "grid", gap: "14px", marginTop: "26px" }}>
@@ -800,7 +820,7 @@ export default function BrandIdentity() {
                   Signature Design Directions
                 </p>
                 <h2 style={{ margin: "8px 0 0", fontFamily: "Playfair Display, Georgia, serif", fontSize: "32px", lineHeight: 1.05 }}>
-                  13 logo and layout examples
+                  {signatureExamples.length} logo and layout examples
                 </h2>
               </div>
               <button
@@ -824,12 +844,12 @@ export default function BrandIdentity() {
               {signatureExamples.map((example, index) => (
                 <article
                   key={example.title}
-                  style={{
-                    background: "#fff",
-                    border: selectedSignatureIndex === index ? "2px solid #c8a05a" : "1px solid #ded6ca",
-                    padding: "18px",
-                    display: "grid",
-                    gap: "14px",
+	                  style={{
+	                    background: "#fff",
+	                    border: 0,
+	                    padding: "18px",
+	                    display: "grid",
+	                    gap: "14px",
                     minWidth: 0,
                   }}
                 >
@@ -841,12 +861,12 @@ export default function BrandIdentity() {
                       {example.note}
                     </p>
                   </div>
-                  <div
-                    style={{
-                      border: "1px solid #eee5d8",
-                      background: index % 2 === 0 ? "#ffffff" : "#f7f4ed",
-                      padding: "18px",
-                      overflowX: "auto",
+	                  <div
+	                    style={{
+	                      border: 0,
+	                      background: index % 2 === 0 ? "#ffffff" : "#f7f4ed",
+	                      padding: "18px",
+	                      overflowX: "auto",
                     }}
                     dangerouslySetInnerHTML={{ __html: exampleHtml[index] }}
                   />
