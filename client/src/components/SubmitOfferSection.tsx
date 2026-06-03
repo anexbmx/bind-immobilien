@@ -24,7 +24,7 @@ export default function SubmitOfferSection() {
       <style>{`@media(max-width:768px){.steps-grid{grid-template-columns:repeat(2,1fr)!important;}.docs-grid{grid-template-columns:1fr!important;}}`}</style>
 
       {/* Banner */}
-      <div style={{ position: 'relative', overflow: 'hidden', minHeight: '420px', display: 'flex', alignItems: 'center' }}>
+      <div style={{ position: 'relative', overflow: 'hidden', minHeight: '420px' }}>
         <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663556990306/i8Gj75QVv5anJNJu4VYAkn/duesseldorf_hero-hL9a8GLKi27MNSSuz7fthf.webp" alt="Düsseldorf" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', filter: 'brightness(0.35)' }} />
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, rgba(17,17,17,0.85) 0%, rgba(17,17,17,0.4) 100%)' }} />
         <div className="container" style={{ position: 'relative', zIndex: 1, paddingTop: '5rem', paddingBottom: '5rem', opacity: inView ? 1 : 0, transform: inView ? 'none' : 'translateY(20px)', transition: 'opacity 0.9s ease, transform 0.9s ease' }}>
@@ -42,22 +42,19 @@ export default function SubmitOfferSection() {
             onMouseLeave={e => { e.currentTarget.style.backgroundColor = '#B8962E'; }}>
             {t.submit.ctaBtn} <ArrowRight size={14} />
           </button>
-        </div>
-      </div>
 
-      {/* Steps */}
-      <div className="section" style={{ backgroundColor: '#F8F7F4' }}>
-        <div className="container">
-          <h3 style={{ fontFamily: 'Playfair Display, Georgia, serif', fontSize: 'clamp(1.6rem, 2.5vw, 2.4rem)', fontWeight: 600, color: '#111111', marginBottom: '3.5rem', letterSpacing: '-0.02em' }}>{t.submit.processTitle}</h3>
-          <div className="steps-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '2rem' }}>
-            {t.submit.steps.map((s, i) => (
-              <div key={i} style={{ opacity: inView ? 1 : 0, transform: inView ? 'none' : 'translateY(16px)', transition: `opacity 0.7s ease ${0.2 + i * 0.12}s, transform 0.7s ease ${0.2 + i * 0.12}s` }}>
-                <div style={{ fontFamily: 'Playfair Display, Georgia, serif', fontSize: '3rem', fontWeight: 600, color: 'rgba(184,150,46,0.15)', lineHeight: 1, marginBottom: '0.75rem' }}>0{i + 1}</div>
-                <div style={{ width: '24px', height: '2px', backgroundColor: '#B8962E', marginBottom: '1rem' }} />
-                <h4 style={{ fontFamily: 'DM Sans, sans-serif', fontSize: '15px', fontWeight: 600, color: '#111111', marginBottom: '0.5rem' }}>{s.title}</h4>
-                <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: '13px', fontWeight: 300, color: '#6B6B6B', lineHeight: 1.7 }}>{s.desc}</p>
-              </div>
-            ))}
+          <div style={{ marginTop: '5rem', paddingTop: '3rem', borderTop: '1px solid rgba(255,255,255,0.18)' }}>
+            <h3 style={{ fontFamily: 'Playfair Display, Georgia, serif', fontSize: 'clamp(1.6rem, 2.5vw, 2.4rem)', fontWeight: 600, color: '#FFFFFF', marginBottom: '3rem', letterSpacing: '-0.02em' }}>{t.submit.processTitle}</h3>
+            <div className="steps-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '2rem' }}>
+              {t.submit.steps.map((s, i) => (
+                <div key={i} style={{ opacity: inView ? 1 : 0, transform: inView ? 'none' : 'translateY(16px)', transition: `opacity 0.7s ease ${0.2 + i * 0.12}s, transform 0.7s ease ${0.2 + i * 0.12}s` }}>
+                  <div style={{ fontFamily: 'Playfair Display, Georgia, serif', fontSize: '3rem', fontWeight: 600, color: 'rgba(184,150,46,0.38)', lineHeight: 1, marginBottom: '0.75rem' }}>0{i + 1}</div>
+                  <div style={{ width: '24px', height: '2px', backgroundColor: '#B8962E', marginBottom: '1rem' }} />
+                  <h4 style={{ fontFamily: 'DM Sans, sans-serif', fontSize: '15px', fontWeight: 600, color: '#FFFFFF', marginBottom: '0.5rem' }}>{s.title}</h4>
+                  <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: '13px', fontWeight: 300, color: 'rgba(255,255,255,0.68)', lineHeight: 1.7 }}>{s.desc}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>

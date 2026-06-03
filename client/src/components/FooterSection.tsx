@@ -3,7 +3,7 @@
 import { useLocation } from "wouter";
 import { useLang } from "@/contexts/LanguageContext";
 
-const LOGO_SRC = "/brand/bind-logo-header.svg";
+const LOGO_SRC = "/brand/bind-signature-logo-dark.svg";
 
 export default function FooterSection() {
   const { t, lang, setLang } = useLang();
@@ -56,7 +56,7 @@ export default function FooterSection() {
             `}</style>
 
             <div className="footer-brand">
-              <div style={{ display: 'inline-flex', backgroundColor: '#F8F7F4', padding: '10px 14px', marginBottom: '1.5rem' }}>
+              <div style={{ display: 'inline-flex', marginBottom: '1.5rem' }}>
                 <img src={LOGO_SRC} alt="BIND Immobilien GmbH" style={{ height: '58px', width: 'auto', maxWidth: '260px', objectFit: 'contain' }} />
               </div>
               <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: '14px', fontWeight: 300, color: 'rgba(255,255,255,0.5)', lineHeight: 1.75, maxWidth: '320px' }}>{t.footer.desc}</p>

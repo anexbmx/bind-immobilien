@@ -63,7 +63,7 @@ export const translations = {
         {
           title: 'Hotels',
           sub: 'Hospitality Investments',
-          desc: 'Durch die Nähe zur BIND Hotelgesellschaft mbH verfügen wir über operatives Branchenverständnis und prüfen bestehende Hotelimmobilien mit tragfähigem Betreiberkonzept.',
+          desc: 'Mit der BIND Hotelgesellschaft mbH verfügen wir über operatives Branchenverständnis und prüfen bestehende Hotelimmobilien mit tragfähigem Betreiberkonzept.',
           tags: ['3–5 Sterne', 'Stadthotels', 'Betreiberverträge möglich'],
         },
         {
