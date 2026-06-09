@@ -72,8 +72,8 @@ export default function Impressum() {
           <LegalSection title="Kontakt">
             <div style={rowStyle}>
               <span style={labelStyle}>E-Mail</span>
-              <a href="mailto:info@bindimmobilien.de" style={{ ...valueStyle, color: "#111111", textDecoration: "underline", textUnderlineOffset: "3px" }}>
-                info@bindimmobilien.de
+              <a href="mailto:info@bind-immobilien.de" style={{ ...valueStyle, color: "#111111", textDecoration: "underline", textUnderlineOffset: "3px" }}>
+                info@bind-immobilien.de
               </a>
             </div>
           </LegalSection>
@@ -94,14 +94,14 @@ export default function Impressum() {
           </LegalSection>
 
           <LegalSection title="Umsatzsteuer-ID">
-            <p style={{ ...valueStyle, color: "#6B6B6B" }}>
-              Eine Umsatzsteuer-Identifikationsnummer gemäß § 27a Umsatzsteuergesetz wird nach Zuteilung ergänzt.
+            <p style={valueStyle}>
+              DE 359540228
             </p>
           </LegalSection>
 
           <LegalSection title="Verantwortlich für redaktionelle Inhalte">
             <div style={valueStyle}>
-              <p>BIND Immobilien GmbH</p>
+              <p style={{ fontWeight: 600 }}>BIND Immobilien GmbH</p>
               <p>Duygu Saltik</p>
               <p>Ostwall 9-11</p>
               <p>47798 Krefeld</p>

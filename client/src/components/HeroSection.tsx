@@ -21,11 +21,34 @@ export default function HeroSection() {
   return (
     <section style={{ minHeight: '100vh', backgroundColor: '#F8F7F4', position: 'relative', overflow: 'hidden' }}>
       <style>{`
-        #hero-grid { display: grid; grid-template-columns: 1fr 1fr; min-height: 100vh; }
+        #hero-grid { display: grid; grid-template-columns: 1fr 1fr; min-height: 100vh; min-width: 0; width: 100%; max-width: 1900px; margin: 0 auto; }
+        #hero-text { min-width: 0; }
+        #hero-headline {
+          font-size: 5.5rem;
+          line-height: 1;
+          letter-spacing: 0;
+          max-width: 100%;
+        }
+        @media (max-width: 1200px) {
+          #hero-text { padding-left: 3rem !important; padding-right: 3rem !important; }
+          #hero-headline { font-size: 4.4rem; }
+        }
         @media (max-width: 900px) {
-          #hero-grid { grid-template-columns: 1fr !important; }
-          #hero-img { min-height: 50vh; order: -1; }
-          #hero-text { padding-top: 7rem !important; padding-bottom: 4rem !important; }
+          #hero-grid { grid-template-columns: 1fr !important; min-height: auto; }
+          #hero-img { order: 2; min-height: 320px; height: 40vh; max-height: 420px; }
+          #hero-text {
+            justify-content: flex-start !important;
+            padding: 8.5rem 2rem 3.5rem !important;
+          }
+          #hero-headline { font-size: 4rem; }
+        }
+        @media (max-width: 600px) {
+          #hero-text { padding: 8rem 1.5rem 3rem !important; }
+          #hero-headline { font-size: 3rem; }
+        }
+        @media (max-width: 420px) {
+          #hero-text { padding-left: 1.25rem !important; padding-right: 1.25rem !important; }
+          #hero-headline { font-size: 2.6rem; }
         }
       `}</style>
 
@@ -41,7 +64,7 @@ export default function HeroSection() {
           </div>
 
           {/* Headline */}
-          <h1 style={{ fontFamily: 'Playfair Display, Georgia, serif', fontSize: 'clamp(3rem, 5.5vw, 5.5rem)', fontWeight: 600, color: '#111111', lineHeight: 1.0, letterSpacing: '-0.03em', marginBottom: '1.5rem', opacity: visible ? 1 : 0, transform: visible ? 'none' : 'translateY(20px)', transition: 'opacity 0.8s ease 0.25s, transform 0.8s ease 0.25s' }}>
+          <h1 id="hero-headline" style={{ fontFamily: 'Playfair Display, Georgia, serif', fontWeight: 600, color: '#111111', marginBottom: '1.5rem', opacity: visible ? 1 : 0, transform: visible ? 'none' : 'translateY(20px)', transition: 'opacity 0.8s ease 0.25s, transform 0.8s ease 0.25s' }}>
             {t.hero.headline1}<br />
             <em style={{ color: '#B8962E', fontStyle: 'italic', fontWeight: 400 }}>{t.hero.headline2}</em>{' '}
             {t.hero.headline3}

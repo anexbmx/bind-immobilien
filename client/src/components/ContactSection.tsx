@@ -41,7 +41,7 @@ export default function ContactSection() {
       ].join('\n'),
     );
 
-    window.location.href = `mailto:info@bindimmobilien.de?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:info@bind-immobilien.de?subject=${subject}&body=${body}`;
     setSending(false);
     toast.success(t.contact.successMsg);
   };
@@ -71,7 +71,7 @@ export default function ContactSection() {
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
               {[
-                { icon: Mail, label: t.contact.emailLabel, value: 'info@bindimmobilien.de' },
+                { icon: Mail, label: t.contact.emailLabel, value: 'info@bind-immobilien.de' },
                 { icon: Clock, label: t.contact.responseLabel, value: t.contact.responseVal },
                 { icon: MapPin, label: t.contact.focusLabel, value: t.contact.focusVal },
               ].map(({ icon: Icon, label, value }) => (

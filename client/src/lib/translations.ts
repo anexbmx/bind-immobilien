@@ -172,7 +172,7 @@ export const translations = {
       segments: ['Geschäftshäuser', 'Hotels', 'Hotelprojekte', 'Baugrundstücke'],
       desc: 'Privater Immobilieninvestor für Geschäftshäuser, Hotels, Hotelprojekte und Baugrundstücke. Schwerpunkt Köln, Düsseldorf und Rheinland; selektiv deutschlandweit.',
       impressum: 'Impressum',
-      datenschutz: 'Datenschutz',
+      datenschutz: 'Datenschutzerklärung',
     },
     // Impressum
     impressum: {

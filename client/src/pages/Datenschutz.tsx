@@ -59,7 +59,7 @@ export default function Datenschutz() {
               <p>47798 Krefeld</p>
               <p>Deutschland</p>
               <p style={{ marginTop: "0.75rem" }}>
-                E-Mail: <a href="mailto:info@bindimmobilien.de" style={{ color: "#111111", textDecoration: "underline", textUnderlineOffset: "3px" }}>info@bindimmobilien.de</a>
+                E-Mail: <a href="mailto:info@bind-immobilien.de" style={{ color: "#111111", textDecoration: "underline", textUnderlineOffset: "3px" }}>info@bind-immobilien.de</a>
               </p>
             </div>
           </LegalSection>

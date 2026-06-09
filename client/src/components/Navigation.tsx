@@ -1,7 +1,7 @@
 /* Navigation - Clean Authority Design + Language Switcher */
 
 import { useState, useEffect } from "react";
-import { Check, Menu, Settings, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useLocation } from "wouter";
 import { useLang } from "@/contexts/LanguageContext";
 import type { Lang } from "@/lib/translations";
@@ -13,16 +13,6 @@ const LANGS: { code: Lang; label: string }[] = [
 ];
 
 const LOGO_SRC = "/brand/bind-logo-header.svg";
-const LOGO_ICON_SRC = "/brand/bind-logo-icon.svg";
-type LogoMode = "full" | "icon";
-type SiteTheme = "classic" | "graphite" | "rhein" | "burgundy";
-
-const SITE_THEMES: { id: SiteTheme; label: string; swatch: string }[] = [
-  { id: "classic", label: "Classic", swatch: "#B8962E" },
-  { id: "graphite", label: "Graphite", swatch: "#8A8176" },
-  { id: "rhein", label: "Rhein", swatch: "#2F7D8C" },
-  { id: "burgundy", label: "Burgundy", swatch: "#8E3D45" },
-];
 
 export default function Navigation() {
   const { t, lang, setLang } = useLang();
@@ -30,16 +20,6 @@ export default function Navigation() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [langOpen, setLangOpen] = useState(false);
-  const [settingsOpen, setSettingsOpen] = useState(false);
-  const [logoMode, setLogoMode] = useState<LogoMode>(() => {
-    if (typeof window === "undefined") return "full";
-    return window.localStorage.getItem("bind-logo-mode") === "icon" ? "icon" : "full";
-  });
-  const [siteTheme, setSiteTheme] = useState<SiteTheme>(() => {
-    if (typeof window === "undefined") return "classic";
-    const stored = window.localStorage.getItem("bind-site-theme");
-    return SITE_THEMES.some(theme => theme.id === stored) ? (stored as SiteTheme) : "classic";
-  });
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -47,19 +27,9 @@ export default function Navigation() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  useEffect(() => {
-    window.localStorage.setItem("bind-logo-mode", logoMode);
-  }, [logoMode]);
-
-  useEffect(() => {
-    document.documentElement.dataset.siteTheme = siteTheme;
-    window.localStorage.setItem("bind-site-theme", siteTheme);
-  }, [siteTheme]);
-
   const scrollTo = (href: string) => {
     setMenuOpen(false);
     setLangOpen(false);
-    setSettingsOpen(false);
 
     if (href.startsWith("/")) {
       navigate(href);
@@ -78,7 +48,6 @@ export default function Navigation() {
   const goHome = () => {
     setMenuOpen(false);
     setLangOpen(false);
-    setSettingsOpen(false);
     if (location === "/") {
       window.scrollTo({ top: 0, behavior: "smooth" });
       return;
@@ -92,77 +61,6 @@ export default function Navigation() {
     { label: t.nav.offer, href: "#angebot" },
     { label: t.nav.contact, href: "#kontakt" },
   ];
-
-  const chooseLogoMode = (mode: LogoMode) => {
-    setLogoMode(mode);
-    setSettingsOpen(false);
-  };
-
-  const chooseSiteTheme = (theme: SiteTheme) => {
-    setSiteTheme(theme);
-    setSettingsOpen(false);
-  };
-
-  const settingsMenu = (
-    <div
-      className="settings-menu"
-      style={{
-        position: 'absolute', bottom: 'calc(100% + 8px)', right: 0,
-        backgroundColor: '#FFFFFF', border: '1px solid #E0DDD8',
-        boxShadow: '0 8px 24px rgba(0,0,0,0.08)',
-        minWidth: '190px', zIndex: 210,
-      }}
-    >
-      <div style={{ padding: '10px 12px 6px', fontFamily: 'DM Sans, sans-serif', fontSize: '10px', fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', color: '#999999' }}>
-        Logo
-      </div>
-      {[
-        { mode: 'full' as const, label: 'Full logo' },
-        { mode: 'icon' as const, label: 'House only' },
-      ].map(item => (
-        <button
-          key={item.mode}
-          onClick={() => chooseLogoMode(item.mode)}
-          style={{
-            display: 'flex', alignItems: 'center', gap: '8px',
-            width: '100%', padding: '10px 12px', background: 'none', border: 'none',
-            fontFamily: 'DM Sans, sans-serif', fontSize: '13px',
-            fontWeight: logoMode === item.mode ? 600 : 400,
-            color: logoMode === item.mode ? '#B8962E' : '#111111',
-            cursor: 'pointer', borderBottom: '1px solid #F0EDE8', textAlign: 'left',
-          }}
-          onMouseEnter={e => { e.currentTarget.style.backgroundColor = '#F8F7F4'; }}
-          onMouseLeave={e => { e.currentTarget.style.backgroundColor = 'transparent'; }}
-        >
-          <span>{item.label}</span>
-          {logoMode === item.mode && <Check size={13} style={{ marginLeft: 'auto' }} />}
-        </button>
-      ))}
-      <div style={{ padding: '12px 12px 6px', fontFamily: 'DM Sans, sans-serif', fontSize: '10px', fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', color: '#999999' }}>
-        Website theme
-      </div>
-      {SITE_THEMES.map(item => (
-        <button
-          key={item.id}
-          onClick={() => chooseSiteTheme(item.id)}
-          style={{
-            display: 'flex', alignItems: 'center', gap: '9px',
-            width: '100%', padding: '10px 12px', background: 'none', border: 'none',
-            fontFamily: 'DM Sans, sans-serif', fontSize: '13px',
-            fontWeight: siteTheme === item.id ? 600 : 400,
-            color: siteTheme === item.id ? '#B8962E' : '#111111',
-            cursor: 'pointer', borderTop: '1px solid #F0EDE8', textAlign: 'left',
-          }}
-          onMouseEnter={e => { e.currentTarget.style.backgroundColor = '#F8F7F4'; }}
-          onMouseLeave={e => { e.currentTarget.style.backgroundColor = 'transparent'; }}
-        >
-          <span style={{ width: 12, height: 12, backgroundColor: item.swatch, border: '1px solid rgba(0,0,0,0.12)' }} />
-          <span>{item.label}</span>
-          {siteTheme === item.id && <Check size={13} style={{ marginLeft: 'auto' }} />}
-        </button>
-      ))}
-    </div>
-  );
 
   return (
     <>
@@ -179,9 +77,9 @@ export default function Navigation() {
         transition: 'background-color 0.4s ease, border-color 0.4s ease',
       }}
     >
-      <div className="nav-container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2.5rem' }}>
+      <div className="nav-container" style={{ width: '100%', maxWidth: '1900px', margin: '0 auto', padding: '0 4rem' }}>
         <style>{`
-          .nav-container { padding-left: 2.5rem; padding-right: 2.5rem; }
+          .nav-container { padding-left: 4rem; padding-right: 4rem; }
           .nav-desktop { display: flex; }
           .nav-mobile { display: none; }
           .nav-logo-img { height: 62px; width: auto; object-fit: contain; }
@@ -223,22 +121,6 @@ export default function Navigation() {
             animation: langMenuIn 0.18s ease both;
             transform-origin: top right;
           }
-          .settings-menu {
-            animation: langMenuIn 0.18s ease both;
-            transform-origin: top right;
-          }
-          .nav-icon-button {
-            width: 42px;
-            height: 42px;
-            display: grid;
-            place-items: center;
-            background: rgba(248,247,244,0.94);
-            border: 1px solid #E0DDD8;
-            color: #111111;
-            cursor: pointer;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.08);
-            transition: border-color 0.2s ease, background-color 0.2s ease;
-          }
           .nav-lang-button {
             min-width: 58px;
             height: 34px;
@@ -265,6 +147,9 @@ export default function Navigation() {
             .nav-desktop { display: none !important; }
             .nav-mobile { display: flex !important; }
           }
+          @media (max-width: 1200px) {
+            .nav-container { padding-left: 3rem !important; padding-right: 3rem !important; }
+          }
           @media (max-width: 767px) {
             .nav-container { padding-left: 0.875rem !important; padding-right: 0.875rem !important; }
             .nav-shell { height: 64px !important; gap: 0.75rem; }
@@ -288,8 +173,8 @@ export default function Navigation() {
             style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer', display: 'flex', alignItems: 'center' }}
           >
             <img
-              className={`nav-logo-img ${logoMode === 'icon' ? 'logo-icon' : ''}`}
-              src={logoMode === 'icon' ? LOGO_ICON_SRC : LOGO_SRC}
+              className="nav-logo-img"
+              src={LOGO_SRC}
               alt="BIND Immobilien GmbH"
             />
           </button>
@@ -318,7 +203,7 @@ export default function Navigation() {
             <div style={{ position: 'relative' }}>
               <button
                 className="nav-lang-button"
-                onClick={() => { setLangOpen(!langOpen); setSettingsOpen(false); }}
+                onClick={() => setLangOpen(!langOpen)}
                 onMouseEnter={e => { e.currentTarget.style.borderColor = '#B8962E'; }}
                 onMouseLeave={e => { if (!langOpen) e.currentTarget.style.borderColor = '#E0DDD8'; }}
               >
@@ -375,7 +260,7 @@ export default function Navigation() {
             <div style={{ position: 'relative' }}>
               <button
                 className="nav-lang-button"
-                onClick={() => { setLangOpen(!langOpen); setSettingsOpen(false); }}
+                onClick={() => setLangOpen(!langOpen)}
               >
                 {lang.toUpperCase()}
               </button>
@@ -435,19 +320,6 @@ export default function Navigation() {
           </button>
       </div>
     </nav>
-    <div style={{ position: 'fixed', right: '1rem', bottom: '1rem', zIndex: 260 }}>
-      <button
-        className="nav-icon-button"
-        aria-label="Logo settings"
-        title="Logo settings"
-        onClick={() => { setSettingsOpen(!settingsOpen); setLangOpen(false); setMenuOpen(false); }}
-        onMouseEnter={e => { e.currentTarget.style.borderColor = '#B8962E'; }}
-        onMouseLeave={e => { if (!settingsOpen) e.currentTarget.style.borderColor = '#E0DDD8'; }}
-      >
-        <Settings size={17} />
-      </button>
-      {settingsOpen && settingsMenu}
-    </div>
     </>
   );
 }

@@ -38,7 +38,7 @@ type SignatureLogoSet = {
 const defaultSignature: SignatureForm = {
   name: "DUYGU SALTIK",
   role: "CHIEF OPERATING OFFICER",
-  address: "Ostwall 21 | 47798 Krefeld | Germany",
+  address: "Ostwall 9-11 | 47798 Krefeld | Germany",
   phone: "",
   mobile: "+49 160 1010602",
   email: "duygu.saltik@bindimmobilien.de",
@@ -72,6 +72,8 @@ const fallbackSignatureLogos: SignatureLogoSet = {
   vertical: "/brand/bind-signature-logo-vertical-dark.png",
   verticalDark: "/brand/bind-signature-logo-vertical.png",
 };
+
+const signatureLegalHtml = `Sitz der Gesellschaft: Krefeld<br>Amtsgericht Köln HRB 118677<br>Vertreten durch: Duygu Saltik (COO)<br>USt-IdNr. DE 359540228`;
 
 function escapeHtml(value: string) {
   return value
@@ -160,9 +162,7 @@ function buildSignatureHtml(form: SignatureForm, logoImageUrl: string) {
         ${contactHtml}
       </div>
       <div style="margin:10px 0 0;padding:0;font-size:11px;color:${mutedText};line-height:15px;mso-line-height-rule:exactly;">
-        Sitz der Gesellschaft: 47798 Krefeld<br>
-        Handelsregister: Amtsgericht Köln HRB 118677<br>
-        USt-IdNr. DE 359540228
+        ${signatureLegalHtml}
       </div>
     </td>
   </tr>
@@ -235,7 +235,7 @@ function buildSignatureExampleHtml(form: SignatureForm, logos: SignatureLogoSet,
     website && `<strong>W.</strong>&nbsp;<a href="${webHref(website)}" style="color:#333;text-decoration:none;">${website}</a>`,
   ].filter(Boolean);
   const contactHtml = contactParts.join(example.layout === "stacked" ? "<br>" : "&nbsp;&nbsp;|&nbsp;&nbsp;");
-  const legal = `Sitz der Gesellschaft: 47798 Krefeld<br>Handelsregister: Amtsgericht Köln HRB 118677<br>USt-IdNr. DE 359540228`;
+  const legal = signatureLegalHtml;
   const logoHtml = buildExampleLogo(example.logo, logos);
   const divider = example.accent ? "#c8a05a" : "#d9d9d9";
   const contentSize = example.layout === "compact" ? { name: 16, role: 9, body: 11, legal: 10 } : { name: 18, role: 10, body: 12, legal: 11 };
@@ -261,9 +261,7 @@ function buildSignatureExampleHtml(form: SignatureForm, logos: SignatureLogoSet,
           </div>
           <div style="height:1px;background:${divider};font-size:0;line-height:0;margin:10px 0 8px;">&nbsp;</div>
           <div style="font-size:11px;color:#777;line-height:15px;">
-            Sitz der Gesellschaft: 47798 Krefeld<br>
-            Handelsregister: Amtsgericht Köln HRB 118677<br>
-            USt-IdNr. DE 359540228
+            ${signatureLegalHtml}
           </div>
         </td>
       </tr>
@@ -292,9 +290,7 @@ function buildSignatureExampleHtml(form: SignatureForm, logos: SignatureLogoSet,
           </div>
           <div style="height:1px;background:${divider};font-size:0;line-height:0;margin:10px 0 8px;">&nbsp;</div>
           <div style="font-size:11px;color:#b8b8b8;line-height:15px;">
-            Sitz der Gesellschaft: 47798 Krefeld<br>
-            Handelsregister: Amtsgericht Köln HRB 118677<br>
-            USt-IdNr. DE 359540228
+            ${signatureLegalHtml}
           </div>
         </td>
       </tr>
@@ -322,9 +318,7 @@ function buildSignatureExampleHtml(form: SignatureForm, logos: SignatureLogoSet,
           </div>
           <div style="height:1px;background:${divider};font-size:0;line-height:0;margin:10px 0 8px;">&nbsp;</div>
           <div style="font-size:11px;color:#666;line-height:15px;">
-            Sitz der Gesellschaft: 47798 Krefeld<br>
-            Handelsregister: Amtsgericht Köln HRB 118677<br>
-            USt-IdNr. DE 359540228
+            ${signatureLegalHtml}
           </div>
         </td>
       </tr>
