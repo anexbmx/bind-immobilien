@@ -1,5 +1,16 @@
 Options -Indexes
 
+<Files ".brand-passwd">
+  Require all denied
+</Files>
+
+<If "%{REQUEST_URI} =~ m#^/brand/?$# || %{REQUEST_URI} == '/brand/bind-immobilien-identity.html'">
+  AuthType Basic
+  AuthName "BIND Brand"
+  AuthUserFile "/home/u8129132/bind-immobilien.de/.brand-passwd"
+  Require valid-user
+</If>
+
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /

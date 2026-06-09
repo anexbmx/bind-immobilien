@@ -23,7 +23,6 @@ export default function FooterSection() {
     { label: t.nav.about, href: '#ueber-uns' },
     { label: t.nav.focus, href: '#investitionsfokus' },
     { label: t.nav.offer, href: '#angebot' },
-    { label: 'Brand', href: '/brand' },
     { label: t.nav.contact, href: '#kontakt' },
   ];
 
