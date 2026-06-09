@@ -52,7 +52,7 @@ export default function StatsSection() {
               fontFamily: "DM Sans, sans-serif",
               fontSize: "14px",
               fontWeight: 500,
-              color: "#B8962E",
+              color: "#D4AE4A",
               letterSpacing: "0.08em",
               textTransform: "uppercase",
               marginBottom: "1rem",

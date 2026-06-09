@@ -1,15 +1,13 @@
-import { Toaster } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import NotFound from "@/pages/NotFound";
 import { Route, Switch, useLocation } from "wouter";
-import { useEffect } from "react";
+import { lazy, Suspense, useEffect } from "react";
 import ErrorBoundary from "./components/ErrorBoundary";
-import { ThemeProvider } from "./contexts/ThemeContext";
 import { LanguageProvider } from "./contexts/LanguageContext";
 import Home from "./pages/Home";
-import Impressum from "./pages/Impressum";
-import Datenschutz from "./pages/Datenschutz";
-import BrandIdentity from "./pages/BrandIdentity";
+
+const BrandIdentity = lazy(() => import("./pages/BrandIdentity"));
+const Datenschutz = lazy(() => import("./pages/Datenschutz"));
+const Impressum = lazy(() => import("./pages/Impressum"));
+const NotFound = lazy(() => import("./pages/NotFound"));
 
 function ScrollToTop() {
   const [location] = useLocation();
@@ -34,18 +32,20 @@ function ScrollToTop() {
   return null;
 }
 
-function Router() {
+function AppRoutes() {
   return (
     <>
       <ScrollToTop />
-      <Switch>
-        <Route path={"/"} component={Home} />
-        <Route path={"/brand"} component={BrandIdentity} />
-        <Route path={"/impressum"} component={Impressum} />
-        <Route path={"/datenschutz"} component={Datenschutz} />
-        <Route path={"/404"} component={NotFound} />
-        <Route component={NotFound} />
-      </Switch>
+      <Suspense fallback={null}>
+        <Switch>
+          <Route path={"/"} component={Home} />
+          <Route path={"/brand"} component={BrandIdentity} />
+          <Route path={"/impressum"} component={Impressum} />
+          <Route path={"/datenschutz"} component={Datenschutz} />
+          <Route path={"/404"} component={NotFound} />
+          <Route component={NotFound} />
+        </Switch>
+      </Suspense>
     </>
   );
 }
@@ -54,12 +54,7 @@ function App() {
   return (
     <ErrorBoundary>
       <LanguageProvider>
-        <ThemeProvider defaultTheme="light">
-          <TooltipProvider>
-            <Toaster />
-            <Router />
-          </TooltipProvider>
-        </ThemeProvider>
+        <AppRoutes />
       </LanguageProvider>
     </ErrorBoundary>
   );

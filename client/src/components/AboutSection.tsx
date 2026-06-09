@@ -27,12 +27,12 @@ export default function AboutSection() {
         <div className="about-top" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', marginBottom: '5rem', alignItems: 'end' }}>
           <div style={{ opacity: inView ? 1 : 0, transform: inView ? 'none' : 'translateY(24px)', transition: 'opacity 0.8s ease, transform 0.8s ease' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '1.75rem' }}>
-              <span style={{ display: 'block', width: '24px', height: '1px', backgroundColor: '#B8962E' }} />
+              <span style={{ display: 'block', width: '24px', height: '1px', backgroundColor: '#806000' }} />
               <span className="label-text">{t.about.label}</span>
             </div>
             <h2 style={{ fontFamily: 'Playfair Display, Georgia, serif', fontSize: 'clamp(2.2rem, 4vw, 3.8rem)', fontWeight: 600, color: '#111111', lineHeight: 1.1, letterSpacing: '-0.02em' }}>
               {t.about.headline1}<br />
-              <em style={{ color: '#B8962E', fontWeight: 400 }}>{t.about.headline2}</em>
+              <em style={{ color: '#806000', fontWeight: 400 }}>{t.about.headline2}</em>
             </h2>
           </div>
           <div style={{ opacity: inView ? 1 : 0, transform: inView ? 'none' : 'translateY(24px)', transition: 'opacity 0.8s ease 0.2s, transform 0.8s ease 0.2s' }}>

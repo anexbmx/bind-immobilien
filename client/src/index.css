@@ -67,8 +67,8 @@
   --c-bg-dark: #111111;
   --c-text: #111111;
   --c-text-muted: #6B6B6B;
-  --c-text-light: #999999;
-  --c-gold: #B8962E;
+  --c-text-light: #5F5A52;
+  --c-gold: #806000;
   --c-gold-light: #D4AE4A;
   --c-border: #E0DDD8;
   --c-white: #FFFFFF;
@@ -92,7 +92,7 @@ html[data-site-theme="rhein"] {
   --c-bg-dark: #102428;
   --c-text: #102428;
   --c-text-muted: #53676A;
-  --c-text-light: #82989C;
+  --c-text-light: #53676A;
   --c-gold: #2F7D8C;
   --c-gold-light: #74AEB8;
   --c-border: #D3E0DF;
@@ -104,7 +104,7 @@ html[data-site-theme="burgundy"] {
   --c-bg-dark: #211316;
   --c-text: #1B1112;
   --c-text-muted: #6D5A5C;
-  --c-text-light: #9B8588;
+  --c-text-light: #6D5A5C;
   --c-gold: #8E3D45;
   --c-gold-light: #B56A72;
   --c-border: #E2D3D0;
@@ -357,3 +357,14 @@ html { scroll-behavior: smooth; }
 .delay-3 { animation-delay: 0.4s; }
 .delay-4 { animation-delay: 0.55s; }
 .delay-5 { animation-delay: 0.7s; }
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.001ms !important;
+  }
+}

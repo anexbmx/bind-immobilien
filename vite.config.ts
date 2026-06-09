@@ -203,39 +203,101 @@ function vitePluginStorageProxy(): Plugin {
   };
 }
 
-const plugins = [react(), tailwindcss(), jsxLocPlugin(), vitePluginManusRuntime(), vitePluginManusDebugCollector(), vitePluginStorageProxy()];
+function vitePluginAsyncCss(): Plugin {
+  return {
+    name: "async-production-css",
+    apply: "build",
+    enforce: "post",
+    generateBundle(_, bundle) {
+      for (const asset of Object.values(bundle)) {
+        if (asset.type !== "asset" || !asset.fileName.endsWith(".html") || typeof asset.source !== "string") {
+          continue;
+        }
 
-export default defineConfig({
-  plugins,
-  resolve: {
-    alias: {
-      "@": path.resolve(import.meta.dirname, "client", "src"),
-      "@shared": path.resolve(import.meta.dirname, "shared"),
-      "@assets": path.resolve(import.meta.dirname, "attached_assets"),
+        asset.source = asset.source.replace(
+          /<link rel="stylesheet" crossorigin href="([^"]+\.css)">/g,
+          `<link rel="preload" as="style" crossorigin href="$1" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" crossorigin href="$1"></noscript>`,
+        );
+      }
     },
-  },
-  envDir: path.resolve(import.meta.dirname),
-  root: path.resolve(import.meta.dirname, "client"),
-  build: {
-    outDir: path.resolve(import.meta.dirname, "dist/public"),
-    emptyOutDir: true,
-  },
-  server: {
-    port: 3000,
-    strictPort: false, // Will find next available port if 3000 is busy
-    host: true,
-    allowedHosts: [
-      ".manuspre.computer",
-      ".manus.computer",
-      ".manus-asia.computer",
-      ".manuscomputer.ai",
-      ".manusvm.computer",
-      "localhost",
-      "127.0.0.1",
-    ],
-    fs: {
-      strict: true,
-      deny: ["**/.*"],
+  };
+}
+
+export default defineConfig(({ command }) => {
+  const isBuild = command === "build";
+  const plugins = [
+    react(),
+    tailwindcss(),
+    vitePluginAsyncCss(),
+    ...(
+      isBuild
+        ? []
+        : [jsxLocPlugin(), vitePluginManusRuntime(), vitePluginManusDebugCollector(), vitePluginStorageProxy()]
+    ),
+  ];
+
+  return {
+    plugins,
+    resolve: {
+      alias: {
+        "@": path.resolve(import.meta.dirname, "client", "src"),
+        "@shared": path.resolve(import.meta.dirname, "shared"),
+        "@assets": path.resolve(import.meta.dirname, "attached_assets"),
+      },
     },
-  },
+    envDir: path.resolve(import.meta.dirname),
+    root: path.resolve(import.meta.dirname, "client"),
+    build: {
+      outDir: path.resolve(import.meta.dirname, "dist/public"),
+      emptyOutDir: true,
+      rollupOptions: {
+        output: {
+          manualChunks(id) {
+            const normalizedId = id.split(path.sep).join("/");
+            if (!normalizedId.includes("node_modules")) return;
+            if (normalizedId.includes("@radix-ui")) {
+              return "vendor-radix";
+            }
+            if (normalizedId.includes("framer-motion")) {
+              return "vendor-motion";
+            }
+            if (normalizedId.includes("lucide-react")) {
+              return "vendor-icons";
+            }
+            if (normalizedId.includes("/node_modules/react-dom/")) {
+              return "vendor-react-dom";
+            }
+            if (normalizedId.includes("/node_modules/react/")) {
+              return "vendor-react";
+            }
+            if (normalizedId.includes("/node_modules/scheduler/")) {
+              return "vendor-scheduler";
+            }
+            if (normalizedId.includes("/node_modules/wouter/")) {
+              return "vendor-router";
+            }
+            return "vendor";
+          }
+        },
+      },
+    },
+    server: {
+      port: 3000,
+      strictPort: false, // Will find next available port if 3000 is busy
+      host: true,
+      allowedHosts: [
+        ".manuspre.computer",
+        ".manus.computer",
+        ".manus-asia.computer",
+        ".manuscomputer.ai",
+        ".manusvm.computer",
+        "localhost",
+        "127.0.0.1",
+      ],
+      fs: {
+        strict: true,
+        deny: ["**/.*"],
+      },
+    },
+  };
 });

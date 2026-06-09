@@ -65,6 +65,7 @@ export default function Navigation() {
   return (
     <>
     <nav
+      aria-label="Hauptnavigation"
       style={{
         position: 'fixed',
         top: 0,
@@ -169,6 +170,8 @@ export default function Navigation() {
 
           {/* Logo */}
           <button
+            type="button"
+            aria-label="Zur Startseite"
             onClick={goHome}
             style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer', display: 'flex', alignItems: 'center' }}
           >
@@ -176,6 +179,9 @@ export default function Navigation() {
               className="nav-logo-img"
               src={LOGO_SRC}
               alt="BIND Immobilien GmbH"
+              width={560}
+              height={180}
+              decoding="async"
             />
           </button>
 
@@ -183,6 +189,7 @@ export default function Navigation() {
           <div className="nav-desktop" style={{ alignItems: 'center', gap: 'clamp(1.3rem, 2.5vw, 2.3rem)' }}>
             {navLinks.map((link) => (
               <button
+                type="button"
                 className="nav-link"
                 key={link.href}
                 onClick={() => scrollTo(link.href)}
@@ -192,7 +199,7 @@ export default function Navigation() {
                   color: '#111111', cursor: 'pointer', padding: '4px 0',
                   transition: 'color 0.2s ease', letterSpacing: '0.01em',
                 }}
-                onMouseEnter={e => { e.currentTarget.style.color = '#B8962E'; }}
+                onMouseEnter={e => { e.currentTarget.style.color = '#806000'; }}
                 onMouseLeave={e => { e.currentTarget.style.color = '#111111'; }}
               >
                 {link.label}
@@ -202,9 +209,13 @@ export default function Navigation() {
             {/* Language Switcher */}
             <div style={{ position: 'relative' }}>
               <button
+                type="button"
                 className="nav-lang-button"
+                aria-label={`Sprache wechseln, aktuell ${lang.toUpperCase()}`}
+                aria-expanded={langOpen}
+                aria-haspopup="menu"
                 onClick={() => setLangOpen(!langOpen)}
-                onMouseEnter={e => { e.currentTarget.style.borderColor = '#B8962E'; }}
+                onMouseEnter={e => { e.currentTarget.style.borderColor = '#806000'; }}
                 onMouseLeave={e => { if (!langOpen) e.currentTarget.style.borderColor = '#E0DDD8'; }}
               >
                 {lang.toUpperCase()}
@@ -224,13 +235,15 @@ export default function Navigation() {
                 >
                   {LANGS.map(l => (
                     <button
+                      type="button"
                       key={l.code}
+                      aria-current={lang === l.code ? "true" : undefined}
                       onClick={() => { setLang(l.code); setLangOpen(false); }}
                       style={{
                         display: 'flex', alignItems: 'center', gap: '8px',
                         width: '100%', padding: '10px 14px', background: 'none', border: 'none',
                         fontFamily: 'DM Sans, sans-serif', fontSize: '13px', fontWeight: lang === l.code ? 600 : 400,
-                        color: lang === l.code ? '#B8962E' : '#111111', cursor: 'pointer',
+                        color: lang === l.code ? '#806000' : '#111111', cursor: 'pointer',
                         borderBottom: '1px solid #F0EDE8', textAlign: 'left',
                         transition: 'background-color 0.15s ease',
                       }}
@@ -238,7 +251,7 @@ export default function Navigation() {
                       onMouseLeave={e => { e.currentTarget.style.backgroundColor = 'transparent'; }}
                     >
                       <span>{l.label}</span>
-                      {lang === l.code && <span style={{ marginLeft: 'auto', color: '#B8962E', fontSize: '10px' }}>✓</span>}
+                      {lang === l.code && <span style={{ marginLeft: 'auto', color: '#806000', fontSize: '10px' }}>✓</span>}
                     </button>
                   ))}
                 </div>
@@ -246,6 +259,7 @@ export default function Navigation() {
             </div>
 
             <button
+              type="button"
               onClick={() => scrollTo("#angebot")}
               className="btn-primary"
               style={{ fontSize: '11px', padding: '10px 22px' }}
@@ -259,7 +273,11 @@ export default function Navigation() {
             {/* Mobile lang switcher */}
             <div style={{ position: 'relative' }}>
               <button
+                type="button"
                 className="nav-lang-button"
+                aria-label={`Sprache wechseln, aktuell ${lang.toUpperCase()}`}
+                aria-expanded={langOpen}
+                aria-haspopup="menu"
                 onClick={() => setLangOpen(!langOpen)}
               >
                 {lang.toUpperCase()}
@@ -271,13 +289,13 @@ export default function Navigation() {
                   boxShadow: '0 8px 24px rgba(0,0,0,0.08)', minWidth: '100px', zIndex: 200,
                 }}>
                   {LANGS.map(l => (
-                    <button key={l.code} onClick={() => { setLang(l.code); setLangOpen(false); }}
+                    <button type="button" key={l.code} aria-current={lang === l.code ? "true" : undefined} onClick={() => { setLang(l.code); setLangOpen(false); }}
                       style={{
                         display: 'flex', alignItems: 'center', gap: '6px',
                         width: '100%', padding: '9px 12px', background: 'none', border: 'none',
                         fontFamily: 'DM Sans, sans-serif', fontSize: '12px',
                         fontWeight: lang === l.code ? 600 : 400,
-                        color: lang === l.code ? '#B8962E' : '#111111', cursor: 'pointer',
+                        color: lang === l.code ? '#806000' : '#111111', cursor: 'pointer',
                         borderBottom: '1px solid #F0EDE8',
                       }}>
                       {l.label}
@@ -287,7 +305,11 @@ export default function Navigation() {
               )}
             </div>
             <button
+              type="button"
               className="nav-menu-button"
+              aria-label={menuOpen ? "Navigation schließen" : "Navigation öffnen"}
+              aria-expanded={menuOpen}
+              aria-controls="mobile-navigation"
               onClick={() => setMenuOpen(!menuOpen)}
               style={{ background: 'none', border: 'none', color: '#111111', cursor: 'pointer' }}
             >
@@ -298,14 +320,16 @@ export default function Navigation() {
       </div>
 
       {/* Mobile menu */}
+      {menuOpen && (
       <div
-        className={`nav-menu-panel ${menuOpen ? 'open' : ''}`}
+        id="mobile-navigation"
+        className="nav-menu-panel open"
         style={{
           backgroundColor: '#F8F7F4', display: 'flex', flexDirection: 'column', gap: '1.25rem',
         }}
       >
           {navLinks.map((link) => (
-            <button className="nav-menu-item" key={link.href} onClick={() => scrollTo(link.href)}
+            <button type="button" className="nav-menu-item" key={link.href} onClick={() => scrollTo(link.href)}
               style={{
                 background: 'none', border: 'none', textAlign: 'left',
                 fontFamily: 'DM Sans, sans-serif', fontSize: '15px', fontWeight: 500,
@@ -314,11 +338,12 @@ export default function Navigation() {
               {link.label}
             </button>
           ))}
-          <button onClick={() => scrollTo("#angebot")} className="btn-primary nav-menu-item"
+          <button type="button" onClick={() => scrollTo("#angebot")} className="btn-primary nav-menu-item"
             style={{ marginTop: '0.5rem', justifyContent: 'center' }}>
             {t.nav.cta}
           </button>
       </div>
+      )}
     </nav>
     </>
   );

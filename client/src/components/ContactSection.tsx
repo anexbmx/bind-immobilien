@@ -2,7 +2,6 @@
 
 import { useEffect, useRef, useState } from "react";
 import { MapPin, Mail, Clock, ArrowRight } from "lucide-react";
-import { toast } from "sonner";
 import { useLang } from "@/contexts/LanguageContext";
 
 function useInView(threshold = 0.08) {
@@ -43,11 +42,10 @@ export default function ContactSection() {
 
     window.location.href = `mailto:info@bind-immobilien.de?subject=${subject}&body=${body}`;
     setSending(false);
-    toast.success(t.contact.successMsg);
   };
 
   const inputStyle: React.CSSProperties = { width: '100%', backgroundColor: 'transparent', border: 'none', borderBottom: '1px solid #E0DDD8', padding: '10px 0', fontFamily: 'DM Sans, sans-serif', fontSize: '15px', fontWeight: 300, color: '#111111', outline: 'none', transition: 'border-color 0.25s ease' };
-  const labelStyle: React.CSSProperties = { fontFamily: 'DM Sans, sans-serif', fontSize: '11px', fontWeight: 500, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#999999', display: 'block', marginBottom: '8px' };
+  const labelStyle: React.CSSProperties = { fontFamily: 'DM Sans, sans-serif', fontSize: '11px', fontWeight: 600, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#5F5A52', display: 'block', marginBottom: '8px' };
   const onFocus = (e: React.FocusEvent<any>) => { e.target.style.borderBottomColor = '#111111'; };
   const onBlur = (e: React.FocusEvent<any>) => { e.target.style.borderBottomColor = '#E0DDD8'; };
 
@@ -57,7 +55,7 @@ export default function ContactSection() {
         <style>{`@media(max-width:900px){.contact-grid{grid-template-columns:1fr!important;gap:3rem!important;}}.form-2col{display:grid;grid-template-columns:1fr 1fr;gap:0 2rem;}@media(max-width:600px){.form-2col{grid-template-columns:1fr!important;}}`}</style>
 
         <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '4rem' }}>
-          <span style={{ display: 'block', width: '24px', height: '1px', backgroundColor: '#B8962E' }} />
+          <span style={{ display: 'block', width: '24px', height: '1px', backgroundColor: '#806000' }} />
           <span className="label-text">{t.contact.label}</span>
         </div>
 
@@ -65,7 +63,7 @@ export default function ContactSection() {
           {/* Info */}
           <div style={{ opacity: inView ? 1 : 0, transform: inView ? 'none' : 'translateX(-20px)', transition: 'opacity 0.8s ease, transform 0.8s ease' }}>
             <h2 style={{ fontFamily: 'Playfair Display, Georgia, serif', fontSize: 'clamp(2rem, 3vw, 2.8rem)', fontWeight: 600, color: '#111111', lineHeight: 1.1, letterSpacing: '-0.02em', marginBottom: '1.5rem' }}>
-              {t.contact.headline1}<br /><em style={{ color: '#B8962E', fontWeight: 400 }}>{t.contact.headline2}</em>{t.contact.headline3 ? ` ${t.contact.headline3}` : ''}
+              {t.contact.headline1}<br /><em style={{ color: '#806000', fontWeight: 400 }}>{t.contact.headline2}</em>{t.contact.headline3 ? ` ${t.contact.headline3}` : ''}
             </h2>
             <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: '15px', fontWeight: 300, color: '#6B6B6B', lineHeight: 1.75, marginBottom: '3rem' }}>{t.contact.sub}</p>
 
@@ -77,10 +75,10 @@ export default function ContactSection() {
               ].map(({ icon: Icon, label, value }) => (
                 <div key={label} style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
                   <div style={{ width: '36px', height: '36px', display: 'flex', alignItems: 'center', justifyContent: 'center', border: '1px solid #E0DDD8', flexShrink: 0 }}>
-                    <Icon size={14} style={{ color: '#B8962E' }} />
+                    <Icon size={14} style={{ color: '#806000' }} />
                   </div>
                   <div>
-                    <div style={{ fontFamily: 'DM Sans, sans-serif', fontSize: '11px', letterSpacing: '0.14em', textTransform: 'uppercase', color: '#999999', marginBottom: '3px' }}>{label}</div>
+                    <div style={{ fontFamily: 'DM Sans, sans-serif', fontSize: '11px', letterSpacing: '0.14em', textTransform: 'uppercase', color: '#5F5A52', marginBottom: '3px' }}>{label}</div>
                     <div style={{ fontFamily: 'DM Sans, sans-serif', fontSize: '14px', fontWeight: 400, color: '#111111', lineHeight: 1.5 }}>{value}</div>
                   </div>
                 </div>
@@ -94,44 +92,44 @@ export default function ContactSection() {
             <form onSubmit={handleSubmit}>
               <div className="form-2col">
                 <div style={{ marginBottom: '2rem' }}>
-                  <label style={labelStyle}>{t.contact.fields.name}</label>
-                  <input required type="text" placeholder={t.contact.fields.namePh} value={form.name} onChange={e => setForm({ ...form, name: e.target.value })} style={inputStyle} onFocus={onFocus} onBlur={onBlur} />
+                  <label htmlFor="contact-name" style={labelStyle}>{t.contact.fields.name}</label>
+                  <input id="contact-name" name="name" autoComplete="name" required type="text" placeholder={t.contact.fields.namePh} value={form.name} onChange={e => setForm({ ...form, name: e.target.value })} style={inputStyle} onFocus={onFocus} onBlur={onBlur} />
                 </div>
                 <div style={{ marginBottom: '2rem' }}>
-                  <label style={labelStyle}>{t.contact.fields.email}</label>
-                  <input required type="email" placeholder={t.contact.fields.emailPh} value={form.email} onChange={e => setForm({ ...form, email: e.target.value })} style={inputStyle} onFocus={onFocus} onBlur={onBlur} />
+                  <label htmlFor="contact-email" style={labelStyle}>{t.contact.fields.email}</label>
+                  <input id="contact-email" name="email" autoComplete="email" required type="email" placeholder={t.contact.fields.emailPh} value={form.email} onChange={e => setForm({ ...form, email: e.target.value })} style={inputStyle} onFocus={onFocus} onBlur={onBlur} />
                 </div>
                 <div style={{ marginBottom: '2rem' }}>
-                  <label style={labelStyle}>{t.contact.fields.phone}</label>
-                  <input type="tel" placeholder={t.contact.fields.phonePh} value={form.phone} onChange={e => setForm({ ...form, phone: e.target.value })} style={inputStyle} onFocus={onFocus} onBlur={onBlur} />
+                  <label htmlFor="contact-phone" style={labelStyle}>{t.contact.fields.phone}</label>
+                  <input id="contact-phone" name="phone" autoComplete="tel" type="tel" placeholder={t.contact.fields.phonePh} value={form.phone} onChange={e => setForm({ ...form, phone: e.target.value })} style={inputStyle} onFocus={onFocus} onBlur={onBlur} />
                 </div>
                 <div style={{ marginBottom: '2rem' }}>
-                  <label style={labelStyle}>{t.contact.fields.type}</label>
-                  <select value={form.type} onChange={e => setForm({ ...form, type: e.target.value })} style={{ ...inputStyle, cursor: 'pointer', appearance: 'none' }} onFocus={onFocus} onBlur={onBlur}>
+                  <label htmlFor="contact-type" style={labelStyle}>{t.contact.fields.type}</label>
+                  <select id="contact-type" name="type" value={form.type} onChange={e => setForm({ ...form, type: e.target.value })} style={{ ...inputStyle, cursor: 'pointer', appearance: 'none' }} onFocus={onFocus} onBlur={onBlur}>
                     <option value="">{t.contact.fields.typePh}</option>
                     {t.contact.fields.typeOptions.map(o => <option key={o}>{o}</option>)}
                   </select>
                 </div>
                 <div style={{ marginBottom: '2rem' }}>
-                  <label style={labelStyle}>{t.contact.fields.location}</label>
-                  <input type="text" placeholder={t.contact.fields.locationPh} value={form.location} onChange={e => setForm({ ...form, location: e.target.value })} style={inputStyle} onFocus={onFocus} onBlur={onBlur} />
+                  <label htmlFor="contact-location" style={labelStyle}>{t.contact.fields.location}</label>
+                  <input id="contact-location" name="location" autoComplete="address-level2" type="text" placeholder={t.contact.fields.locationPh} value={form.location} onChange={e => setForm({ ...form, location: e.target.value })} style={inputStyle} onFocus={onFocus} onBlur={onBlur} />
                 </div>
                 <div style={{ marginBottom: '2rem' }}>
-                  <label style={labelStyle}>{t.contact.fields.price}</label>
-                  <input type="text" placeholder={t.contact.fields.pricePh} value={form.price} onChange={e => setForm({ ...form, price: e.target.value })} style={inputStyle} onFocus={onFocus} onBlur={onBlur} />
+                  <label htmlFor="contact-price" style={labelStyle}>{t.contact.fields.price}</label>
+                  <input id="contact-price" name="price" inputMode="decimal" type="text" placeholder={t.contact.fields.pricePh} value={form.price} onChange={e => setForm({ ...form, price: e.target.value })} style={inputStyle} onFocus={onFocus} onBlur={onBlur} />
                 </div>
               </div>
               <div style={{ marginBottom: '2.5rem' }}>
-                <label style={labelStyle}>{t.contact.fields.message}</label>
-                <textarea rows={4} placeholder={t.contact.fields.messagePh} value={form.message} onChange={e => setForm({ ...form, message: e.target.value })} style={{ ...inputStyle, resize: 'vertical', border: '1px solid #E0DDD8', padding: '10px 12px', borderBottom: '1px solid #E0DDD8' }} onFocus={e => { e.target.style.borderColor = '#111111'; }} onBlur={e => { e.target.style.borderColor = '#E0DDD8'; }} />
+                <label htmlFor="contact-message" style={labelStyle}>{t.contact.fields.message}</label>
+                <textarea id="contact-message" name="message" rows={4} placeholder={t.contact.fields.messagePh} value={form.message} onChange={e => setForm({ ...form, message: e.target.value })} style={{ ...inputStyle, resize: 'vertical', border: '1px solid #E0DDD8', padding: '10px 12px', borderBottom: '1px solid #E0DDD8' }} onFocus={e => { e.target.style.borderColor = '#111111'; }} onBlur={e => { e.target.style.borderColor = '#E0DDD8'; }} />
               </div>
               <button type="submit" disabled={sending}
                 style={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px', fontFamily: 'DM Sans, sans-serif', fontSize: '12px', fontWeight: 600, letterSpacing: '0.14em', textTransform: 'uppercase', padding: '15px 32px', backgroundColor: sending ? '#999' : '#111111', color: '#FFFFFF', border: 'none', cursor: sending ? 'default' : 'pointer', transition: 'background-color 0.25s ease' }}
-                onMouseEnter={e => { if (!sending) e.currentTarget.style.backgroundColor = '#B8962E'; }}
+                onMouseEnter={e => { if (!sending) e.currentTarget.style.backgroundColor = '#806000'; }}
                 onMouseLeave={e => { if (!sending) e.currentTarget.style.backgroundColor = '#111111'; }}>
                 {sending ? t.contact.submitting : (<>{t.contact.submitBtn} <ArrowRight size={14} /></>)}
               </button>
-              <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: '12px', color: '#999999', textAlign: 'center', marginTop: '1rem' }}>{t.contact.privacy}</p>
+              <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: '12px', color: '#5F5A52', textAlign: 'center', marginTop: '1rem' }}>{t.contact.privacy}</p>
             </form>
           </div>
         </div>

@@ -56,17 +56,17 @@ export default function FooterSection() {
 
             <div className="footer-brand">
               <div style={{ display: 'inline-flex', marginBottom: '1.5rem' }}>
-                <img src={LOGO_SRC} alt="BIND Immobilien GmbH" style={{ height: '58px', width: 'auto', maxWidth: '260px', objectFit: 'contain' }} />
+                <img src={LOGO_SRC} alt="BIND Immobilien GmbH" width={560} height={180} loading="lazy" decoding="async" style={{ height: '58px', width: 'auto', maxWidth: '260px', objectFit: 'contain' }} />
               </div>
               <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: '14px', fontWeight: 300, color: 'rgba(255,255,255,0.5)', lineHeight: 1.75, maxWidth: '320px' }}>{t.footer.desc}</p>
             </div>
 
             <div>
-              <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: '11px', letterSpacing: '0.18em', textTransform: 'uppercase', color: '#B8962E', marginBottom: '1.5rem' }}>{t.footer.navTitle}</p>
+              <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: '11px', letterSpacing: '0.18em', textTransform: 'uppercase', color: '#D4AE4A', marginBottom: '1.5rem' }}>{t.footer.navTitle}</p>
               <div className="footer-link-grid">
                 {navLinks.map(l => (
-                  <button key={l.href} onClick={() => scrollTo(l.href)} style={{ background: 'none', border: 'none', textAlign: 'left', fontFamily: 'DM Sans, sans-serif', fontSize: '14px', fontWeight: 300, color: 'rgba(255,255,255,0.55)', cursor: 'pointer', padding: 0, transition: 'color 0.2s ease' }}
-                    onMouseEnter={e => { e.currentTarget.style.color = '#B8962E'; }}
+                  <button type="button" key={l.href} onClick={() => scrollTo(l.href)} style={{ background: 'none', border: 'none', textAlign: 'left', fontFamily: 'DM Sans, sans-serif', fontSize: '14px', fontWeight: 300, color: 'rgba(255,255,255,0.55)', cursor: 'pointer', padding: 0, transition: 'color 0.2s ease' }}
+                    onMouseEnter={e => { e.currentTarget.style.color = '#D4AE4A'; }}
                     onMouseLeave={e => { e.currentTarget.style.color = 'rgba(255,255,255,0.55)'; }}>
                     {l.label}
                   </button>
@@ -75,13 +75,13 @@ export default function FooterSection() {
             </div>
 
             <div>
-              <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: '11px', letterSpacing: '0.18em', textTransform: 'uppercase', color: '#B8962E', marginBottom: '1.5rem' }}>{t.footer.segTitle}</p>
+              <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: '11px', letterSpacing: '0.18em', textTransform: 'uppercase', color: '#D4AE4A', marginBottom: '1.5rem' }}>{t.footer.segTitle}</p>
               <div className="footer-link-grid" style={{ marginBottom: '2rem' }}>
                 {t.footer.segments.map(s => (
                   <span key={s} style={{ fontFamily: 'DM Sans, sans-serif', fontSize: '14px', fontWeight: 300, color: 'rgba(255,255,255,0.55)' }}>{s}</span>
                 ))}
               </div>
-              <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: '11px', letterSpacing: '0.18em', textTransform: 'uppercase', color: '#B8962E', marginBottom: '0.875rem' }}>{t.footer.language}</p>
+              <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: '11px', letterSpacing: '0.18em', textTransform: 'uppercase', color: '#D4AE4A', marginBottom: '0.875rem' }}>{t.footer.language}</p>
               <div className="footer-lang">
                 {[
                   { code: 'de' as const, label: 'DE' },
@@ -89,14 +89,17 @@ export default function FooterSection() {
                   { code: 'tr' as const, label: 'TR' },
                 ].map(item => (
                   <button
+                    type="button"
                     key={item.code}
+                    aria-pressed={lang === item.code}
+                    aria-label={`Sprache ${item.label} auswählen`}
                     onClick={() => setLang(item.code)}
                     style={{
                       minWidth: '44px',
                       padding: '8px 10px',
-                      border: lang === item.code ? '1px solid #B8962E' : '1px solid rgba(255,255,255,0.16)',
+                      border: lang === item.code ? '1px solid #D4AE4A' : '1px solid rgba(255,255,255,0.16)',
                       background: lang === item.code ? 'rgba(184,150,46,0.12)' : 'transparent',
-                      color: lang === item.code ? '#B8962E' : 'rgba(255,255,255,0.55)',
+                      color: lang === item.code ? '#D4AE4A' : 'rgba(255,255,255,0.72)',
                       fontFamily: 'DM Sans, sans-serif',
                       fontSize: '12px',
                       fontWeight: 600,
@@ -111,16 +114,16 @@ export default function FooterSection() {
           </div>
 
           <div className="footer-bottom" style={{ borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '2rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem' }}>
-            <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: '12px', color: 'rgba(255,255,255,0.3)' }}>© {new Date().getFullYear()} BIND Immobilien GmbH · HRB 118677 Amtsgericht Köln</p>
+            <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: '12px', color: 'rgba(255,255,255,0.64)' }}>© {new Date().getFullYear()} BIND Immobilien GmbH · HRB 118677 Amtsgericht Köln</p>
             <div style={{ display: 'flex', gap: '2rem' }}>
               {[{ label: t.footer.impressum, path: '/impressum' }, { label: t.footer.datenschutz, path: '/datenschutz' }].map(item => (
                 <a key={item.path} href={item.path} onClick={e => {
                   if (e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
                   e.preventDefault();
                   navigate(item.path);
-                }} style={{ fontFamily: 'DM Sans, sans-serif', fontSize: '12px', color: 'rgba(255,255,255,0.3)', cursor: 'pointer', transition: 'color 0.2s ease', textDecoration: 'none' }}
-                  onMouseEnter={e => { e.currentTarget.style.color = '#B8962E'; }}
-                  onMouseLeave={e => { e.currentTarget.style.color = 'rgba(255,255,255,0.3)'; }}>
+                }} style={{ fontFamily: 'DM Sans, sans-serif', fontSize: '12px', color: 'rgba(255,255,255,0.64)', cursor: 'pointer', transition: 'color 0.2s ease', textDecoration: 'none' }}
+                  onMouseEnter={e => { e.currentTarget.style.color = '#D4AE4A'; }}
+                  onMouseLeave={e => { e.currentTarget.style.color = 'rgba(255,255,255,0.64)'; }}>
                   {item.label}
                 </a>
               ))}

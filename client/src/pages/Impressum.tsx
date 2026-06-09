@@ -31,7 +31,7 @@ function LegalSection({
 }) {
   return (
     <section style={{ marginBottom: "3rem" }}>
-      <h2 style={{ fontFamily: "DM Sans, sans-serif", fontSize: "11px", letterSpacing: "0.18em", textTransform: "uppercase", color: "#B8962E", marginBottom: "1.25rem" }}>
+      <h2 style={{ fontFamily: "DM Sans, sans-serif", fontSize: "11px", letterSpacing: "0.18em", textTransform: "uppercase", color: "#806000", marginBottom: "1.25rem" }}>
         {title}
       </h2>
       {children}
@@ -45,7 +45,7 @@ export default function Impressum() {
       <Navigation />
 
       <main style={{ maxWidth: "860px", margin: "0 auto", padding: "9rem 2rem 8rem" }}>
-        <p style={{ fontFamily: "DM Sans, sans-serif", fontSize: "11px", letterSpacing: "0.18em", textTransform: "uppercase", color: "#B8962E", marginBottom: "1.5rem" }}>
+        <p style={{ fontFamily: "DM Sans, sans-serif", fontSize: "11px", letterSpacing: "0.18em", textTransform: "uppercase", color: "#806000", marginBottom: "1.5rem" }}>
           Rechtliche Angaben
         </p>
         <h1 style={{ fontFamily: "Playfair Display, Georgia, serif", fontSize: "clamp(2.5rem, 5vw, 3.6rem)", fontWeight: 600, color: "#111111", marginBottom: "3rem", lineHeight: 1.1 }}>
@@ -123,7 +123,7 @@ export default function Impressum() {
             </p>
           </LegalSection>
 
-          <p style={{ fontFamily: "DM Sans, sans-serif", fontSize: "12px", color: "#999999", borderTop: "1px solid #E0DDD8", paddingTop: "1.5rem" }}>
+          <p style={{ fontFamily: "DM Sans, sans-serif", fontSize: "12px", color: "#5F5A52", borderTop: "1px solid #E0DDD8", paddingTop: "1.5rem" }}>
             Stand: Mai 2026
           </p>
         </div>
