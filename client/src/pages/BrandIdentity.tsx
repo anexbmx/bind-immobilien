@@ -43,7 +43,7 @@ const defaultSignature: SignatureForm = {
   mobile: "+49 160 1010602",
   email: "duygu.saltik@bindimmobilien.de",
   website: "",
-  logoType: "text",
+  logoType: "image",
   stackedContact: false,
 };
 
@@ -73,7 +73,15 @@ const fallbackSignatureLogos: SignatureLogoSet = {
   verticalDark: "/brand/bind-signature-logo-vertical.png",
 };
 
-const signatureLegalHtml = `Sitz der Gesellschaft: Krefeld<br>Amtsgericht Köln HRB 118677<br>Vertreten durch: Duygu Saltik (COO)<br>USt-IdNr. DE 359540228`;
+const signatureImpressumUrl = "https://www.bindimmobilien.de/impressum";
+const signatureDatenschutzUrl = "https://www.bindimmobilien.de/datenschutz";
+
+function buildSignatureLegalHtml(linkColor = "#8a8a8a") {
+  const linkStyle = `color:${linkColor};text-decoration:underline;text-underline-offset:2px;`;
+  return `Sitz der Gesellschaft: Krefeld<br>Amtsgericht Köln HRB 118677<br>Vertreten durch: Duygu Saltik (COO)<br>USt-IdNr. DE 359540228<br><a href="${signatureImpressumUrl}" style="${linkStyle}">Impressum</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="${signatureDatenschutzUrl}" style="${linkStyle}">Datenschutzerklärung</a>`;
+}
+
+const signatureLegalHtml = buildSignatureLegalHtml();
 
 function escapeHtml(value: string) {
   return value
@@ -235,7 +243,7 @@ function buildSignatureExampleHtml(form: SignatureForm, logos: SignatureLogoSet,
     website && `<strong>W.</strong>&nbsp;<a href="${webHref(website)}" style="color:#333;text-decoration:none;">${website}</a>`,
   ].filter(Boolean);
   const contactHtml = contactParts.join(example.layout === "stacked" ? "<br>" : "&nbsp;&nbsp;|&nbsp;&nbsp;");
-  const legal = signatureLegalHtml;
+  const legal = buildSignatureLegalHtml("#8a8a8a");
   const logoHtml = buildExampleLogo(example.logo, logos);
   const divider = example.accent ? "#c8a05a" : "#d9d9d9";
   const contentSize = example.layout === "compact" ? { name: 16, role: 9, body: 11, legal: 10 } : { name: 18, role: 10, body: 12, legal: 11 };
@@ -261,7 +269,7 @@ function buildSignatureExampleHtml(form: SignatureForm, logos: SignatureLogoSet,
           </div>
           <div style="height:1px;background:${divider};font-size:0;line-height:0;margin:10px 0 8px;">&nbsp;</div>
           <div style="font-size:11px;color:#777;line-height:15px;">
-            ${signatureLegalHtml}
+            ${buildSignatureLegalHtml("#777")}
           </div>
         </td>
       </tr>
@@ -290,7 +298,7 @@ function buildSignatureExampleHtml(form: SignatureForm, logos: SignatureLogoSet,
           </div>
           <div style="height:1px;background:${divider};font-size:0;line-height:0;margin:10px 0 8px;">&nbsp;</div>
           <div style="font-size:11px;color:#b8b8b8;line-height:15px;">
-            ${signatureLegalHtml}
+            ${buildSignatureLegalHtml("#b8b8b8")}
           </div>
         </td>
       </tr>
@@ -318,7 +326,7 @@ function buildSignatureExampleHtml(form: SignatureForm, logos: SignatureLogoSet,
           </div>
           <div style="height:1px;background:${divider};font-size:0;line-height:0;margin:10px 0 8px;">&nbsp;</div>
           <div style="font-size:11px;color:#666;line-height:15px;">
-            ${signatureLegalHtml}
+            ${buildSignatureLegalHtml("#666")}
           </div>
         </td>
       </tr>
@@ -447,6 +455,12 @@ export default function BrandIdentity() {
         form.mobile && `M ${form.mobile}`,
         form.email && `E ${form.email}`,
         form.website && `W ${form.website}`,
+        "Sitz der Gesellschaft: Krefeld",
+        "Amtsgericht Köln HRB 118677",
+        "Vertreten durch: Duygu Saltik (COO)",
+        "USt-IdNr. DE 359540228",
+        `Impressum: ${signatureImpressumUrl}`,
+        `Datenschutzerklärung: ${signatureDatenschutzUrl}`,
       ]
         .filter(Boolean)
         .join("\n"),
@@ -682,7 +696,7 @@ export default function BrandIdentity() {
                 >
                   <option value="none">None</option>
                   <option value="text">Text logo</option>
-                <option value="image" disabled>New brand logo</option>
+                  <option value="image">Brand logo</option>
                 </select>
               </label>
             </div>

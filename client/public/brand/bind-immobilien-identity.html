@@ -587,88 +587,127 @@
 
     .signature-assets {
       display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-      gap: 18px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
       margin-top: 28px;
     }
 
     .signature-card {
-      position: relative;
       display: grid;
-      gap: 20px;
-      padding: 24px 22px;
-      background: rgba(255, 255, 255, 0.36);
-      border: 1px solid var(--line);
+      grid-template-rows: auto minmax(230px, 1fr) auto;
+      gap: 18px;
+      min-width: 0;
+      padding: 0;
+      background: #fff;
+      border: 0;
       user-select: text;
     }
 
-    .signature-card::before {
-      content: attr(data-label);
-      position: absolute;
-      top: -10px;
-      left: 16px;
-      padding: 0 8px;
-      background: #f7f5f1;
-      color: var(--gold);
-      font-size: 9px;
-      font-weight: 750;
-      letter-spacing: 1.2px;
-      text-transform: uppercase;
-    }
-
-    .signature-card.with-logo {
-      grid-template-columns: 235px 1px minmax(0, 1fr);
-      align-items: start;
-    }
-
-    .signature-logo {
-      color: var(--black);
-      font-size: 26px;
+    .signature-card-title {
+      margin: 0;
+      font-size: 18px;
       font-weight: 850;
-      letter-spacing: 1.7px;
-      line-height: 1.05;
+      letter-spacing: 1.6px;
+      line-height: 1.2;
       text-transform: uppercase;
     }
 
-    .signature-rule {
-      width: 1px;
-      min-height: 122px;
-      background: var(--line);
+    .signature-card-note {
+      margin: 8px 0 0;
+      color: #687280;
+      font-size: 16px;
+      line-height: 1.35;
     }
 
-    .signature-info {
+    .signature-reference-panel {
+      display: flex;
       min-width: 0;
+      min-height: 230px;
+      align-items: center;
+      overflow: auto;
+      padding: 26px 30px;
+      background: #fff;
+    }
+
+    .signature-reference-panel.is-warm {
+      background: #f7f3ec;
+    }
+
+    .signature-reference {
+      display: grid;
+      grid-template-columns: 142px 2px minmax(270px, 1fr);
+      width: 100%;
+      min-width: 600px;
+      align-items: center;
+    }
+
+    .signature-reference.is-vertical {
+      grid-template-columns: 218px 2px minmax(270px, 1fr);
+    }
+
+    .reference-logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 0;
+      padding-right: 24px;
+    }
+
+    .reference-logo img {
+      display: block;
+      width: 112px;
+      max-width: 100%;
+      height: auto;
+    }
+
+    .signature-reference.is-vertical .reference-logo img {
+      width: 178px;
+    }
+
+    .reference-rule {
+      width: 2px;
+      min-height: 198px;
+      background: var(--gold);
+    }
+
+    .reference-info {
+      min-width: 0;
+      padding-left: 28px;
+      color: var(--black);
       font-size: 13px;
-      line-height: 1.45;
+      line-height: 1.4;
     }
 
     .signature-name {
-      font-size: 18px;
-      font-weight: 850;
+      font-size: 22px;
+      font-weight: 900;
       letter-spacing: 1.8px;
       line-height: 1.05;
       text-transform: uppercase;
+      white-space: nowrap;
     }
 
     .signature-role {
-      margin-top: 3px;
-      color: rgba(26, 26, 26, 0.48);
-      font-size: 14px;
+      margin-top: 5px;
+      color: var(--gold);
+      font-size: 13px;
+      font-weight: 800;
       letter-spacing: 1.8px;
+      line-height: 1.2;
       text-transform: uppercase;
+      white-space: nowrap;
     }
 
     .signature-address {
       margin-top: 16px;
-      color: rgba(26, 26, 26, 0.68);
+      color: var(--black);
+      white-space: nowrap;
     }
 
     .signature-contact {
       margin-top: 9px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      color: rgba(26, 26, 26, 0.72);
+      color: var(--black);
+      line-height: 1.55;
     }
 
     .signature-contact strong {
@@ -676,11 +715,39 @@
       font-weight: 850;
     }
 
+    .signature-divider {
+      width: 100%;
+      height: 1px;
+      margin: 12px 0 11px;
+      background: var(--gold);
+    }
+
     .signature-legal {
-      margin-top: 15px;
-      color: rgba(26, 26, 26, 0.42);
-      font-size: 10px;
+      color: rgba(26, 26, 26, 0.52);
+      font-size: 12px;
       line-height: 1.35;
+    }
+
+    .signature-legal a {
+      color: inherit;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    .signature-select {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 58px;
+      padding: 18px 24px;
+      background: var(--black);
+      color: #fff;
+      font-size: 14px;
+      font-weight: 850;
+      letter-spacing: 2px;
+      line-height: 1;
+      text-align: center;
+      text-transform: uppercase;
     }
 
     .backgrounds {
@@ -1147,8 +1214,8 @@
         grid-template-columns: 1fr;
       }
 
-      .signature-card.with-logo {
-        grid-template-columns: 190px 1px minmax(0, 1fr);
+      .signature-card {
+        grid-template-rows: auto minmax(220px, 1fr) auto;
       }
 
       .bg-row {
@@ -1312,15 +1379,46 @@
         gap: 22px;
       }
 
-      .signature-card,
-      .signature-card.with-logo {
-        grid-template-columns: 1fr;
+      .signature-reference-panel {
+        padding: 22px;
       }
 
-      .signature-rule {
+      .signature-reference,
+      .signature-reference.is-vertical {
+        grid-template-columns: 1fr;
+        min-width: 0;
+        justify-items: start;
+        gap: 16px;
+      }
+
+      .reference-logo {
+        justify-content: flex-start;
+        padding-right: 0;
+      }
+
+      .reference-logo img,
+      .signature-reference.is-vertical .reference-logo img {
+        width: 140px;
+      }
+
+      .reference-rule {
         width: 100%;
-        min-height: 1px;
-        height: 1px;
+        min-height: 2px;
+        height: 2px;
+      }
+
+      .reference-info {
+        padding-left: 0;
+      }
+
+      .signature-name {
+        font-size: 18px;
+        white-space: normal;
+      }
+
+      .signature-role,
+      .signature-address {
+        white-space: normal;
       }
 
       .bg-row {
@@ -1644,45 +1742,72 @@
       <div class="panel mid-row assets">
         <h2 class="section-title">Brand Assets</h2>
         <div class="signature-assets">
-          <div class="signature-card with-logo" data-label="With Logo">
-            <div class="signature-logo">BIND<br>IMMOBILIEN<br>GMBH</div>
-            <div class="signature-rule" aria-hidden="true"></div>
-            <div class="signature-info">
-              <div class="signature-name">DUYGU SALTIK</div>
-              <div class="signature-role">CHIEF OPERATING OFFICER</div>
-              <div class="signature-address">Ostwall 9-11 | 47798 Krefeld | Germany</div>
-              <div class="signature-contact">
-                <span><strong>M.</strong> +49 160 1010602</span>
-                <span>|</span>
-                <span><strong>E.</strong> duygu.saltik@bindimmobilien.de</span>
-              </div>
-              <div class="signature-legal">
-                Sitz der Gesellschaft: Krefeld<br>
-                Amtsgericht Köln HRB 118677<br>
-                Vertreten durch: Duygu Saltik (COO)<br>
-                USt-IdNr. DE 359540228
+          <div class="signature-card">
+            <div class="signature-card-header">
+              <h3 class="signature-card-title">01 Horizontal Reference</h3>
+              <p class="signature-card-note">Light layout with horizontal logo.</p>
+            </div>
+            <div class="signature-reference-panel">
+              <div class="signature-reference">
+                <div class="reference-logo">
+                  <img src="/brand/bind-signature-logo-horizontal-dark.png" alt="BIND Immobilien horizontal logo">
+                </div>
+                <div class="reference-rule" aria-hidden="true"></div>
+                <div class="reference-info">
+                  <div class="signature-name">DUYGU SALTIK</div>
+                  <div class="signature-role">CHIEF OPERATING OFFICER</div>
+                  <div class="signature-address">Ostwall 9-11 · 47798 Krefeld · Germany</div>
+                  <div class="signature-contact">
+                    <strong>M.</strong>&nbsp;&nbsp;+49 160 1010602<br>
+                    <strong>E.</strong>&nbsp;&nbsp;duygu.saltik@bindimmobilien.de<br>
+                    <strong>W.</strong>&nbsp;&nbsp;www.bindimmobilien.de
+                  </div>
+                  <div class="signature-divider" aria-hidden="true"></div>
+                  <div class="signature-legal">
+                    Sitz der Gesellschaft: Krefeld<br>
+                    Amtsgericht Köln HRB 118677<br>
+                    Vertreten durch: Duygu Saltik (COO)<br>
+                    USt-IdNr. DE 359540228<br>
+                    <a href="https://www.bindimmobilien.de/impressum">Impressum</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="https://www.bindimmobilien.de/datenschutz">Datenschutzerklärung</a>
+                  </div>
+                </div>
               </div>
             </div>
+            <div class="signature-select">Select Variation</div>
           </div>
 
-          <div class="signature-card" data-label="Without Logo">
-            <div class="signature-info">
-              <div class="signature-name">DUYGU SALTIK</div>
-              <div class="signature-role">CHIEF OPERATING OFFICER</div>
-              <div class="signature-address">Ostwall 9-11 | 47798 Krefeld | Germany</div>
-              <div class="signature-contact">
-                <span><strong>M.</strong> +49 160 1010602</span>
-                <span>|</span>
-                <span><strong>E.</strong> duygu.saltik@bindimmobilien.de</span>
-              </div>
-              <div class="signature-legal">
-                BIND Immobilien GmbH<br>
-                Sitz der Gesellschaft: Krefeld<br>
-                Amtsgericht Köln HRB 118677<br>
-                Vertreten durch: Duygu Saltik (COO)<br>
-                USt-IdNr. DE 359540228
+          <div class="signature-card">
+            <div class="signature-card-header">
+              <h3 class="signature-card-title">02 Vertical Reference</h3>
+              <p class="signature-card-note">Light layout with vertical logo.</p>
+            </div>
+            <div class="signature-reference-panel is-warm">
+              <div class="signature-reference is-vertical">
+                <div class="reference-logo">
+                  <img src="/brand/bind-signature-logo-vertical-dark.png" alt="BIND Immobilien vertical logo">
+                </div>
+                <div class="reference-rule" aria-hidden="true"></div>
+                <div class="reference-info">
+                  <div class="signature-name">DUYGU SALTIK</div>
+                  <div class="signature-role">CHIEF OPERATING OFFICER</div>
+                  <div class="signature-address">Ostwall 9-11 · 47798 Krefeld · Germany</div>
+                  <div class="signature-contact">
+                    <strong>M.</strong>&nbsp;&nbsp;+49 160 1010602<br>
+                    <strong>E.</strong>&nbsp;&nbsp;duygu.saltik@bindimmobilien.de<br>
+                    <strong>W.</strong>&nbsp;&nbsp;www.bindimmobilien.de
+                  </div>
+                  <div class="signature-divider" aria-hidden="true"></div>
+                  <div class="signature-legal">
+                    Sitz der Gesellschaft: Krefeld<br>
+                    Amtsgericht Köln HRB 118677<br>
+                    Vertreten durch: Duygu Saltik (COO)<br>
+                    USt-IdNr. DE 359540228<br>
+                    <a href="https://www.bindimmobilien.de/impressum">Impressum</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="https://www.bindimmobilien.de/datenschutz">Datenschutzerklärung</a>
+                  </div>
+                </div>
               </div>
             </div>
+            <div class="signature-select">Select Variation</div>
           </div>
         </div>
       </div>

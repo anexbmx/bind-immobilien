@@ -34,7 +34,7 @@ export default function StatsSection() {
           @media(max-width:768px){
             .project-band{padding:0!important;}
             .project-title{font-size:13px!important;}
-            .project-name{font-size:clamp(1.75rem, 8vw, 2.5rem)!important;}
+            .project-name{font-size:clamp(1.6rem, 2.5vw, 2.4rem)!important;}
           }
         `}</style>
         <div
@@ -64,7 +64,7 @@ export default function StatsSection() {
             className="project-name"
             style={{
               fontFamily: "Playfair Display, Georgia, serif",
-              fontSize: "clamp(2.1rem, 4vw, 3.8rem)",
+              fontSize: "clamp(1.6rem, 2.5vw, 2.4rem)",
               fontWeight: 600,
               color: "#FFFFFF",
               lineHeight: 1.05,

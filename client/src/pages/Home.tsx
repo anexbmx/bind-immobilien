@@ -19,9 +19,9 @@ export default function Home() {
       <HeroSection />
       <AboutSection />
       <InvestmentFocusSection />
-      <StatsSection />
       <SubmitOfferSection />
       <ContactSection />
+      <StatsSection />
       <FooterSection />
     </div>
   );
