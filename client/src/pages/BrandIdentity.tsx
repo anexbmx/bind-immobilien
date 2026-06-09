@@ -73,8 +73,8 @@ const fallbackSignatureLogos: SignatureLogoSet = {
   verticalDark: "/brand/bind-signature-logo-vertical.png",
 };
 
-const signatureImpressumUrl = "https://www.bindimmobilien.de/impressum";
-const signatureDatenschutzUrl = "https://www.bindimmobilien.de/datenschutz";
+const signatureImpressumUrl = "https://www.bind-immobilien.de/impressum";
+const signatureDatenschutzUrl = "https://www.bind-immobilien.de/datenschutz";
 
 function buildSignatureLegalHtml(linkColor = "#8a8a8a") {
   const linkStyle = `color:${linkColor};text-decoration:underline;text-underline-offset:2px;`;
@@ -249,7 +249,7 @@ function buildSignatureExampleHtml(form: SignatureForm, logos: SignatureLogoSet,
   const contentSize = example.layout === "compact" ? { name: 16, role: 9, body: 11, legal: 10 } : { name: 18, role: 10, body: 12, legal: 11 };
 
   if (example.layout === "reference") {
-    const web = website || "www.bindimmobilien.de";
+    const web = website || "www.bind-immobilien.de";
     const logoWidth = logoWidthForExample(example);
     const logoCellWidth = example.logoOrientation === "vertical" ? 180 : 112;
     return `<table cellpadding="0" cellspacing="0" border="0" style="font-family:Arial,Helvetica,sans-serif;border-collapse:collapse;margin:0;padding:0;">
@@ -277,7 +277,7 @@ function buildSignatureExampleHtml(form: SignatureForm, logos: SignatureLogoSet,
   }
 
   if (example.layout === "referenceDark") {
-    const web = website || "www.bindimmobilien.de";
+    const web = website || "www.bind-immobilien.de";
     const logoWidth = logoWidthForExample(example);
     const logoCellWidth = example.logoOrientation === "vertical" ? 180 : 112;
     const panelPadding = example.logoOrientation === "vertical" ? 18 : 10;
@@ -306,7 +306,7 @@ function buildSignatureExampleHtml(form: SignatureForm, logos: SignatureLogoSet,
   }
 
   if (example.layout === "referenceSplit") {
-    const web = website || "www.bindimmobilien.de";
+    const web = website || "www.bind-immobilien.de";
     const logoWidth = example.logoOrientation === "vertical" ? 150 : 96;
     const logoCellWidth = example.logoOrientation === "vertical" ? 180 : 112;
     return `<table cellpadding="0" cellspacing="0" border="0" style="font-family:Arial,Helvetica,sans-serif;border-collapse:collapse;margin:0;padding:0;background:#ffffff;background-color:#ffffff;">
